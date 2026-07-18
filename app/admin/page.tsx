@@ -1,216 +1,153 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import FadeIn from "@/components/FadeIn";
+import SignOutButton from "@/components/auth/SignOutButton";
 import { createClient } from "@/lib/supabase/server";
+
+type ProfileRole = {
+  role: "member" | "admin";
+  full_name: string;
+};
 
 export default async function AdminPage() {
   const supabase = await createClient();
 
-  const [
-    projectsResult,
-    profilesResult,
-    publishedProjectsResult,
-  ] = await Promise.all([
-    supabase
-      .from("projects")
-      .select("*", {
-        count: "exact",
-        head: true,
-      }),
+  const { data: claimsData } =
+    await supabase.auth.getClaims();
 
-    supabase
-      .from("profiles")
-      .select("*", {
-        count: "exact",
-        head: true,
-      }),
+  const userId =
+    typeof claimsData?.claims?.sub === "string"
+      ? claimsData.claims.sub
+      : null;
 
-    supabase
-      .from("projects")
-      .select("*", {
-        count: "exact",
-        head: true,
-      })
-      .eq("status", "published"),
-  ]);
+  if (!userId) {
+    redirect("/login");
+  }
 
-  const totalProjects =
-    projectsResult.count ?? 0;
+  const { data } = await supabase
+    .from("profiles")
+    .select("role, full_name")
+    .eq("id", userId)
+    .single();
 
-  const totalMembers =
-    profilesResult.count ?? 0;
+  const profile = data as ProfileRole | null;
 
-  const publishedProjects =
-    publishedProjectsResult.count ?? 0;
+  if (!profile || profile.role !== "admin") {
+    redirect("/account");
+  }
 
-  const draftProjects =
-    Math.max(
-      totalProjects - publishedProjects,
-      0,
-    );
-
-  const dashboardStatistics = [
+  const dashboardItems = [
     {
-      label: "Total Projects",
-      value: totalProjects,
+      title: "Projects",
+      description:
+        "Create, edit, publish, and archive organizational projects.",
+      href: "#",
+      status: "Coming in Pack 7",
     },
     {
-      label: "Published Projects",
-      value: publishedProjects,
+      title: "Ambassadors",
+      description:
+        "Review and manage the international ambassador network.",
+      href: "#",
+      status: "Coming in Pack 7",
     },
     {
-      label: "Unpublished Projects",
-      value: draftProjects,
+      title: "Education",
+      description:
+        "Publish articles, outreach guides, and learning resources.",
+      href: "#",
+      status: "Coming in Pack 7",
     },
     {
-      label: "Registered Accounts",
-      value: totalMembers,
+      title: "Volunteers",
+      description:
+        "Review applications, opportunities, and volunteer hours.",
+      href: "#",
+      status: "Coming in Pack 8",
     },
   ];
 
   return (
-    <main className="px-6 py-14 md:py-20">
-      <div className="mx-auto max-w-7xl">
-        <FadeIn>
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+    <main>
+      <section className="bg-[#233F31] px-6 py-16 text-white md:py-24">
+        <FadeIn className="mx-auto max-w-7xl">
+          <div className="flex flex-col justify-between gap-7 md:flex-row md:items-end">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#6F8172]">
-                Dashboard Overview
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#B7CA7F]">
+                Protected Administration
               </p>
 
-              <h1 className="mt-4 text-5xl md:text-6xl">
-                Administration
+              <h1 className="mt-5 text-5xl text-white md:text-7xl">
+                Admin Dashboard
               </h1>
 
-              <p className="mt-5 max-w-2xl leading-7 text-[#233F31]/70">
-                Manage the organization’s website,
-                projects, members, and future volunteer
-                programs.
+              <p className="mt-6 text-lg text-white/75">
+                Signed in as {profile.full_name}
               </p>
             </div>
 
-            <Link
-              href="/admin/projects/new"
-              className="bg-[#233F31] px-7 py-4 text-center font-bold text-white transition hover:-translate-y-1 hover:bg-[#6F8172]"
-            >
-              Create New Project
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/account"
+                className="border border-white px-6 py-3 font-bold text-white transition hover:bg-white hover:text-[#233F31]"
+              >
+                My Account
+              </Link>
+
+              <SignOutButton />
+            </div>
           </div>
         </FadeIn>
+      </section>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          {dashboardStatistics.map(
-            (statistic, index) => (
-              <FadeIn
-                key={statistic.label}
-                delay={index * 70}
-              >
-                <article className="border border-[#294638] bg-[#FFFAF0] p-7 shadow-sm">
-                  <p className="font-[var(--font-heading)] text-5xl">
-                    {statistic.value}
-                  </p>
-
-                  <p className="mt-3 font-bold">
-                    {statistic.label}
-                  </p>
-                </article>
-              </FadeIn>
-            ),
-          )}
-        </div>
-
-        <section className="mt-14">
+      <section className="bg-[#F1F6C8] px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl">
           <FadeIn>
-            <h2 className="text-4xl">
-              Management Sections
-            </h2>
+            <div className="border-l-4 border-[#233F31] bg-[#FFFAF0] p-7">
+              <p className="font-bold">
+                Authentication and role protection are
+                active.
+              </p>
+
+              <p className="mt-3 leading-7 text-[#233F31]/75">
+                The next pack will connect these dashboard
+                sections to real Supabase database tables
+                and admin forms.
+              </p>
+            </div>
           </FadeIn>
 
-          <div className="mt-8 grid gap-7 md:grid-cols-2">
-            <FadeIn>
-              <Link
-                href="/admin/projects"
-                className="group block h-full border border-[#294638] bg-[#FFFAF0] p-8 transition hover:-translate-y-2 hover:shadow-xl"
-              >
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6F8172]">
-                  Available Now
-                </p>
+          <div className="mt-10 grid gap-7 md:grid-cols-2">
+            {dashboardItems.map(
+              (item, index) => (
+                <FadeIn
+                  key={item.title}
+                  delay={index * 80}
+                  className="h-full"
+                >
+                  <article className="flex h-full flex-col border border-[#294638] bg-[#FFFAF0] p-8 transition hover:-translate-y-2 hover:shadow-xl">
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6F8172]">
+                      {item.status}
+                    </p>
 
-                <h3 className="mt-4 text-4xl">
-                  Projects
-                </h3>
+                    <h2 className="mt-4 text-4xl">
+                      {item.title}
+                    </h2>
 
-                <p className="mt-5 leading-7 text-[#233F31]/70">
-                  Create, edit, publish, feature, archive,
-                  and delete organizational projects.
-                </p>
+                    <p className="mt-5 flex-1 leading-7 text-[#233F31]/75">
+                      {item.description}
+                    </p>
 
-                <p className="mt-8 font-bold">
-                  Manage Projects{" "}
-                  <span className="inline-block transition-transform group-hover:translate-x-2">
-                    →
-                  </span>
-                </p>
-              </Link>
-            </FadeIn>
-
-            <FadeIn delay={80}>
-              <article className="h-full border border-[#294638]/40 bg-[#FFFAF0]/60 p-8">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6F8172]">
-                  Next Admin Pack
-                </p>
-
-                <h3 className="mt-4 text-4xl">
-                  Ambassadors
-                </h3>
-
-                <p className="mt-5 leading-7 text-[#233F31]/60">
-                  Manage ambassador profiles, countries,
-                  regions, photographs, and active status.
-                </p>
-
-                <p className="mt-8 font-bold text-[#233F31]/40">
-                  Coming Next
-                </p>
-              </article>
-            </FadeIn>
-
-            <FadeIn delay={160}>
-              <article className="h-full border border-[#294638]/40 bg-[#FFFAF0]/60 p-8">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6F8172]">
-                  Future Pack
-                </p>
-
-                <h3 className="mt-4 text-4xl">
-                  Education
-                </h3>
-
-                <p className="mt-5 leading-7 text-[#233F31]/60">
-                  Publish educational articles and
-                  community outreach guides.
-                </p>
-              </article>
-            </FadeIn>
-
-            <FadeIn delay={240}>
-              <article className="h-full border border-[#294638]/40 bg-[#FFFAF0]/60 p-8">
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#6F8172]">
-                  Future Pack
-                </p>
-
-                <h3 className="mt-4 text-4xl">
-                  Volunteers
-                </h3>
-
-                <p className="mt-5 leading-7 text-[#233F31]/60">
-                  Review applications, create
-                  opportunities, and approve volunteer
-                  hours.
-                </p>
-              </article>
-            </FadeIn>
+                    <span className="mt-8 font-bold text-[#233F31]/50">
+                      Management tools coming next
+                    </span>
+                  </article>
+                </FadeIn>
+              ),
+            )}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }
