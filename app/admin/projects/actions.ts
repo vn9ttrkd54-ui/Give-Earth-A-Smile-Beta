@@ -300,11 +300,9 @@ export async function createProject(
     };
   }
 
-  revalidatePath("/");
-  revalidatePath("/projects");
-  revalidatePath("/projects/[slug]", "page");
   revalidatePath("/admin");
   revalidatePath("/admin/projects");
+  revalidatePath("/projects");
 
   redirect(
     `/admin/projects/${data.id}/edit?success=${encodeURIComponent(
@@ -389,15 +387,13 @@ export async function updateProject(
     };
   }
 
-  revalidatePath("/");
-  revalidatePath("/projects");
-  revalidatePath("/projects/[slug]", "page");
-  revalidatePath(`/projects/${input.slug}`);
   revalidatePath("/admin");
   revalidatePath("/admin/projects");
   revalidatePath(
     `/admin/projects/${projectId}/edit`,
   );
+  revalidatePath("/projects");
+  revalidatePath(`/projects/${input.slug}`);
 
   return {
     success: true,
@@ -425,11 +421,9 @@ export async function deleteProject(
     );
   }
 
-  revalidatePath("/");
-  revalidatePath("/projects");
-  revalidatePath("/projects/[slug]", "page");
   revalidatePath("/admin");
   revalidatePath("/admin/projects");
+  revalidatePath("/projects");
 
   redirect(
     `/admin/projects?success=${encodeURIComponent(
@@ -466,11 +460,9 @@ export async function toggleProjectPublished(
     );
   }
 
-  revalidatePath("/");
-  revalidatePath("/projects");
-  revalidatePath("/projects/[slug]", "page");
   revalidatePath("/admin");
   revalidatePath("/admin/projects");
+  revalidatePath("/projects");
 
   redirect("/admin/projects");
 }

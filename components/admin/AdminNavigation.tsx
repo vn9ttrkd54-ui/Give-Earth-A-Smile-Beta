@@ -23,11 +23,16 @@ const navigationItems: AdminNavigationItem[] = [
   {
     label: "Ambassadors",
     href: "/admin/ambassadors",
-    available: true,
+    available: false,
   },
   {
     label: "Education",
     href: "/admin/education",
+    available: false,
+  },
+  {
+    label: "Volunteers",
+    href: "/admin/volunteers",
     available: false,
   },
 ];
