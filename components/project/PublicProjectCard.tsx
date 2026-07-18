@@ -12,7 +12,10 @@ const fallbackImage =
 export default function PublicProjectCard({
   project,
 }: PublicProjectCardProps) {
-  const location = [project.city, project.country]
+  const location = [
+    project.city,
+    project.country,
+  ]
     .filter(Boolean)
     .join(", ");
 
@@ -24,7 +27,10 @@ export default function PublicProjectCard({
         className="relative block aspect-[4/3] overflow-hidden bg-[#DDE7BE]"
       >
         <Image
-          src={project.coverImage || fallbackImage}
+          src={
+            project.coverImage ||
+            fallbackImage
+          }
           alt={project.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

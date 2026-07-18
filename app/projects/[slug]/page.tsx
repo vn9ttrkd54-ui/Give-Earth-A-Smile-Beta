@@ -2,16 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import AnimatedCounter from "@/components/AnimatedCounter";
-import FadeIn from "@/components/FadeIn";
-import ProjectGallery from "@/components/project/ProjectGallery";
-import ProjectHero from "@/components/project/ProjectHero";
-import ProjectSidebar from "@/components/project/ProjectSidebar";
-import ProjectTimeline from "@/components/project/ProjectTimeline";
-import RelatedProjects from "@/components/project/RelatedProjects";
-import SectionHeader from "@/components/SectionHeader";
-import { projects } from "@/data/projects";
-import { getProjectBySlug } from "@/lib/projectHelpers";
+import PublicProjectCard from "@/components/project/PublicProjectCard";
+import {
+  getPublishedProjectBySlug,
+  getRelatedProjects,
+} from "@/lib/projects/publicProjectQueries";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -19,17 +14,31 @@ type ProjectPageProps = {
   }>;
 };
 
-export function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+const fallbackImage =
+  "/images/projects/project-placeholder.jpg";
+
+function formatProjectDate(
+  date: string | null,
+): string | null {
+  if (!date) {
+    return null;
+  }
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T00:00:00Z`));
 }
 
 export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+
+  const project =
+    await getPublishedProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -47,290 +56,311 @@ export default async function ProjectPage({
   params,
 }: ProjectPageProps) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+
+  const project =
+    await getPublishedProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
+  const relatedProjects =
+    await getRelatedProjects(project);
+
+  const startDate = formatProjectDate(
+    project.startDate,
+  );
+
+  const endDate = formatProjectDate(
+    project.endDate,
+  );
+
+  const location = [
+    project.city,
+    project.country,
+  ]
+    .filter(Boolean)
+    .join(", ");
+
   return (
     <main>
-      <ProjectHero project={project} />
+      <section className="relative min-h-[620px] overflow-hidden bg-[#233F31]">
+        <Image
+          src={
+            project.coverImage ||
+            fallbackImage
+          }
+          alt={project.title}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
 
-      <ProjectSidebar variant="mobile" />
+        <div className="absolute inset-0 bg-[#10271D]/65" />
 
-      <div className="bg-[#FFFAF0] px-6 py-20 md:py-28">
-        <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[240px_minmax(0,1fr)]">
-          <div className="hidden lg:block">
-            <ProjectSidebar variant="desktop" />
-          </div>
+        <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-end px-6 py-16 text-white md:py-24">
+          <div className="max-w-5xl">
+            <div className="flex flex-wrap gap-3">
+              <span className="border border-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">
+                {project.category}
+              </span>
 
-          <div className="min-w-0">
-            <section
-              id="overview"
-              className="scroll-mt-36"
-            >
-              <FadeIn>
-                <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#6F8172]">
-                  Project Overview
-                </p>
-
-                <h2 className="mt-5 text-5xl leading-tight md:text-6xl">
-                  About This Project
-                </h2>
-              </FadeIn>
-
-              <div className="mt-9 space-y-6">
-                {project.fullDescription.map((paragraph, index) => (
-                  <FadeIn key={paragraph} delay={index * 70}>
-                    <p className="text-lg leading-9 text-[#233F31]/85">
-                      {paragraph}
-                    </p>
-                  </FadeIn>
-                ))}
-              </div>
-
-              {project.partners.length > 0 && (
-                <FadeIn delay={180}>
-                  <div className="mt-10 border-l-4 border-[#6F8172] bg-[#F1F6C8] p-7">
-                    <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">
-                      Project Partners and Participants
-                    </p>
-
-                    <div className="mt-5 flex flex-wrap gap-3">
-                      {project.partners.map((partner) => (
-                        <span
-                          key={partner}
-                          className="border border-[#294638] bg-[#FFFAF0] px-4 py-3 text-sm font-bold"
-                        >
-                          {partner}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </FadeIn>
+              {location && (
+                <span className="bg-[#F1F6C8] px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]">
+                  {location}
+                </span>
               )}
-            </section>
 
-            <section
-              id="statistics"
-              className="scroll-mt-36 pt-24"
-            >
-              <SectionHeader
-                eyebrow="Project Impact"
-                title="Impact in Numbers"
-                description="Current statistics and measurable outcomes connected to this project."
-                centered={false}
-              />
+              {project.featured && (
+                <span className="bg-[#233F31] px-4 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">
+                  Featured Project
+                </span>
+              )}
+            </div>
 
-              <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-                {project.statistics.map((statistic, index) => (
-                  <FadeIn
-                    key={statistic.id}
-                    delay={index * 80}
-                    className="h-full"
-                  >
-                    <article className="group flex h-full min-h-52 flex-col items-center justify-center border border-[#294638] bg-[#F1F6C8] p-7 text-center transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-                      <AnimatedCounter
-                        value={statistic.value}
-                        className="font-[var(--font-heading)] text-5xl"
-                      />
+            <h1 className="mt-7 text-5xl text-white md:text-7xl">
+              {project.title}
+            </h1>
 
-                      <div className="my-5 h-px w-12 bg-[#6F8172] transition-all duration-300 group-hover:w-20" />
-
-                      <p className="font-bold">{statistic.label}</p>
-                    </article>
-                  </FadeIn>
-                ))}
-              </div>
-            </section>
-
-            <section
-              id="goals"
-              className="scroll-mt-36 pt-24"
-            >
-              <SectionHeader
-                eyebrow="Purpose and Progress"
-                title="Goals and Results"
-                centered={false}
-              />
-
-              <div className="mt-12 grid gap-8 xl:grid-cols-2">
-                <FadeIn direction="right" className="h-full">
-                  <article className="h-full border border-[#294638] bg-[#F1F6C8] p-8 md:p-10">
-                    <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">
-                      Project Goals
-                    </p>
-
-                    <h3 className="mt-4 text-4xl">
-                      What We Set Out to Achieve
-                    </h3>
-
-                    <div className="mt-8 space-y-5">
-                      {project.goals.map((goal, index) => (
-                        <div key={goal} className="flex gap-4">
-                          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#233F31] text-sm font-bold text-white">
-                            {index + 1}
-                          </span>
-
-                          <p className="pt-1 leading-7">{goal}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </article>
-                </FadeIn>
-
-                <FadeIn direction="left" className="h-full">
-                  <article className="h-full border border-[#294638] bg-[#233F31] p-8 text-white md:p-10">
-                    <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#B7CA7F]">
-                      Project Results
-                    </p>
-
-                    <h3 className="mt-4 text-4xl text-white">
-                      Progress and Outcomes
-                    </h3>
-
-                    <div className="mt-8 space-y-5">
-                      {project.results.map((result) => (
-                        <div key={result} className="flex gap-4">
-                          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#B7CA7F] font-bold text-[#233F31]">
-                            ✓
-                          </span>
-
-                          <p className="pt-1 leading-7 text-white/85">
-                            {result}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </article>
-                </FadeIn>
-              </div>
-            </section>
-
-            <section
-              id="timeline"
-              className="scroll-mt-36 pt-24"
-            >
-              <SectionHeader
-                eyebrow="Project Development"
-                title="Project Timeline"
-                description="Follow the major stages of the project from its initial planning through implementation and future development."
-                centered={false}
-              />
-
-              <div className="mt-14">
-                <ProjectTimeline timeline={project.timeline} />
-              </div>
-            </section>
-
-            <section
-              id="gallery"
-              className="scroll-mt-36 pt-24"
-            >
-              <SectionHeader
-                eyebrow="Project Gallery"
-                title="Moments From the Project"
-                description="Select an image to open the fullscreen gallery. Use the arrow keys to navigate and Escape to close it."
-                centered={false}
-              />
-
-              <div className="mt-12">
-                <ProjectGallery images={project.gallery} />
-              </div>
-            </section>
-
-            <section
-              id="leadership"
-              className="scroll-mt-36 pt-24"
-            >
-              <SectionHeader
-                eyebrow="Project Leadership"
-                title="Meet the Team"
-                description="The leaders, ambassadors, and organizers contributing to this initiative."
-                centered={false}
-              />
-
-              <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                {project.leaders.map((leader, index) => (
-                  <FadeIn
-                    key={leader.id}
-                    delay={index * 80}
-                    className="h-full"
-                  >
-                    <article className="group h-full overflow-hidden border border-[#294638] bg-[#F1F6C8]">
-                      {leader.image ? (
-                        <div className="relative aspect-[4/3] overflow-hidden bg-[#E4EBCB]">
-                          <Image
-                            src={leader.image}
-                            alt={leader.name}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                            className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
-                        </div>
-                      ) : (
-                        <div className="flex aspect-[4/3] items-center justify-center bg-[#233F31]">
-                          <span className="font-[var(--font-heading)] text-6xl text-white">
-                            {leader.name
-                              .split(" ")
-                              .slice(0, 2)
-                              .map((part) => part[0])
-                              .join("")}
-                          </span>
-                        </div>
-                      )}
-
-                      <div className="p-6">
-                        <h3 className="text-2xl">{leader.name}</h3>
-
-                        <p className="mt-3 text-sm font-bold leading-6 text-[#6F8172]">
-                          {leader.role}
-                        </p>
-                      </div>
-                    </article>
-                  </FadeIn>
-                ))}
-              </div>
-            </section>
-
-            <FadeIn>
-              <section className="mt-24 border border-[#294638] bg-[#F1F6C8] p-8 text-center md:p-12">
-                <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#6F8172]">
-                  Support This Work
-                </p>
-
-                <h2 className="mt-5 text-4xl md:text-5xl">
-                  Help Expand Projects Like This
-                </h2>
-
-                <p className="mx-auto mt-6 max-w-2xl text-lg leading-8">
-                  Join Give Earth a Smile as a volunteer, ambassador, project
-                  leader, partner, or supporter.
-                </p>
-
-                <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-                  <Link
-                    href="/join"
-                    className="bg-[#233F31] px-9 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-[#6F8172]"
-                  >
-                    Join Our Organization
-                  </Link>
-
-                  <Link
-                    href="/contact"
-                    className="border border-[#294638] px-9 py-4 font-bold transition hover:-translate-y-1 hover:bg-[#233F31] hover:text-white"
-                  >
-                    Contact Our Team
-                  </Link>
-                </div>
-              </section>
-            </FadeIn>
+            {project.subtitle && (
+              <p className="mt-6 max-w-3xl text-xl leading-8 text-white/85">
+                {project.subtitle}
+              </p>
+            )}
           </div>
         </div>
-      </div>
+      </section>
 
-      <RelatedProjects project={project} />
+      <section className="bg-[#F1F6C8] px-6 py-16 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_340px]">
+          <div className="space-y-10">
+            <section className="border border-[#294638] bg-[#FFFAF0] p-7 md:p-10">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">
+                Project Overview
+              </p>
+
+              <h2 className="mt-4 text-4xl">
+                About This Project
+              </h2>
+
+              <p className="mt-6 text-lg leading-8 text-[#233F31]/75">
+                {project.fullDescription ||
+                  project.shortDescription}
+              </p>
+            </section>
+
+            {project.impactSummary && (
+              <section className="border border-[#294638] bg-[#233F31] p-7 text-white md:p-10">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#F1F6C8]">
+                  Measured Impact
+                </p>
+
+                <h2 className="mt-4 text-4xl text-white">
+                  Project Impact
+                </h2>
+
+                <p className="mt-6 text-lg leading-8 text-white/80">
+                  {project.impactSummary}
+                </p>
+              </section>
+            )}
+
+            {project.goals.length > 0 && (
+              <ProjectListSection
+                eyebrow="Purpose"
+                title="Project Goals"
+                items={project.goals}
+              />
+            )}
+
+            {project.results.length > 0 && (
+              <ProjectListSection
+                eyebrow="Outcomes"
+                title="Project Results"
+                items={project.results}
+              />
+            )}
+          </div>
+
+          <aside>
+            <div className="sticky top-28 border border-[#294638] bg-[#FFFAF0] p-7">
+              <h2 className="text-3xl">
+                Project Details
+              </h2>
+
+              <dl className="mt-7 divide-y divide-[#294638]/20 border-y border-[#294638]/20">
+                <ProjectDetail
+                  label="Category"
+                  value={project.category}
+                />
+
+                <ProjectDetail
+                  label="Location"
+                  value={
+                    location ||
+                    project.country
+                  }
+                />
+
+                {startDate && (
+                  <ProjectDetail
+                    label="Start date"
+                    value={startDate}
+                  />
+                )}
+
+                {endDate && (
+                  <ProjectDetail
+                    label="End date"
+                    value={endDate}
+                  />
+                )}
+              </dl>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+                <ProjectStatistic
+                  value={project.peopleReached}
+                  label="People Reached"
+                />
+
+                <ProjectStatistic
+                  value={project.volunteerHours}
+                  label="Volunteer Hours"
+                />
+
+                <ProjectStatistic
+                  value={project.volunteersCount}
+                  label="Volunteers"
+                />
+              </div>
+
+              <Link
+                href="/join"
+                className="mt-8 block bg-[#233F31] px-6 py-4 text-center font-bold text-white"
+              >
+                Join Our Work
+              </Link>
+
+              <Link
+                href="/projects"
+                className="mt-3 block border border-[#294638] px-6 py-4 text-center font-bold text-[#233F31]"
+              >
+                View All Projects
+              </Link>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      {relatedProjects.length > 0 && (
+        <section className="border-t border-[#294638] bg-[#FFFAF0] px-6 py-16 md:py-24">
+          <div className="mx-auto max-w-7xl">
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#6F8172]">
+              Continue Exploring
+            </p>
+
+            <h2 className="mt-4 text-4xl md:text-5xl">
+              Related Projects
+            </h2>
+
+            <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+              {relatedProjects.map(
+                (relatedProject) => (
+                  <PublicProjectCard
+                    key={relatedProject.id}
+                    project={relatedProject}
+                  />
+                ),
+              )}
+            </div>
+          </div>
+        </section>
+      )}
     </main>
+  );
+}
+
+type ProjectListSectionProps = {
+  eyebrow: string;
+  title: string;
+  items: string[];
+};
+
+function ProjectListSection({
+  eyebrow,
+  title,
+  items,
+}: ProjectListSectionProps) {
+  return (
+    <section className="border border-[#294638] bg-[#FFFAF0] p-7 md:p-10">
+      <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">
+        {eyebrow}
+      </p>
+
+      <h2 className="mt-4 text-4xl">
+        {title}
+      </h2>
+
+      <ul className="mt-7 space-y-4">
+        {items.map((item, index) => (
+          <li
+            key={`${item}-${index}`}
+            className="flex gap-4 leading-7 text-[#233F31]/75"
+          >
+            <span
+              aria-hidden="true"
+              className="mt-2 h-3 w-3 shrink-0 bg-[#B7CA7F]"
+            />
+
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+type ProjectDetailProps = {
+  label: string;
+  value: string;
+};
+
+function ProjectDetail({
+  label,
+  value,
+}: ProjectDetailProps) {
+  return (
+    <div className="py-5">
+      <dt className="text-xs font-bold uppercase tracking-[0.14em] text-[#6F8172]">
+        {label}
+      </dt>
+
+      <dd className="mt-2 font-semibold">
+        {value}
+      </dd>
+    </div>
+  );
+}
+
+type ProjectStatisticProps = {
+  value: number;
+  label: string;
+};
+
+function ProjectStatistic({
+  value,
+  label,
+}: ProjectStatisticProps) {
+  return (
+    <div className="border border-[#294638] bg-[#F1F6C8] p-5 text-center">
+      <p className="font-[var(--font-heading)] text-4xl">
+        {value.toLocaleString()}
+      </p>
+
+      <p className="mt-2 text-xs font-bold uppercase tracking-[0.12em] text-[#233F31]/65">
+        {label}
+      </p>
+    </div>
   );
 }

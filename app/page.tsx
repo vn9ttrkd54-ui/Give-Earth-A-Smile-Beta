@@ -5,8 +5,8 @@ import FadeIn from "@/components/FadeIn";
 import Gallery from "@/components/Gallery";
 import ProjectCard from "@/components/ProjectCard";
 import SectionHeader from "@/components/SectionHeader";
-import { projects } from "@/data/projects";
 import { statistics } from "@/data/statistics";
+import DatabaseFeaturedProjects from "@/components/home/DatabaseFeaturedProjects";
 
 export default function HomePage() {
   return (
@@ -158,15 +158,7 @@ export default function HomePage() {
           />
 
           <div className="mt-14 grid gap-8 lg:grid-cols-3">
-            {projects.slice(0, 3).map((project, index) => (
-              <FadeIn
-                key={project.id}
-                delay={index * 100}
-                className="h-full"
-              >
-                <ProjectCard project={project} />
-              </FadeIn>
-            ))}
+            <DatabaseFeaturedProjects />
           </div>
 
           <FadeIn delay={250} className="mt-12 text-center">
