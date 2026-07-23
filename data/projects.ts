@@ -267,7 +267,7 @@ Give Earth a Smile is working toward bringing these educational voices into the 
         label: "Of environmental education",
       },
       {
-        value: "30 Students",
+        value: "30+ Students",
         label: "Engaged in the program",
       },
       {

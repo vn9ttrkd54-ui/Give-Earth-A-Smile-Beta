@@ -14,7 +14,7 @@ const impactStatistics = [
     label: "Days of environmental education",
   },
   {
-    value: "30",
+    value: "30+",
     label: "Students impacted",
   },
   {

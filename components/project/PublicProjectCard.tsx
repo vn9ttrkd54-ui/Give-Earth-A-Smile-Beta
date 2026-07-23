@@ -33,26 +33,18 @@ export default function PublicProjectCard({
     return null;
   }
 
-  const studentsImpacted =
-    getStatisticValue(project, "students impacted") ??
-    getStatisticValue(project, "students");
-
-  const classesBenefiting =
-    getStatisticValue(project, "classes benefiting") ??
-    getStatisticValue(project, "classes");
-
-  const daysOfEducation =
-    getStatisticValue(
-      project,
-      "days of environmental education",
-    ) ?? getStatisticValue(project, "days");
-
   const isMalawi =
     project.slug === "seeds-for-change-malawi";
 
+  const studentsImpacted = isMalawi
+    ? project.statistics[2]?.value ?? null
+    : getStatisticValue(project, "students impacted") ??
+      getStatisticValue(project, "students");
+
   const secondaryStatistic = isMalawi
-    ? daysOfEducation
-    : classesBenefiting;
+    ? project.statistics[1]?.value ?? null
+    : getStatisticValue(project, "classes benefiting") ??
+      getStatisticValue(project, "classes");
 
   const secondaryLabel = isMalawi
     ? "Days of environmental education"
