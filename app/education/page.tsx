@@ -1,25 +1,15 @@
 import Link from "next/link";
-import ArticleCard from "@/components/education/ArticleCard";
 import EducationDirectory from "@/components/education/EducationDirectory";
 import FadeIn from "@/components/FadeIn";
 import SectionHeader from "@/components/SectionHeader";
-import {
-  getAllEducationArticles,
-  getFeaturedEducationArticles,
-} from "@/lib/educationHelpers";
+import { getAllEducationArticles } from "@/lib/educationHelpers";
 
 export default function EducationPage() {
   const articles = getAllEducationArticles();
-  const featuredArticles = getFeaturedEducationArticles();
 
   const categoryCount = new Set(
     articles.map((article) => article.category),
   ).size;
-
-  const totalReadingTime = articles.reduce(
-    (total, article) => total + article.readingTime,
-    0,
-  );
 
   return (
     <main>
@@ -30,26 +20,28 @@ export default function EducationPage() {
           </p>
 
           <h1 className="mt-5 text-5xl leading-tight sm:text-6xl md:text-7xl">
-            Education and Outreach
+            Education
           </h1>
 
           <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-white/85">
             Explore environmental lessons, community action guides,
-            discussion resources, and educational articles created
-            for students and volunteers.
+            discussion resources, and educational articles created for
+            students and volunteers.
           </p>
         </FadeIn>
       </section>
 
-      <section className="bg-[#F1F6C8] px-6 py-16 md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-5 sm:grid-cols-3">
+      <section className="bg-[#F1F6C8] px-6 pb-8 pt-12 md:pb-10 md:pt-14">
+        <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2">
           <FadeIn>
             <article className="border border-[#294638] bg-[#FFFAF0] p-7 text-center">
               <p className="font-[var(--font-heading)] text-5xl">
                 {articles.length}
               </p>
 
-              <p className="mt-3 font-bold">Educational Resources</p>
+              <p className="mt-3 font-bold">
+                Educational Resources
+              </p>
             </article>
           </FadeIn>
 
@@ -59,53 +51,23 @@ export default function EducationPage() {
                 {categoryCount}
               </p>
 
-              <p className="mt-3 font-bold">Topic Categories</p>
-            </article>
-          </FadeIn>
-
-          <FadeIn delay={160}>
-            <article className="border border-[#294638] bg-[#FFFAF0] p-7 text-center">
-              <p className="font-[var(--font-heading)] text-5xl">
-                {totalReadingTime}
+              <p className="mt-3 font-bold">
+                Topic Categories
               </p>
-
-              <p className="mt-3 font-bold">Minutes of Learning</p>
             </article>
           </FadeIn>
         </div>
       </section>
 
-      <section className="bg-[#FFFAF0] px-6 py-20 md:py-28">
+      <section className="bg-[#F1F6C8] px-6 pb-20 pt-8 md:pb-28 md:pt-10">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
-            eyebrow="Featured Learning"
-            title="Start Exploring"
-            description="Featured environmental lessons and community action guides from our education team."
+            eyebrow="Education Library"
+            title="Explore All Articles"
+            description="Browse our complete collection of environmental education articles. Search by title or keyword and filter resources by category and reading level."
           />
 
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
-            {featuredArticles.slice(0, 3).map((article, index) => (
-              <FadeIn
-                key={article.id}
-                delay={index * 100}
-                className="h-full"
-              >
-                <ArticleCard article={article} />
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F1F6C8] px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeader
-            eyebrow="Resource Library"
-            title="Find a Topic"
-            description="Search by subject, title, or keyword and filter resources by category and reading level."
-          />
-
-          <FadeIn delay={100} className="mt-14">
+          <FadeIn delay={100} className="mt-10">
             <EducationDirectory articles={articles} />
           </FadeIn>
         </div>
@@ -122,9 +84,8 @@ export default function EducationPage() {
           </h2>
 
           <p className="mx-auto mt-7 max-w-2xl text-lg leading-8 text-white/80">
-            Ambassadors and volunteers can use these resources to
-            organize discussions, lessons, and community outreach
-            activities.
+            Ambassadors and volunteers can use these resources to organize
+            discussions, lessons, and community outreach activities.
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">

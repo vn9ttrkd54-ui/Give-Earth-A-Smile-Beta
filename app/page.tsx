@@ -11,9 +11,9 @@ import DatabaseFeaturedProjects from "@/components/home/DatabaseFeaturedProjects
 export default function HomePage() {
   return (
     <main>
-      <section className="relative flex min-h-[760px] items-end overflow-hidden">
+      <section className="relative flex min-h-[650px] items-end overflow-hidden">
         <Image
-          src="/images/home/hero.jpg"
+          src="/images/home/hero-new.jpg"
           alt="Give Earth a Smile environmental project"
           fill
           priority
@@ -23,24 +23,12 @@ export default function HomePage() {
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/20 to-black/80" />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 pt-36 text-center text-white md:pb-24">
-          <FadeIn direction="down" duration={900}>
-            <p className="text-sm font-bold uppercase tracking-[0.35em] text-white/85 md:text-base">
-              Youth-Led Environmental Action
-            </p>
-          </FadeIn>
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-end px-6 pb-24 pt-64 text-center text-white">
 
-          <FadeIn delay={120} duration={900}>
-            <h1 className="mx-auto mt-6 max-w-5xl text-5xl leading-tight sm:text-6xl md:text-7xl lg:text-8xl">
+          <FadeIn duration={900}>
+            <h1 className="mx-auto whitespace-nowrap font-[var(--font-fraunces)] text-3xl leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
               Together for a Greener Tomorrow
             </h1>
-          </FadeIn>
-
-          <FadeIn delay={240} duration={900}>
-            <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-white/90 md:text-xl">
-              Connecting young environmental leaders through education,
-              community service, and international collaboration.
-            </p>
           </FadeIn>
 
           <FadeIn delay={360} duration={900}>
@@ -73,7 +61,7 @@ export default function HomePage() {
       <section className="grid bg-[#FFFAF0] lg:grid-cols-2">
         <FadeIn direction="right" className="relative min-h-[480px] lg:min-h-[660px]">
           <Image
-            src="/images/home/impact.jpg"
+            src="/images/home/impact-new.jpg"
             alt="Community environmental initiative"
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -157,7 +145,7 @@ export default function HomePage() {
             description="Our projects combine environmental education, community service, youth leadership, and international cooperation."
           />
 
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
+          <div className="mt-14">
             <DatabaseFeaturedProjects />
           </div>
 
@@ -191,7 +179,7 @@ export default function HomePage() {
           </p>
 
           <a
-            href="https://www.gofundme.com/"
+            href="https://www.gofundme.com/f/seeds-for-change-improve-education-access-to-malawi-schools"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-10 inline-block min-w-56 rounded-full bg-[#B7CA7F] px-9 py-4 text-lg font-bold text-[#233F31] shadow-lg transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"

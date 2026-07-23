@@ -8,9 +8,9 @@ export default function Footer() {
         <Image
           src="/images/logo.png"
           alt="Give Earth a Smile logo"
-          width={75}
-          height={75}
-          className="mx-auto h-16 w-16 object-contain"
+          width={300}
+          height={50}
+          className="mx-auto h-16 w-auto object-contain"
         />
 
         <div className="mt-6 flex flex-wrap justify-center gap-6">
@@ -18,13 +18,13 @@ export default function Footer() {
           <Link href="/about">About</Link>
           <Link href="/projects">Projects</Link>
           <Link href="/impact">Our Impact</Link>
-          <Link href="/education">Education and Outreach</Link>
+          <Link href="/education">Education</Link>
           <Link href="/team">Our Team</Link>
           <Link href="/contact">Contact</Link>
         </div>
 
         <p className="mt-8 text-sm">
-          © 2026 Give Earth a Smile. All rights reserved.
+          © 2024 Give Earth a Smile. All rights reserved.
         </p>
       </div>
     </footer>

@@ -1,282 +1,139 @@
-import { createClient } from "@/lib/supabase/server";
 import {
-  convertProjectRow,
-  type PublicProject,
-  type PublicProjectDatabaseRow,
-  type PublicProjectStatistics,
-} from "@/lib/projects/publicProjectTypes";
+  projects,
+  type Project,
+  type ProjectCategory,
+} from "@/data/projects";
 
-const publicProjectColumns = `
-  id,
-  slug,
-  title,
-  subtitle,
-  short_description,
-  full_description,
-  category,
-  country,
-  city,
-  status,
-  featured,
-  cover_image,
-  start_date,
-  end_date,
-  impact_summary,
-  people_reached,
-  volunteer_hours,
-  volunteers_count,
-  goals,
-  results,
-  created_at,
-  updated_at
-`;
+export type PublicProjectStatistics = {
+  totalProjects: number;
+  totalCountries: number;
+  totalPeopleReached: number;
+  totalVolunteerHours: number;
+  totalVolunteers: number;
+};
 
-function cleanSearchText(value: string): string {
+function normalizeText(value: string): string {
   return value
-    .replace(/[%_,()]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, " ");
 }
 
-export async function getPublishedProjects(): Promise<
-  PublicProject[]
-> {
-  const supabase = await createClient();
+function sortProjects(projectList: Project[]): Project[] {
+  return [...projectList].sort((firstProject, secondProject) => {
+    if (firstProject.featured !== secondProject.featured) {
+      return firstProject.featured ? -1 : 1;
+    }
 
-  const { data, error } = await supabase
-    .from("projects")
-    .select(publicProjectColumns)
-    .eq("status", "published")
-    .order("featured", {
-      ascending: false,
-    })
-    .order("start_date", {
-      ascending: false,
-      nullsFirst: false,
-    })
-    .order("created_at", {
-      ascending: false,
-    });
+    return firstProject.title.localeCompare(secondProject.title);
+  });
+}
 
-  if (error) {
-    console.error(
-      "Unable to load published projects:",
-      error.message,
-    );
-
-    return [];
-  }
-
-  return (
-    (data as PublicProjectDatabaseRow[] | null) ?? []
-  ).map(convertProjectRow);
+/*
+ * In this code-managed version, every project inside data/projects.ts
+ * is considered public. To hide a project, remove it from the array
+ * or add a separate published field later.
+ */
+export async function getPublishedProjects(): Promise<Project[]> {
+  return sortProjects(projects);
 }
 
 export async function getFeaturedProjects(
   limit = 3,
-): Promise<PublicProject[]> {
-  const supabase = await createClient();
-
-  const { data, error } = await supabase
-    .from("projects")
-    .select(publicProjectColumns)
-    .eq("status", "published")
-    .eq("featured", true)
-    .order("start_date", {
-      ascending: false,
-      nullsFirst: false,
-    })
-    .order("created_at", {
-      ascending: false,
-    })
-    .limit(limit);
-
-  if (error) {
-    console.error(
-      "Unable to load featured projects:",
-      error.message,
-    );
-
-    return [];
-  }
-
-  return (
-    (data as PublicProjectDatabaseRow[] | null) ?? []
-  ).map(convertProjectRow);
+): Promise<Project[]> {
+  return sortProjects(
+    projects.filter((project) => project.featured),
+  ).slice(0, limit);
 }
 
 export async function getPublishedProjectBySlug(
   slug: string,
-): Promise<PublicProject | null> {
-  const supabase = await createClient();
+): Promise<Project | null> {
+  const normalizedSlug = normalizeText(slug);
 
-  const normalizedSlug = slug
-    .toLowerCase()
-    .trim();
-
-  const { data, error } = await supabase
-    .from("projects")
-    .select(publicProjectColumns)
-    .eq("slug", normalizedSlug)
-    .eq("status", "published")
-    .maybeSingle();
-
-  if (error) {
-    console.error(
-      `Unable to load project "${normalizedSlug}":`,
-      error.message,
-    );
-
-    return null;
-  }
-
-  if (!data) {
-    return null;
-  }
-
-  return convertProjectRow(
-    data as PublicProjectDatabaseRow,
+  return (
+    projects.find(
+      (project) =>
+        normalizeText(project.slug) === normalizedSlug,
+    ) ?? null
   );
 }
 
 export async function getRelatedProjects(
-  project: PublicProject,
+  project: Project,
   limit = 3,
-): Promise<PublicProject[]> {
-  const supabase = await createClient();
+): Promise<Project[]> {
+  const relatedProjects = projects.filter(
+    (candidateProject) =>
+      candidateProject.id !== project.id &&
+      (candidateProject.category === project.category ||
+        candidateProject.country === project.country),
+  );
 
-  const { data, error } = await supabase
-    .from("projects")
-    .select(publicProjectColumns)
-    .eq("status", "published")
-    .neq("id", project.id)
-    .or(
-      `category.eq.${project.category},country.eq.${project.country}`,
-    )
-    .order("featured", {
-      ascending: false,
-    })
-    .order("created_at", {
-      ascending: false,
-    })
-    .limit(limit);
-
-  if (error) {
-    console.error(
-      "Unable to load related projects:",
-      error.message,
-    );
-
-    return [];
-  }
-
-  return (
-    (data as PublicProjectDatabaseRow[] | null) ?? []
-  ).map(convertProjectRow);
+  return sortProjects(relatedProjects).slice(0, limit);
 }
 
 export async function searchPublishedProjects(
   search: string,
   category: string,
   country: string,
-): Promise<PublicProject[]> {
-  const supabase = await createClient();
+): Promise<Project[]> {
+  const normalizedSearch = normalizeText(search);
 
-  let query = supabase
-    .from("projects")
-    .select(publicProjectColumns)
-    .eq("status", "published")
-    .order("featured", {
-      ascending: false,
-    })
-    .order("created_at", {
-      ascending: false,
-    });
+  const matchingProjects = projects.filter((project) => {
+    const matchesCategory =
+      !category ||
+      category === "all" ||
+      normalizeText(project.category) ===
+        normalizeText(category);
 
-  const cleanedSearch = cleanSearchText(search);
+    const matchesCountry =
+      !country ||
+      country === "all" ||
+      normalizeText(project.country) ===
+        normalizeText(country);
 
-  if (cleanedSearch) {
-    query = query.or(
+    const searchableText = normalizeText(
       [
-        `title.ilike.%${cleanedSearch}%`,
-        `subtitle.ilike.%${cleanedSearch}%`,
-        `short_description.ilike.%${cleanedSearch}%`,
-        `category.ilike.%${cleanedSearch}%`,
-        `country.ilike.%${cleanedSearch}%`,
-        `city.ilike.%${cleanedSearch}%`,
-      ].join(","),
-    );
-  }
-
-  if (category && category !== "all") {
-    query = query.eq("category", category);
-  }
-
-  if (country && country !== "all") {
-    query = query.eq("country", country);
-  }
-
-  const { data, error } = await query;
-
-  if (error) {
-    console.error(
-      "Unable to search projects:",
-      error.message,
+        project.title,
+        project.subtitle,
+        project.shortDescription,
+        project.description,
+        project.location,
+        project.country,
+        project.category,
+        project.status,
+        ...project.goals,
+        ...project.results,
+      ].join(" "),
     );
 
-    return [];
-  }
+    const matchesSearch =
+      !normalizedSearch ||
+      searchableText.includes(normalizedSearch);
 
-  return (
-    (data as PublicProjectDatabaseRow[] | null) ?? []
-  ).map(convertProjectRow);
+    return (
+      matchesCategory &&
+      matchesCountry &&
+      matchesSearch
+    );
+  });
+
+  return sortProjects(matchingProjects);
 }
 
 export async function getProjectFilterOptions(): Promise<{
-  categories: string[];
+  categories: ProjectCategory[];
   countries: string[];
 }> {
-  const supabase = await createClient();
-
-  const { data, error } = await supabase
-    .from("projects")
-    .select("category, country")
-    .eq("status", "published");
-
-  if (error) {
-    console.error(
-      "Unable to load project filters:",
-      error.message,
-    );
-
-    return {
-      categories: [],
-      countries: [],
-    };
-  }
-
-  const rows =
-    (data as Array<{
-      category: string;
-      country: string;
-    }> | null) ?? [];
-
   const categories = Array.from(
-    new Set(
-      rows
-        .map((row) => row.category)
-        .filter(Boolean),
-    ),
+    new Set(projects.map((project) => project.category)),
   ).sort((first, second) =>
     first.localeCompare(second),
   );
 
   const countries = Array.from(
-    new Set(
-      rows
-        .map((row) => row.country)
-        .filter(Boolean),
-    ),
+    new Set(projects.map((project) => project.country)),
   ).sort((first, second) =>
     first.localeCompare(second),
   );
@@ -287,15 +144,33 @@ export async function getProjectFilterOptions(): Promise<{
   };
 }
 
-export async function getPublicProjectStatistics(): Promise<
-  PublicProjectStatistics
-> {
-  const projects = await getPublishedProjects();
+function extractStatisticNumber(
+  project: Project,
+  labelText: string,
+): number {
+  const statistic = project.statistics.find((item) =>
+    item.label
+      .toLowerCase()
+      .includes(labelText.toLowerCase()),
+  );
 
+  if (!statistic) {
+    return 0;
+  }
+
+  const numericValue = statistic.value.replace(
+    /[^0-9.]/g,
+    "",
+  );
+
+  const result = Number(numericValue);
+
+  return Number.isNaN(result) ? 0 : result;
+}
+
+export async function getPublicProjectStatistics(): Promise<PublicProjectStatistics> {
   const countries = new Set(
-    projects
-      .map((project) => project.country)
-      .filter(Boolean),
+    projects.map((project) => project.country),
   );
 
   return {
@@ -304,20 +179,15 @@ export async function getPublicProjectStatistics(): Promise<
 
     totalPeopleReached: projects.reduce(
       (total, project) =>
-        total + project.peopleReached,
+        total +
+        extractStatisticNumber(
+          project,
+          "students impacted",
+        ),
       0,
     ),
 
-    totalVolunteerHours: projects.reduce(
-      (total, project) =>
-        total + project.volunteerHours,
-      0,
-    ),
-
-    totalVolunteers: projects.reduce(
-      (total, project) =>
-        total + project.volunteersCount,
-      0,
-    ),
+    totalVolunteerHours: 0,
+    totalVolunteers: 0,
   };
 }

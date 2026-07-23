@@ -57,6 +57,12 @@ function createMarkerIcon(type: ImpactLocationType, selected: boolean) {
 }
 
 function getLocationLine(location: ImpactLocation) {
+  if (
+    location.type === "ambassador" &&
+    location.country === "United States"
+  ) {
+    return [location.city, location.state].filter(Boolean).join(", ");
+  }
   const locationParts = [
     location.city,
     location.state &&
@@ -130,11 +136,11 @@ export default function ImpactMapClient() {
       (location) => location.id === selectedLocationId,
     ) ?? null;
 
-  const ambassadorCount = filteredLocations.filter(
+  const ambassadorCount = impactLocations.filter(
     (location) => location.type === "ambassador",
   ).length;
 
-  const projectCount = filteredLocations.filter(
+  const projectCount = impactLocations.filter(
     (location) => location.type === "project",
   ).length;
 
@@ -225,50 +231,62 @@ export default function ImpactMapClient() {
               )}
             </div>
 
-            <div className="mt-4 grid grid-cols-3 gap-2">
-              {(
-                [
-                  ["all", "All"],
-                  ["ambassador", "Ambassadors"],
-                  ["project", "Projects"],
-                ] as const
-              ).map(([value, label]) => (
-                <button
-                  key={value}
-                  type="button"
-                  onClick={() => setLocationTypeFilter(value)}
-                  className={`border border-[#294638] px-2 py-2 text-xs font-bold transition ${
-                    locationTypeFilter === value
-                      ? "bg-[#233F31] text-white"
-                      : "bg-transparent text-[#233F31] hover:bg-[#F1F6C8]"
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
+            <div className="mt-4">
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.15em] text-[#6F8172]">
+                Type
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {(
+                  [
+                    ["all", "All"],
+                    ["ambassador", "Ambassadors"],
+                    ["project", "Projects"],
+                  ] as const
+                ).map(([value, label]) => (
+                  <button
+                    key={value}
+                    type="button"
+                    onClick={() => setLocationTypeFilter(value)}
+                    className={`border border-[#294638] px-3 py-2 text-xs font-bold transition ${
+                      locationTypeFilter === value
+                        ? "bg-[#233F31] text-white"
+                        : "bg-transparent text-[#233F31] hover:bg-[#F1F6C8]"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
 
-            <div className="mt-2 grid grid-cols-3 gap-2">
-              {(
-                [
-                  ["all", "All Regions"],
-                  ["United States", "United States"],
-                  ["International", "International"],
-                ] as const
-              ).map(([value, label]) => (
-                <button
-                  key={value}
-                  type="button"
-                  onClick={() => setRegionFilter(value)}
-                  className={`border border-[#294638] px-2 py-2 text-[11px] font-bold transition ${
-                    regionFilter === value
-                      ? "bg-[#6F8172] text-white"
-                      : "bg-transparent text-[#233F31] hover:bg-[#F1F6C8]"
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
+            <div className="mt-5">
+              <p className="mb-2 text-xs font-bold uppercase tracking-[0.15em] text-[#6F8172]">
+                Region
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {(
+                  [
+                    ["all", "All Regions"],
+                    ["United States", "United States"],
+                    ["International", "International"],
+                  ] as const
+                ).map(([value, label]) => (
+                  <button
+                    key={value}
+                    type="button"
+                    onClick={() => setRegionFilter(value)}
+                    className={`border border-[#294638] px-3 py-2 text-xs font-bold transition ${
+                      regionFilter === value
+                        ? "bg-[#6F8172] text-white"
+                        : "bg-transparent text-[#233F31] hover:bg-[#F1F6C8]"
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <label
@@ -305,7 +323,7 @@ export default function ImpactMapClient() {
             <div className="mt-4 grid grid-cols-3 gap-2 bg-[#F1F6C8] p-3 text-center">
               <div>
                 <p className="font-[var(--font-heading)] text-2xl">
-                  {filteredLocations.length}
+                  {ambassadorCount}
                 </p>
                 <p className="text-[10px] font-bold uppercase tracking-wide">
                   Locations
@@ -456,6 +474,16 @@ export default function ImpactMapClient() {
                 >
                   <Popup minWidth={260} maxWidth={320}>
                     <div className="impact-popup">
+                      {location.type === "ambassador" && location.image && (
+                        <div className="mb-4 overflow-hidden">
+                          <img
+                            src={location.image}
+                            alt={location.name}
+                            className="h-44 w-full object-cover"
+                          />
+                        </div>
+                      )}
+
                       <div className="flex items-start gap-3">
                         <span
                           className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
@@ -486,9 +514,11 @@ export default function ImpactMapClient() {
                         {getLocationLine(location)}
                       </p>
 
-                      <p className="mt-4 text-sm leading-6">
-                        {location.description}
-                      </p>
+                      {location.type === "project" && (
+                        <p className="mt-4 text-sm leading-6">
+                          {location.description}
+                        </p>
+                      )}
 
                       {location.category && (
                         <p className="mt-3 inline-block bg-[#F1F6C8] px-3 py-2 text-xs font-bold">

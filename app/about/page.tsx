@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FadeIn from "@/components/FadeIn";
-import ProjectCard from "@/components/ProjectCard";
 import SectionHeader from "@/components/SectionHeader";
-import { projects } from "@/data/projects";
 import { statistics } from "@/data/statistics";
+import DatabaseFeaturedProjects from "@/components/home/DatabaseFeaturedProjects";
 
 const programs = [
   {
@@ -185,16 +184,8 @@ export default function AboutPage() {
             description="Explore several of the initiatives being developed by our growing international network."
           />
 
-          <div className="mt-14 grid gap-8 lg:grid-cols-3">
-            {projects.map((project, index) => (
-              <FadeIn
-                key={project.id}
-                delay={index * 100}
-                className="h-full"
-              >
-                <ProjectCard project={project} />
-              </FadeIn>
-            ))}
+          <div className="mt-8">
+            <DatabaseFeaturedProjects />
           </div>
         </div>
       </section>

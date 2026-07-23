@@ -25,11 +25,11 @@ const navigationLinks: NavigationLink[] = [
   },
   {
     href: "/impact",
-    label: "Our Impact",
+    label: "Impact",
   },
   {
     href: "/education",
-    label: "Education and Outreach",
+    label: "Education",
   },
   {
     href: "/team",
@@ -76,15 +76,13 @@ export default function Navbar() {
           <Image
             src="/images/logo.png"
             alt="Give Earth a Smile logo"
-            width={72}
-            height={72}
+            width={300}
+            height={50}
             priority
-            className="h-14 w-14 object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
 
-          <span className="truncate font-[var(--font-heading)] text-2xl text-[#233F31] sm:text-3xl">
-            Give Earth a Smile
-          </span>
+          
         </Link>
 
         <button

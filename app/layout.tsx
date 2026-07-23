@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   DM_Serif_Display,
+  Fraunces,
   Montserrat,
   Roboto_Mono,
 } from "next/font/google";
@@ -12,6 +13,11 @@ const headingFont = DM_Serif_Display({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-heading",
+});
+
+const frauncesFont = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
 });
 
 const bodyFont = Montserrat({
@@ -38,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
+        className={`${headingFont.variable} ${frauncesFont.variable} ${bodyFont.variable} ${monoFont.variable}`}
       >
         <Navbar />
         {children}

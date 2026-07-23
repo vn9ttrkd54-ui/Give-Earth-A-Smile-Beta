@@ -85,17 +85,17 @@ export default function Gallery() {
 
   return (
     <>
-      <section className="bg-[#FFFAF0] px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-[#FFFAF0] px-6 py-14 md:py-20">
+        <div className="mx-auto max-w-4xl">
           <SectionHeader
             eyebrow="Moments of Impact"
             title="Our Gallery"
             description="Explore moments from our environmental projects, community service, educational outreach, and international collaborations."
           />
 
-          <FadeIn delay={120} className="mt-12">
+          <FadeIn delay={120} className="mt-8">
             <div
-              className="group relative aspect-[16/9] cursor-zoom-in overflow-hidden border border-[#294638] bg-[#E9EFD1] shadow-xl"
+              className="group relative aspect-[16/9] w-full cursor-zoom-in overflow-hidden border border-[#294638] bg-[#E9EFD1] shadow-lg"
               role="button"
               tabIndex={0}
               aria-label="Open gallery image in fullscreen"
@@ -110,7 +110,7 @@ export default function Gallery() {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  sizes="(max-width: 1280px) 100vw, 1280px"
+                  sizes="(max-width: 896px) 100vw, 896px"
                   className={`object-cover transition-all duration-700 ${
                     index === currentIndex
                       ? "scale-100 opacity-100"
@@ -121,20 +121,20 @@ export default function Gallery() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
 
-              <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5 text-white md:p-8">
+              <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-4 p-5 text-white md:p-6">
                 <div>
-                  <p className="text-sm font-bold uppercase tracking-[0.25em] text-white/75">
+                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/75">
                     Gallery
                   </p>
 
-                  <p className="mt-2 max-w-2xl text-lg font-semibold md:text-2xl">
+                  <p className="mt-2 max-w-xl text-base font-semibold md:text-xl">
                     {currentImage.alt}
                   </p>
                 </div>
 
-                <p className="shrink-0 font-[var(--font-heading)] text-3xl">
+                <p className="shrink-0 font-[var(--font-heading)] text-2xl">
                   {String(currentIndex + 1).padStart(2, "0")}
-                  <span className="text-lg text-white/65">
+                  <span className="text-base text-white/65">
                     {" "}
                     / {String(galleryImages.length).padStart(2, "0")}
                   </span>
@@ -147,7 +147,7 @@ export default function Gallery() {
                   event.stopPropagation();
                   showPrevious();
                 }}
-                className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border border-white/70 bg-black/35 text-3xl text-white backdrop-blur-sm transition hover:scale-110 hover:bg-[#233F31] md:left-7"
+                className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-white/70 bg-black/35 text-2xl text-white backdrop-blur-sm transition hover:scale-110 hover:bg-[#233F31]"
                 aria-label="Previous gallery image"
               >
                 ‹
@@ -159,15 +159,15 @@ export default function Gallery() {
                   event.stopPropagation();
                   showNext();
                 }}
-                className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border border-white/70 bg-black/35 text-3xl text-white backdrop-blur-sm transition hover:scale-110 hover:bg-[#233F31] md:right-7"
+                className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center border border-white/70 bg-black/35 text-2xl text-white backdrop-blur-sm transition hover:scale-110 hover:bg-[#233F31]"
                 aria-label="Next gallery image"
               >
                 ›
               </button>
             </div>
 
-            <div className="mt-5 flex flex-col items-center justify-between gap-5 md:flex-row">
-              <div className="grid w-full grid-cols-4 gap-3 md:max-w-3xl">
+            <div className="mt-4 flex flex-col items-center justify-between gap-4 md:flex-row">
+              <div className="grid w-full grid-cols-4 gap-2 md:max-w-2xl">
                 {galleryImages.map((image, index) => (
                   <button
                     key={image.id}
@@ -175,7 +175,7 @@ export default function Gallery() {
                     onClick={() => setCurrentIndex(index)}
                     className={`relative aspect-[4/3] overflow-hidden border-2 transition-all duration-300 ${
                       index === currentIndex
-                        ? "scale-[1.02] border-[#233F31] shadow-md"
+                        ? "scale-[1.02] border-[#233F31] shadow-sm"
                         : "border-transparent opacity-65 hover:opacity-100"
                     }`}
                     aria-label={`Show gallery image ${index + 1}`}
@@ -184,7 +184,7 @@ export default function Gallery() {
                       src={image.src}
                       alt=""
                       fill
-                      sizes="180px"
+                      sizes="160px"
                       className="object-cover"
                     />
                   </button>
@@ -194,7 +194,7 @@ export default function Gallery() {
               <button
                 type="button"
                 onClick={() => setAutoplayEnabled((current) => !current)}
-                className="min-w-40 border border-[#294638] px-5 py-3 text-sm font-bold text-[#233F31] transition hover:bg-[#233F31] hover:text-white"
+                className="min-w-36 border border-[#294638] px-4 py-2 text-sm font-bold text-[#233F31] transition hover:bg-[#233F31] hover:text-white"
               >
                 {autoplayEnabled ? "Pause Slideshow" : "Play Slideshow"}
               </button>

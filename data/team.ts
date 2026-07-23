@@ -19,7 +19,7 @@ export const executiveTeam: ExecutiveMember[] = [
     name: "Srikrithi Kodimela",
     role: "Co-Founder and Director of Operations",
     bio: "Srikrithi manages organizational operations, internal planning, and project coordination.",
-    image: "/images/team/srikrithi-kodimela.jpg",
+    image: "/images/team/srikrithi-kodimela-new.jpg",
   },
   {
     id: 3,

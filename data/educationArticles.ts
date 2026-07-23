@@ -496,3 +496,71 @@ export const educationDifficulties: EducationDifficulty[] = [
   "Intermediate",
   "Advanced",
 ];
+export function getPublishedEducationArticles(): EducationArticle[] {
+  return educationArticles;
+}
+
+export function getFeaturedEducationArticles(
+  limit = 3,
+): EducationArticle[] {
+  return educationArticles
+    .filter((article) => article.featured)
+    .slice(0, limit);
+}
+
+export function getEducationArticleBySlug(
+  slug: string,
+): EducationArticle | null {
+  return (
+    educationArticles.find(
+      (article) => article.slug === slug,
+    ) ?? null
+  );
+}
+
+export function getRelatedEducationArticles(
+  article: EducationArticle,
+  limit = 3,
+): EducationArticle[] {
+  return educationArticles
+    .filter(
+      (candidateArticle) =>
+        candidateArticle.slug !== article.slug &&
+        (candidateArticle.category === article.category ||
+          candidateArticle.relatedArticleSlugs.includes(article.slug)),
+    )
+    .slice(0, limit);
+}
+
+export function searchEducationArticles(
+  search: string,
+  category?: EducationCategory | "all",
+): EducationArticle[] {
+  const normalizedSearch = search
+    .trim()
+    .toLowerCase();
+
+  return educationArticles.filter((article) => {
+    const matchesCategory =
+      !category ||
+      category === "all" ||
+      article.category === category;
+
+    const searchableText = [
+      article.title,
+      article.subtitle,
+      article.description,
+      article.author,
+      article.authorRole,
+      ...article.tags,
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    const matchesSearch =
+      normalizedSearch.length === 0 ||
+      searchableText.includes(normalizedSearch);
+
+    return matchesCategory && matchesSearch;
+  });
+}

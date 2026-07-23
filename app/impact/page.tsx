@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import ImpactMap from "@/components/impact/ImpactMap";
@@ -95,46 +96,6 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      <section className="bg-[#FFFAF0] px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <SectionHeader
-            eyebrow="National Network"
-            title="United States Ambassadors"
-            description="Students helping expand environmental education, leadership, and service throughout the United States."
-          />
-
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {unitedStatesAmbassadors.map((ambassador, index) => (
-              <FadeIn
-                key={ambassador.id}
-                delay={(index % 4) * 70}
-                className="h-full"
-              >
-                <article className="group flex h-full min-h-56 flex-col border border-[#294638] bg-[#F1F6C8] p-7 transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#233F31] font-bold text-white">
-                    {ambassador.name
-                      .split(" ")
-                      .slice(0, 2)
-                      .map((namePart) => namePart[0])
-                      .join("")}
-                  </div>
-
-                  <h3 className="mt-6 text-2xl">{ambassador.name}</h3>
-
-                  <p className="mt-2 text-sm font-bold text-[#6F8172]">
-                    {ambassador.city}, {ambassador.country}
-                  </p>
-
-                  <p className="mt-4 text-sm leading-6">
-                    {ambassador.description}
-                  </p>
-                </article>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-[#F1F6C8] px-6 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
@@ -143,31 +104,88 @@ export default function ImpactPage() {
             description="Young environmental leaders connecting communities and ideas across borders."
           />
 
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {internationalAmbassadors.map((ambassador, index) => (
               <FadeIn
                 key={ambassador.id}
                 delay={(index % 4) * 70}
                 className="h-full"
               >
-                <article className="group flex h-full min-h-56 flex-col border border-[#294638] bg-[#FFFAF0] p-7 transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#B7CA7F] font-bold text-[#233F31]">
-                    {ambassador.name
-                      .split(" ")
-                      .slice(0, 2)
-                      .map((namePart) => namePart[0])
-                      .join("")}
+                <article className="group overflow-hidden border border-[#294638] bg-[#FFFAF0] transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+                  <div className="relative aspect-[4/3] w-full bg-[#E9EFD1]">
+                    {ambassador.image ? (
+                      <Image
+                        src={ambassador.image}
+                        alt={ambassador.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 320px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center bg-[#E9EFD1] text-sm font-bold text-[#233F31]/50">
+                        Photo Coming Soon
+                      </div>
+                    )}
                   </div>
 
-                  <h3 className="mt-6 text-2xl">{ambassador.name}</h3>
+                  <div className="p-6">
+                    <h3 className="text-2xl">
+                      {ambassador.name}
+                    </h3>
 
-                  <p className="mt-2 text-sm font-bold text-[#6F8172]">
-                    {ambassador.city}, {ambassador.country}
-                  </p>
+                    <p className="mt-2 text-sm font-bold text-[#6F8172]">
+                      {ambassador.city}, {ambassador.country}
+                    </p>
+                  </div>
+                </article>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                  <p className="mt-4 text-sm leading-6">
-                    {ambassador.description}
-                  </p>
+      <section className="bg-[#FFFAF0] px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="National Network"
+            title="United States Ambassadors"
+            description="Students helping expand environmental education, leadership, and service throughout the United States."
+          />
+
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {unitedStatesAmbassadors.map((ambassador, index) => (
+              <FadeIn
+                key={ambassador.id}
+                delay={(index % 4) * 70}
+                className="h-full"
+              >
+                <article className="group overflow-hidden border border-[#294638] bg-[#F1F6C8] transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+                  <div className="relative aspect-[4/3] w-full bg-[#E9EFD1]">
+                    {ambassador.image ? (
+                      <Image
+                        src={ambassador.image}
+                        alt={ambassador.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 320px"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="flex h-full items-center justify-center bg-[#E9EFD1] text-sm font-bold text-[#233F31]/50">
+                        Photo Coming Soon
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="p-6">
+                    <h3 className="text-2xl">
+                      {ambassador.name}
+                    </h3>
+
+                    <p className="mt-2 text-sm font-bold text-[#6F8172]">
+                      {ambassador.city}
+                      {ambassador.state ? `, ${ambassador.state}` : ""}
+                    </p>
+                  </div>
                 </article>
               </FadeIn>
             ))}
