@@ -105,7 +105,7 @@ export default function PublicProjectCard({
                 aria-label="Pudhiya Shakti"
                 className="h-full w-full rounded-full bg-contain bg-center bg-no-repeat"
                 style={{
-                  backgroundImage: "url('/images/pudhiya-shakti.png')",
+                  backgroundImage: "url('/images/pudhiya-shakti-web.png')",
                 }}
               />
             </div>
