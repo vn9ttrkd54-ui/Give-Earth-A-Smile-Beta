@@ -36,6 +36,9 @@ export default function PublicProjectCard({
   const isMalawi =
     project.slug === "seeds-for-change-malawi";
 
+  const isTaiwan =
+    project.slug === "seeds-for-change-taiwan";
+
   const isPudhiyaShaktiProject = [
     "smart-classrooms-odisha",
     "smart-classrooms-tamil-nadu",
@@ -43,6 +46,8 @@ export default function PublicProjectCard({
 
   const primaryStatistic = isMalawi
     ? project.statistics[0] ?? null
+    : isTaiwan
+      ? project.statistics[1] ?? null
     : {
         value:
           getStatisticValue(project, "students impacted") ??
@@ -52,6 +57,8 @@ export default function PublicProjectCard({
 
   const secondaryStatistic = isMalawi
     ? project.statistics[1] ?? null
+    : isTaiwan
+      ? project.statistics[0] ?? null
     : {
         value:
           getStatisticValue(project, "classes benefiting") ??

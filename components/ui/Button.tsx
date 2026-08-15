@@ -24,7 +24,7 @@ type SharedButtonProps = {
 type LinkButtonProps = SharedButtonProps &
   Omit<
     AnchorHTMLAttributes<HTMLAnchorElement>,
-    "className"
+    "className" | "href"
   > & {
     href: string;
   };
@@ -73,33 +73,34 @@ function combineClasses(
   return values.filter(Boolean).join(" ");
 }
 
-export default function Button(
-  props: ButtonProps,
-) {
-  const {
-    children,
-    variant = "primary",
-    size = "medium",
-    className,
-    fullWidth = false,
-  } = props;
-
-  const buttonClasses = combineClasses([
+function getButtonClasses({
+  variant = "primary",
+  size = "medium",
+  className,
+  fullWidth = false,
+}: SharedButtonProps) {
+  return combineClasses([
     baseStyles,
     variantStyles[variant],
     sizeStyles[size],
     fullWidth && "w-full",
     className,
   ]);
+}
 
-  if ("href" in props && props.href) {
+export default function Button(
+  props: ButtonProps,
+) {
+  const buttonClasses = getButtonClasses(props);
+
+  if (typeof props.href === "string") {
     const {
       href,
-      variant: _variant,
-      size: _size,
-      fullWidth: _fullWidth,
-      className: _className,
-      children: _children,
+      children,
+      variant,
+      size,
+      fullWidth,
+      className,
       ...linkProps
     } = props;
 
@@ -115,14 +116,14 @@ export default function Button(
   }
 
   const {
-    variant: _variant,
-    size: _size,
-    fullWidth: _fullWidth,
-    className: _className,
-    children: _children,
+    children,
+    variant,
+    size,
+    fullWidth,
+    className,
     type = "button",
     ...buttonProps
-  } = props;
+  } = props as NativeButtonProps;
 
   return (
     <button

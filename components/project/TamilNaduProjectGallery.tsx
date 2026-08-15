@@ -3,26 +3,30 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const projectImages = Array.from({ length: 13 }, (_, index) => ({
-  id: index + 1,
-  src: `/images/projects/smart-classrooms-tamil-nadu/${String(
-    index + 1,
-  ).padStart(2, "0")}.jpg`,
-  alt: `Smart Classrooms in Tamil Nadu project photo ${index + 1}`,
-}));
+type TamilNaduProjectGalleryProps = {
+  images: string[];
+};
 
-export default function TamilNaduProjectGallery() {
+export default function TamilNaduProjectGallery({
+  images,
+}: TamilNaduProjectGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const selectedImage = projectImages[selectedIndex];
+  const selectedImage = images[selectedIndex];
+
+  if (!selectedImage) {
+    return null;
+  }
 
   return (
     <div>
       {/* Main Image */}
       <div className="relative aspect-[16/9] w-full overflow-hidden border border-[#294638] bg-[#E9EFD1] shadow-lg">
         <Image
-          src={selectedImage.src}
-          alt={selectedImage.alt}
+          src={selectedImage}
+          alt={`Smart Classrooms in Tamil Nadu project photo ${
+            selectedIndex + 1
+          }`}
           fill
           sizes="(max-width: 1280px) 100vw, 1280px"
           className="object-cover"
@@ -45,7 +49,7 @@ export default function TamilNaduProjectGallery() {
             {String(selectedIndex + 1).padStart(2, "0")}
             <span className="text-lg text-white/70">
               {" "}
-              / {projectImages.length}
+              / {images.length}
             </span>
           </p>
         </div>
@@ -53,9 +57,9 @@ export default function TamilNaduProjectGallery() {
 
       {/* Thumbnails */}
       <div className="mt-5 grid grid-cols-3 gap-3 sm:grid-cols-5 md:grid-cols-7">
-        {projectImages.map((image, index) => (
+        {images.map((image, index) => (
           <button
-            key={image.id}
+            key={`${image}-${index}`}
             type="button"
             onClick={() => setSelectedIndex(index)}
             className={`relative aspect-[4/3] overflow-hidden border-2 transition duration-300 ${
@@ -66,8 +70,10 @@ export default function TamilNaduProjectGallery() {
             aria-label={`Show project image ${index + 1}`}
           >
             <Image
-              src={image.src}
-              alt={image.alt}
+              src={image}
+              alt={`Smart Classrooms in Tamil Nadu project photo ${
+                index + 1
+              }`}
               fill
               sizes="200px"
               className="object-cover"

@@ -47,6 +47,13 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false);
+    document.body.style.overflow = "";
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto",
+    });
   }, [pathname]);
 
   useEffect(() => {
@@ -66,7 +73,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-t-2 border-[#294638] bg-[#F1F6C8]/95 shadow-sm backdrop-blur-md">
+    <header className="sticky top-0 z-[100] border-t-2 border-[#294638] bg-[#F1F6C8]/95 shadow-sm backdrop-blur-md">
       <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-6 px-5 py-4 lg:px-10">
         <Link
           href="/"
@@ -119,6 +126,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                scroll={true}
                 aria-current={active ? "page" : undefined}
                 className={`relative border border-[#294638] px-4 py-3 text-center text-sm font-semibold transition-all duration-300 xl:px-5 ${
                   active
@@ -134,13 +142,13 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`fixed inset-0 top-[89px] z-40 bg-[#F1F6C8] transition-all duration-300 lg:hidden ${
+        className={`absolute left-0 right-0 top-full z-50 h-[calc(100dvh-114px)] bg-[#F1F6C8] transition-all duration-300 lg:hidden ${
           menuOpen
             ? "pointer-events-auto translate-x-0 opacity-100"
             : "pointer-events-none translate-x-full opacity-0"
         }`}
       >
-        <nav className="flex h-full flex-col overflow-y-auto px-6 py-8">
+        <nav className="flex h-full flex-col overflow-y-auto px-6 py-6">
           {navigationLinks.map((link, index) => {
             const active = isActiveLink(link.href);
 
@@ -148,6 +156,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                scroll={true}
                 aria-current={active ? "page" : undefined}
                 className={`border-b border-[#294638]/30 px-3 py-5 text-2xl font-semibold transition-all duration-300 ${
                   active
@@ -155,7 +164,9 @@ export default function Navbar() {
                     : "text-[#233F31] hover:bg-[#233F31] hover:pl-6 hover:text-white"
                 }`}
                 style={{
-                  transitionDelay: menuOpen ? `${index * 35}ms` : "0ms",
+                  transitionDelay: menuOpen
+                    ? `${index * 35}ms`
+                    : "0ms",
                 }}
               >
                 {link.label}

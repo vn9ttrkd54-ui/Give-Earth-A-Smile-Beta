@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { executiveTeam } from "@/data/team";
-import { ambassadors } from "@/data/ambassadors";
 
 export default function TeamPage() {
   return (
@@ -41,8 +40,6 @@ export default function TeamPage() {
                   <h3 className="text-3xl">{member.name}</h3>
 
                   <p className="mt-3 font-semibold">{member.role}</p>
-
-                  <p className="mt-5 text-sm leading-7">{member.bio}</p>
                 </div>
               </article>
             ))}
@@ -54,7 +51,7 @@ export default function TeamPage() {
         <h2 className="text-5xl">Our Ambassador Network</h2>
 
         <p className="mx-auto mt-6 max-w-3xl text-lg leading-8">
-          We currently have {ambassadors.length} ambassadors representing
+          We currently have 26 ambassadors representing
           locations throughout the United States and internationally.
         </p>
 

@@ -59,7 +59,7 @@ export const educationArticles: EducationArticle[] = [
     publishedDate: "July 2026",
     readingTime: 8,
     coverImage: "/images/education/climate-change-basics.jpg",
-    featured: true,
+    featured: false,
     tags: [
       "Climate Change",
       "Greenhouse Gases",
@@ -135,10 +135,6 @@ export const educationArticles: EducationArticle[] = [
       "building-a-sustainable-school",
       "environmental-justice-introduction",
     ],
-    downloadableResource: {
-      label: "Download Classroom Discussion Guide",
-      href: "#",
-    },
   },
 
   {
@@ -153,10 +149,10 @@ export const educationArticles: EducationArticle[] = [
     difficulty: "Intermediate",
     author: "Give Earth a Smile Education Team",
     authorRole: "Youth Outreach",
-    publishedDate: "July 2026",
+    publishedDate: "June 2026",
     readingTime: 10,
     coverImage: "/images/education/sustainable-school.jpg",
-    featured: true,
+    featured: false,
     tags: [
       "Schools",
       "Student Leadership",
@@ -232,10 +228,6 @@ export const educationArticles: EducationArticle[] = [
       "climate-change-basics",
       "understanding-recycling",
     ],
-    downloadableResource: {
-      label: "Download School Sustainability Checklist",
-      href: "#",
-    },
   },
 
   {
@@ -250,7 +242,7 @@ export const educationArticles: EducationArticle[] = [
     difficulty: "Beginner",
     author: "Give Earth a Smile Education Team",
     authorRole: "Environmental Education",
-    publishedDate: "July 2026",
+    publishedDate: "May 2026",
     readingTime: 7,
     coverImage: "/images/education/recycling.jpg",
     featured: false,
@@ -333,10 +325,10 @@ export const educationArticles: EducationArticle[] = [
     difficulty: "Intermediate",
     author: "Give Earth a Smile Education Team",
     authorRole: "Conservation Education",
-    publishedDate: "July 2026",
+    publishedDate: "April 2026",
     readingTime: 9,
-    coverImage: "/images/education/biodiversity.jpg",
-    featured: true,
+    coverImage: "/images/education/sustainable-school.jpg",
+    featured: false,
     tags: ["Biodiversity", "Habitats", "Pollinators", "Conservation"],
     sections: [
       {
@@ -411,7 +403,7 @@ export const educationArticles: EducationArticle[] = [
     difficulty: "Advanced",
     author: "Give Earth a Smile Education Team",
     authorRole: "Community Education",
-    publishedDate: "July 2026",
+    publishedDate: "March 2026",
     readingTime: 12,
     coverImage: "/images/education/environmental-justice.jpg",
     featured: false,
@@ -481,6 +473,618 @@ export const educationArticles: EducationArticle[] = [
       "building-a-sustainable-school",
     ],
   },
+  {
+    id: "article-water-conservation",
+    slug: "water-conservation-every-drop-matters",
+    title: "Water Conservation: Why Every Drop Matters",
+    subtitle:
+      "Understanding freshwater scarcity and the practical steps communities can take to protect water resources.",
+    description:
+      "Learn where our freshwater comes from, why water conservation matters, and how students can reduce unnecessary water use.",
+    category: "Climate and Sustainability",
+    difficulty: "Beginner",
+    author: "Give Earth a Smile Education Team",
+    authorRole: "Environmental Education",
+    publishedDate: "February 2026",
+    readingTime: 8,
+    coverImage: "/images/education/biodiversity.jpg",
+    featured: false,
+    tags: [
+      "Water Conservation",
+      "Freshwater",
+      "Sustainability",
+      "Youth Action",
+    ],
+    sections: [
+      {
+        id: "freshwater",
+        title: "Understanding Our Freshwater Supply",
+        paragraphs: [
+          "Water covers most of Earth’s surface, but only a small portion is freshwater available for human use. Communities depend on rivers, lakes, reservoirs, and groundwater for drinking water, agriculture, sanitation, and industry.",
+          "Because usable freshwater is limited, protecting existing supplies and avoiding unnecessary waste are important parts of building sustainable communities.",
+        ],
+        keyPoints: [
+          "Most of Earth’s water is saltwater.",
+          "Communities rely on limited freshwater resources.",
+          "Water conservation helps protect supplies for future use.",
+        ],
+      },
+      {
+        id: "water-use",
+        title: "Where Does Our Water Go?",
+        paragraphs: [
+          "Water is used for much more than drinking. Agriculture requires water to grow crops, industries use water during manufacturing, and households use water for cleaning, cooking, landscaping, and sanitation.",
+          "Understanding where water is being used makes it easier to identify opportunities for conservation.",
+        ],
+        keyPoints: [
+          "Agriculture is an important source of water demand.",
+          "Homes, schools, and businesses all use freshwater.",
+          "Measuring water use can reveal opportunities to conserve it.",
+        ],
+      },
+      {
+        id: "protecting-water",
+        title: "Protecting Water Resources",
+        paragraphs: [
+        "Conservation includes both using less water and protecting water from pollution. Litter, chemicals, fertilizers, and other pollutants can enter waterways through runoff.",
+        "Communities can help by maintaining healthy landscapes, disposing of waste responsibly, preventing leaks, and protecting local rivers and wetlands.",
+        ],
+        keyPoints: [
+          "Water quality and water conservation are connected.",
+          "Preventing pollution protects available freshwater.",
+          "Small improvements across a community can add up.",
+        ],
+      },
+      {
+        id: "student-water-action",
+        title: "What Students Can Do",
+        paragraphs: [
+          "Students can begin by observing how water is used at home and school. Leaking faucets, unnecessary irrigation, and inefficient habits can all create avoidable water waste.",
+          "Students can also organize awareness campaigns, conduct simple water-use audits, and encourage their communities to adopt more responsible habits.",
+        ],
+        keyPoints: [
+          "Look for unnecessary water use.",
+          "Report leaks instead of ignoring them.",
+          "Combine personal conservation with community education.",
+        ],
+      },
+    ],
+    takeaways: [
+      "Usable freshwater is a limited natural resource.",
+      "Water is essential to households, agriculture, ecosystems, and industry.",
+      "Conservation includes reducing waste and preventing pollution.",
+      "Students can promote responsible water use in their communities.",
+    ],
+    discussionQuestions: [
+      "Where does your community get its drinking water?",
+      "Where might your school be wasting water?",
+      "What water conservation campaign could students realistically organize?",
+    ],
+    relatedArticleSlugs: [
+      "climate-change-basics",
+      "building-a-sustainable-school",
+    ],
+  },
+
+  {
+    id: "article-food-waste",
+    slug: "food-waste-hidden-environmental-cost",
+    title: "Food Waste: The Hidden Environmental Cost",
+    subtitle:
+      "Why throwing away food also wastes water, energy, land, transportation, and other resources.",
+    description:
+      "Explore the environmental impact of food waste and learn how households, schools, and communities can prevent it.",
+    category: "Waste and Recycling",
+    difficulty: "Intermediate",
+    author: "Give Earth a Smile Education Team",
+    authorRole: "Environmental Education",
+    publishedDate: "January 2026",
+    readingTime: 9,
+    coverImage: "/images/education/biodiversity.jpg",
+    featured: false,
+    tags: [
+      "Food Waste",
+      "Waste Reduction",
+      "Consumption",
+      "Sustainability",
+    ],
+    sections: [
+      {
+        id: "more-than-food",
+        title: "Food Waste Is More Than Wasted Food",
+        paragraphs: [
+          "Producing food requires land, water, energy, labor, transportation, storage, and packaging. When edible food is discarded, many of the resources used to produce it are wasted as well.",
+          "Thinking about the entire journey from farm to table helps explain why preventing food waste can have environmental benefits beyond reducing the amount of material in a trash bin.",
+        ],
+        keyPoints: [
+          "Food production requires many different resources.",
+          "Discarded food represents wasted resources as well as wasted food.",
+          "Preventing waste can reduce unnecessary environmental impacts.",
+        ],
+      },
+      {
+        id: "why-food-wasted",
+        title: "Why Food Gets Wasted",
+        paragraphs: [
+          "Food can be lost or wasted during production, transportation, retail, restaurants, schools, and inside homes.",
+          "People may purchase too much food, misunderstand date labels, prepare portions that are too large, or forget about food before it can be eaten.",
+        ],
+        keyPoints: [
+          "Food waste occurs at multiple stages.",
+          "Planning and storage can prevent some household waste.",
+          "Schools can examine cafeteria waste to identify patterns.",
+        ],
+      },
+      {
+        id: "prevent-first",
+        title: "Prevention Comes First",
+        paragraphs: [
+          "The best way to address food waste is to prevent edible food from becoming waste in the first place.",
+          "Planning meals, taking reasonable portions, storing food correctly, and finding appropriate ways to redistribute usable surplus food can all help.",
+        ],
+      },
+      {
+        id: "school-action",
+        title: "Reducing Food Waste at School",
+        paragraphs: [
+          "Students can study cafeteria waste, identify commonly discarded foods, and work with school staff to investigate possible improvements.",
+          "Any food redistribution or composting project should follow school rules and appropriate health and safety requirements.",
+        ],
+        keyPoints: [
+          "Measure the problem before proposing changes.",
+          "Work with cafeteria and school staff.",
+          "Focus first on preventing edible food from being wasted.",
+        ],
+      },
+    ],
+    takeaways: [
+      "Food waste also wastes the resources used to produce food.",
+      "Waste can occur throughout the food system.",
+      "Preventing waste is preferable to managing it after disposal.",
+      "Schools can use data to identify practical improvements.",
+    ],
+    discussionQuestions: [
+      "What foods are most commonly wasted at your school?",
+      "Why might people take more food than they eat?",
+      "How could a school measure food waste?",
+    ],
+    relatedArticleSlugs: [
+      "understanding-recycling",
+      "building-a-sustainable-school",
+    ],
+  },
+  {
+    id: "article-native-plants",
+    slug: "native-plants-stronger-ecosystems",
+    title: "Native Plants and Stronger Local Ecosystems",
+    subtitle:
+      "How plants adapted to local environments can support wildlife, habitats, and resilient communities.",
+    description:
+      "Discover what native plants are, why they matter, and how thoughtful planting projects can support local biodiversity.",
+    category: "Biodiversity",
+    difficulty: "Intermediate",
+    author: "Give Earth a Smile Education Team",
+    authorRole: "Conservation Education",
+    publishedDate: "December 2025",
+    readingTime: 8,
+    coverImage: "/images/education/biodiversity.jpg",
+    featured: false,
+    tags: [
+      "Native Plants",
+      "Biodiversity",
+      "Habitats",
+      "Pollinators",
+    ],
+    sections: [
+      {
+        id: "what-native-means",
+        title: "What Makes a Plant Native?",
+        paragraphs: [
+          "Native plants are species that occur naturally in a particular region and have developed relationships with the surrounding environment over long periods of time.",
+          "The definition depends on location. A plant native to one region may not be native to another, which is why local information is important when planning a habitat project.",
+        ],
+        keyPoints: [
+          "Native status depends on geographic location.",
+          "Local plants interact with local ecosystems.",
+          "Plant selection should be based on reliable regional information.",
+        ],
+      },
+      {
+        id: "wildlife-connections",
+        title: "Plants and Wildlife Are Connected",
+        paragraphs: [
+          "Plants can provide food, shelter, nesting areas, and other resources for insects, birds, and additional wildlife.",
+          "Because species interact in complex ways, protecting plant diversity can contribute to healthier habitat for many organisms.",
+        ],
+        keyPoints: [
+          "Plants form important parts of food webs.",
+          "Different species depend on different habitat resources.",
+          "Plant diversity can support wildlife diversity.",
+        ],
+      },
+      {
+        id: "right-plant",
+        title: "The Right Plant in the Right Place",
+        paragraphs: [
+          "A successful planting project requires more than choosing a species because it is native. Soil, sunlight, rainfall, available space, and maintenance requirements also matter.",
+          "Students should consult local conservation organizations, extension resources, or knowledgeable community partners before making major habitat changes.",
+        ],
+      },
+      {
+        id: "school-habitat",
+        title: "Creating Habitat at School",
+        paragraphs: [
+          "School grounds can provide opportunities for native gardens, pollinator areas, and environmental education.",
+          "A small, carefully maintained project can often be more useful than a large planting area that the school cannot maintain.",
+      ],
+        keyPoints: [
+          "Start with a manageable project.",
+          "Create a long-term maintenance plan.",
+          "Use the project as an educational resource.",
+        ],
+      },
+    ],
+    takeaways: [
+      "Native plants are connected to specific regions.",
+      "Plants provide important resources for wildlife.",
+      "Site conditions matter when selecting plants.",
+      "Habitat projects require planning and continued care.",
+    ],
+    discussionQuestions: [
+      "Which plants are native to your region?",
+      "What wildlife could a native garden support?",
+      "Where could your school create a small habitat area?",
+    ],
+    relatedArticleSlugs: [
+      "protecting-local-biodiversity",
+      "building-a-sustainable-school",
+    ],
+  },
+  {
+  id: "article-fast-fashion",
+  slug: "fast-fashion-environmental-impact",
+  title: "Fast Fashion and the Environment",
+  subtitle:
+    "Looking beyond the price tag to understand clothing, consumption, waste, and natural resources.",
+  description:
+    "Explore the environmental life cycle of clothing and how more thoughtful consumption can reduce waste.",
+  category: "Waste and Recycling",
+  difficulty: "Advanced",
+  author: "Give Earth a Smile Education Team",
+  authorRole: "Sustainability Education",
+  publishedDate: "November 2025",
+  readingTime: 11,
+  coverImage: "/images/education/biodiversity.jpg",
+  featured: false,
+  tags: [
+    "Fast Fashion",
+    "Clothing",
+    "Consumption",
+    "Waste Reduction",
+  ],
+  sections: [
+    {
+      id: "clothing-life-cycle",
+      title: "The Life Cycle of Clothing",
+      paragraphs: [
+        "A piece of clothing has an environmental story that begins before it reaches a store. Raw materials must be produced, processed into fibers and fabrics, manufactured into clothing, transported, sold, used, and eventually discarded or reused.",
+        "Examining this entire life cycle helps reveal environmental impacts that are not visible when we only consider the finished product.",
+      ],
+      keyPoints: [
+        "Products have environmental impacts before and after purchase.",
+        "Manufacturing requires materials and energy.",
+        "Transportation and disposal are also parts of a product’s life cycle.",
+      ],
+    },
+    {
+      id: "rapid-consumption",
+      title: "The Problem With Rapid Consumption",
+      paragraphs: [
+        "When clothing is treated as disposable, more products must continually be manufactured to replace items that are quickly discarded.",
+        "Buying more clothing than necessary can increase demand for materials, manufacturing, transportation, packaging, and waste management.",
+      ],
+    },
+    {
+      id: "longer-use",
+      title: "Using Clothing for Longer",
+      paragraphs: [
+        "Extending the useful life of clothing can reduce the need for constant replacement. Caring for garments, repairing minor damage, exchanging clothing, and purchasing secondhand items are possible strategies.",
+        "The goal is not to make every purchase perfect, but to think more carefully about whether an item is needed and how long it can realistically be used.",
+      ],
+      keyPoints: [
+        "Durability can reduce replacement.",
+        "Repair and reuse can extend product life.",
+        "Reducing unnecessary purchases prevents waste before it begins.",
+      ],
+    },
+    {
+      id: "student-response",
+      title: "What Can Students Do?",
+      paragraphs: [
+        "Students can organize clothing swaps, learn basic repair skills, donate usable clothing responsibly, and encourage thoughtful purchasing.",
+        "Educational campaigns can also help people understand that sustainability includes considering how products are made, used, and discarded.",
+      ],
+    },
+  ],
+  takeaways: [
+    "Clothing has environmental impacts throughout its life cycle.",
+    "Rapid consumption can increase resource use and waste.",
+    "Keeping products in use longer can reduce unnecessary replacement.",
+    "Students can promote reuse and responsible consumption.",
+  ],
+  discussionQuestions: [
+    "How long do you typically keep clothing?",
+    "What makes people replace usable clothes?",
+    "Could your school organize a clothing reuse project?",
+  ],
+  relatedArticleSlugs: [
+    "understanding-recycling",
+    "building-a-sustainable-school",
+  ],
+},
+{
+  id: "article-urban-trees",
+  slug: "urban-trees-healthier-communities",
+  title: "Urban Trees and Healthier Communities",
+  subtitle:
+    "How trees can support shade, habitat, stormwater management, and more livable communities.",
+  description:
+    "Learn about the environmental benefits of urban trees and why responsible tree planting requires long-term planning.",
+  category: "Community Action",
+  difficulty: "Beginner",
+  author: "Give Earth a Smile Education Team",
+  authorRole: "Community Education",
+  publishedDate: "October 2025",
+  readingTime: 8,
+  coverImage: "/images/education/biodiversity.jpg",
+  featured: false,
+  tags: [
+    "Trees",
+    "Urban Environment",
+    "Community",
+    "Habitat",
+  ],
+  sections: [
+    {
+      id: "trees-in-cities",
+      title: "Why Trees Matter in Cities",
+      paragraphs: [
+        "Trees are important parts of urban environments. Their leaves provide shade, their roots interact with soil and water, and their branches can create habitat for wildlife.",
+        "Well-planned tree cover can make outdoor spaces more comfortable while contributing to healthier local ecosystems.",
+      ],
+      keyPoints: [
+        "Trees provide multiple environmental benefits.",
+        "Urban nature can support both people and wildlife.",
+        "Tree location and species selection matter.",
+      ],
+    },
+    {
+      id: "heat-and-shade",
+      title: "Shade and Urban Heat",
+      paragraphs: [
+        "Buildings, roads, and paved surfaces can absorb and retain heat. Trees can shade some of these surfaces and create more comfortable spaces for people.",
+        "The benefits depend on factors including tree size, location, climate, and long-term survival.",
+      ],
+    },
+    {
+      id: "water-habitat",
+      title: "Water and Habitat",
+      paragraphs: [
+        "Trees can interact with rainfall by intercepting water and supporting soil that absorbs moisture. They can also provide food and habitat for local organisms.",
+        "These benefits are strongest when trees are appropriate for the local environment and receive the care needed to survive.",
+      ],
+      keyPoints: [
+        "Trees are part of urban water systems.",
+        "Trees can create habitat.",
+        "Planting is only the beginning of a successful tree project.",
+      ],
+    },
+    {
+      id: "responsible-planting",
+      title: "Planting the Right Way",
+      paragraphs: [
+        "Tree projects should consider native or locally appropriate species, available space, underground and overhead infrastructure, water needs, and future maintenance.",
+        "Students should work with property managers, local experts, and community organizations rather than planting trees without permission or a care plan.",
+      ],
+      keyPoints: [
+        "Choose appropriate species and locations.",
+        "Get permission before planting.",
+        "Create a long-term maintenance plan.",
+      ],
+    },
+  ],
+  takeaways: [
+    "Urban trees can provide shade and habitat.",
+    "Trees interact with local soil and water systems.",
+    "Successful planting requires careful species and site selection.",
+    "Long-term maintenance is essential.",
+  ],
+  discussionQuestions: [
+    "Where does your community lack shade?",
+    "Which trees are appropriate for your local environment?",
+    "Who would maintain trees after a planting project?",
+  ],
+  relatedArticleSlugs: [
+    "protecting-local-biodiversity",
+    "building-a-sustainable-school",
+  ],
+},
+{
+  id: "article-plastic-pollution",
+  slug: "plastic-pollution-beyond-the-bottle",
+  title: "Plastic Pollution: Beyond the Bottle",
+  subtitle:
+    "Understanding single-use plastics, microplastics, waste systems, and the importance of reducing unnecessary consumption.",
+  description:
+    "Explore how plastic moves through our communities and why reducing disposable products matters.",
+  category: "Waste and Recycling",
+  difficulty: "Intermediate",
+  author: "Give Earth a Smile Education Team",
+  authorRole: "Environmental Education",
+  publishedDate: "September 2025",
+  readingTime: 9,
+  coverImage: "/images/education/biodiversity.jpg",
+  featured: false,
+  tags: [
+    "Plastic",
+    "Pollution",
+    "Waste",
+    "Microplastics",
+  ],
+  sections: [
+    {
+      id: "why-plastic",
+      title: "Why We Use So Much Plastic",
+      paragraphs: [
+        "Plastic can be lightweight, durable, inexpensive, and useful for many applications. Those properties have helped make plastic common in packaging, transportation, healthcare, construction, and everyday products.",
+        "However, durability becomes a challenge when products designed for very short periods of use remain in the environment much longer.",
+      ],
+      keyPoints: [
+        "Plastic has many useful properties.",
+        "Short-lived products can create long-lived waste.",
+        "Not all plastic products serve the same purpose.",
+      ],
+    },
+    {
+      id: "where-it-goes",
+      title: "Where Plastic Waste Goes",
+      paragraphs: [
+        "After use, plastic may be reused, recycled where appropriate systems exist, disposed of in landfills, burned under regulated waste systems, or escape into the environment as litter.",
+        "Waste management differs significantly between communities, so the environmental outcome of a plastic item depends partly on local infrastructure.",
+      ],
+    },
+    {
+      id: "microplastics",
+      title: "Understanding Microplastics",
+      paragraphs: [
+        "Plastic can break into increasingly small pieces rather than simply disappearing. Very small plastic particles are often described as microplastics.",
+        "Researchers continue to study how these particles move through water, soil, air, ecosystems, and food systems.",
+      ],
+      keyPoints: [
+        "Plastic can fragment into smaller pieces.",
+        "Plastic pollution can move between environments.",
+        "Preventing pollution is easier than recovering tiny fragments later.",
+      ],
+    },
+    {
+      id: "reduce-disposables",
+      title: "Reducing Unnecessary Plastic",
+      paragraphs: [
+        "Students can identify disposable products that have practical reusable alternatives, encourage responsible waste disposal, and participate in organized cleanups.",
+        "Reducing unnecessary consumption addresses waste before it is created and should accompany, rather than be replaced by, recycling efforts.",
+      ],
+      keyPoints: [
+        "Avoid unnecessary single-use products when practical.",
+        "Use local recycling rules correctly.",
+        "Prevent litter before it reaches natural environments.",
+      ],
+    },
+  ],
+  takeaways: [
+    "Plastic is useful but can create persistent waste.",
+    "Plastic waste has different outcomes depending on local systems.",
+    "Plastic can break into very small particles.",
+    "Waste prevention is an important part of addressing plastic pollution.",
+  ],
+  discussionQuestions: [
+    "Which disposable plastics do you use most often?",
+    "Which could realistically be replaced?",
+    "Where does litter in your community tend to accumulate?",
+  ],
+  relatedArticleSlugs: [
+    "understanding-recycling",
+    "protecting-local-biodiversity",
+  ],
+},
+{
+  id: "article-community-cleanup",
+  slug: "planning-effective-community-cleanup",
+  title: "How to Plan an Effective Community Cleanup",
+  subtitle:
+    "Turning a one-day cleanup into a thoughtful project that identifies waste problems and supports lasting community action.",
+  description:
+    "Learn how community cleanups can combine service, data collection, education, and long-term waste prevention.",
+  category: "Community Action",
+  difficulty: "Beginner",
+  author: "Give Earth a Smile Education Team",
+  authorRole: "Youth Outreach",
+  publishedDate: "August 2025",
+  readingTime: 8,
+  coverImage: "/images/education/biodiversity.jpg",
+  featured: false,
+  tags: [
+    "Community Cleanup",
+    "Litter",
+    "Service",
+    "Youth Action",
+  ],
+  sections: [
+    {
+      id: "purpose",
+      title: "More Than Picking Up Litter",
+      paragraphs: [
+        "A cleanup can immediately improve a shared space, but it can also help students understand why waste accumulates in particular locations.",
+        "Instead of treating every cleanup as an isolated event, organizers can observe what they collect and use that information to think about longer-term prevention.",
+      ],
+      keyPoints: [
+        "Cleanups can combine service and environmental education.",
+        "Observations can reveal patterns in local waste.",
+        "Prevention should be part of the long-term goal.",
+      ],
+    },
+    {
+      id: "choose-location",
+      title: "Choose a Location Responsibly",
+      paragraphs: [
+        "Organizers should receive permission from the appropriate property owner, school, park authority, or community organization before conducting a cleanup.",
+        "The site should also be evaluated for hazards. Volunteers should not handle dangerous, sharp, chemical, medical, or otherwise unsafe waste and should follow the supervising organization's safety procedures.",
+      ],
+      keyPoints: [
+        "Get permission before organizing a cleanup.",
+        "Work with responsible adults or organizations on safety planning.",
+        "Do not handle hazardous materials.",
+      ],
+    },
+    {
+      id: "collect-information",
+      title: "Learn From What You Find",
+      paragraphs: [
+        "Participants can record broad categories of ordinary litter without handling unsafe materials. For example, they might compare the amount of food packaging, bottles, paper, or other common waste.",
+        "Patterns can help communities think about whether additional bins, better signs, public education, or waste-reduction efforts could address the source of the problem.",
+      ],
+    },
+    {
+      id: "after-cleanup",
+      title: "What Happens After the Cleanup?",
+      paragraphs: [
+        "A strong project does not necessarily end when the cleanup is finished. Students can share what they learned and work with local partners to explore ways to prevent litter from returning.",
+        "Photographs, general waste observations, volunteer participation, and follow-up observations can help document the project's impact.",
+      ],
+      keyPoints: [
+        "Share results with the community.",
+        "Look for causes rather than only symptoms.",
+        "Follow up to see whether conditions improve.",
+      ],
+    },
+  ],
+  takeaways: [
+    "Community cleanups can combine service with environmental learning.",
+    "Permission and safety planning are essential.",
+    "Observing ordinary waste patterns can help identify possible causes.",
+    "Long-term prevention can make cleanup projects more meaningful.",
+  ],
+  discussionQuestions: [
+    "Where does litter accumulate in your community?",
+    "What might be causing it?",
+    "How could students prevent some of that waste from appearing again?",
+  ],
+  relatedArticleSlugs: [
+    "understanding-recycling",
+    "building-a-sustainable-school",
+  ],
+},
+
+
 ];
 
 export const educationCategories: EducationCategory[] = [

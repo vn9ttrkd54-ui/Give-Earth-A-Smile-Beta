@@ -1,22 +1,22 @@
 export const galleryImages = [
   {
     id: 1,
-    src: "/images/gallery/gallery-1.jpg",
-    alt: "Give Earth a Smile environmental activity",
+    src: "/images/gallery/gallery-1-new.jpg",
+    alt: "Smart Classrooms in Tamil Nadu",
   },
   {
     id: 2,
-    src: "/images/gallery/gallery-2.jpg",
-    alt: "Students participating in a community project",
+    src: "/images/gallery/gallery-2-new.jpg",
+    alt: "Smart Classrooms in Odisha",
   },
   {
     id: 3,
-    src: "/images/gallery/gallery-3.jpg",
-    alt: "Tree planting and environmental outreach",
+    src: "/images/gallery/gallery-3-new.jpg",
+    alt: "Seeds for Change in Malawi",
   },
   {
     id: 4,
-    src: "/images/gallery/gallery-4.jpg",
-    alt: "Give Earth a Smile volunteers",
+    src: "/images/gallery/gallery-4-new.jpg",
+    alt: "Seeds for Change in Taiwan",
   },
 ];

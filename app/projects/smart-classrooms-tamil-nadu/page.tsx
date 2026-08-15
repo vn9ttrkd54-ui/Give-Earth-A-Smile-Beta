@@ -3,6 +3,7 @@ import FadeIn from "@/components/FadeIn";
 import TamilNaduProjectGallery from "@/components/project/TamilNaduProjectGallery";
 import TamilNaduProjectVideos from "@/components/project/TamilNaduProjectVideos";
 import Link from "next/link";
+import { getProjectBySlug } from "@/data/projects";
 
 const challenges = [
   "Limited access to modern educational technology and digital learning resources.",
@@ -104,6 +105,14 @@ const goals = [
 ];
 
 export default function SmartClassroomsTamilNaduPage() {
+  const project = getProjectBySlug(
+    "smart-classrooms-tamil-nadu"
+  );
+
+  if (!project) {
+    return null;
+  }
+
   return (
     <main className="bg-[#FFFAF0] text-[#233F31]">
       {/* Hero */}
@@ -356,6 +365,10 @@ export default function SmartClassroomsTamilNaduPage() {
                     ₹90,000+
                   </p>
 
+                  <p className="mt-2 font-bold text-white/70">
+                    Approximately $1,040 USD
+                  </p>
+
                   <p className="mt-3 text-white/75">
                     Raised for the project
                   </p>
@@ -506,7 +519,9 @@ export default function SmartClassroomsTamilNaduPage() {
           </FadeIn>
 
           <FadeIn delay={120} className="mt-10">
-            <TamilNaduProjectGallery />
+            <TamilNaduProjectGallery
+              images={project.gallery}
+            />
           </FadeIn>
         </div>
       </section>

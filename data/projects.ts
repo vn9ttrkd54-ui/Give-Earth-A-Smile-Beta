@@ -12,6 +12,7 @@ export type ProjectCategory =
 
 export type ProjectStatistic = {
   value: string;
+  secondaryValue?: string;
   label: string;
 };
 
@@ -84,26 +85,26 @@ Give Earth a Smile is working toward bringing these educational voices into the 
     endDate: "Fall 2025",
 
     coverImage:
-      "/images/projects/smart-classrooms-odisha/cover.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1785049566/cover_l8tbni.jpg",
 
     featured: true,
 
     gallery: [
-      "/images/projects/smart-classrooms-odisha/01.jpg",
-      "/images/projects/smart-classrooms-odisha/02.jpg",
-      "/images/projects/smart-classrooms-odisha/03.jpg",
-      "/images/projects/smart-classrooms-odisha/04.jpg",
-      "/images/projects/smart-classrooms-odisha/05.jpg",
-      "/images/projects/smart-classrooms-odisha/06.jpg",
-      "/images/projects/smart-classrooms-odisha/07.jpg",
-      "/images/projects/smart-classrooms-odisha/08.jpg",
-      "/images/projects/smart-classrooms-odisha/09.jpg",
-      "/images/projects/smart-classrooms-odisha/10.jpg",
-      "/images/projects/smart-classrooms-odisha/11.jpg",
-      "/images/projects/smart-classrooms-odisha/12.jpg",
-      "/images/projects/smart-classrooms-odisha/13.jpg",
-      "/images/projects/smart-classrooms-odisha/14.jpg",
-      "/images/projects/smart-classrooms-odisha/15.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785048825/01_bfemad.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785048847/02_zjz9at.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785048875/03_dvnmzp.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785048884/04_p13x7j.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785048900/05_szhm5g.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785048908/06_ihjvbm.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785048915/07_n9ffk9.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785048921/08_mu2jhf.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785049497/09_hwucxw.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785049505/10_omatwo.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785049512/11_n4itz4.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785049522/12_mv2fpp.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785049540/13_mclien.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785049549/14_mvanzw.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785049558/15_pnsql1.jpg",
     ],
 
     statistics: [
@@ -170,15 +171,25 @@ Give Earth a Smile is working toward bringing these educational voices into the 
     startDate: "Fall 2025",
 
     coverImage:
-      "/images/projects/smart-classrooms-tamil-nadu/cover.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1785090858/cover_mc0xsr.png",
 
     featured: true,
 
-    gallery: Array.from({ length: 13 }, (_, index) =>
-      `/images/projects/smart-classrooms-tamil-nadu/${String(
-        index + 1,
-      ).padStart(2, "0")}.jpg`
-    ),
+    gallery: [
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090570/01_u5ktg8.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090616/02_d24oq6.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090642/03_zqo443.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090673/04_ifqcsq.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090711/05_lofkxy.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090742/06_lcbweb.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090755/07_t1bmz3.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090768/08_ndysdc.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090781/09_optd8u.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090796/10_vfflir.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090808/11_kbigxo.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090822/12_yokfc9.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785090841/13_dggmvg.png",
+    ],
 
     statistics: [
       {
@@ -247,15 +258,76 @@ Give Earth a Smile is working toward bringing these educational voices into the 
     endDate: "Spring 2026",
 
     coverImage:
-      "/images/projects/seeds-for-change-malawi/cover.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1785132602/cover_uohmxu.jpg",
 
     featured: true,
 
-    gallery: Array.from({ length: 64 }, (_, index) =>
-      `/images/projects/seeds-for-change-malawi/${String(
-        index + 1,
-      ).padStart(2, "0")}.jpg`
-    ),
+    gallery: [
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097657/01_lz5yc4.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097673/02_x6rid7.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097684/03_ngeiww.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097697/04_atqunb.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097709/05_rmkg8t.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097721/06_b3q8q5.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097732/07_mkavhf.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097743/08_dqpl0e.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097756/09_kotk1x.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097769/10_ufl65i.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097805/11_eoeg8r.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097816/12_vvtyk3.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097832/13_my2thf.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097853/14_bnqnvb.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097864/15_zfmmyv.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097877/16_zr9qt1.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097889/17_jzriei.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097900/18_r1mn6q.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097914/19_jr9hx5.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097926/20_cfhlal.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097938/21_m4ovjq.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097951/22_h4fgoe.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097964/23_nwraa9.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097976/24_bxigbz.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785097989/25_ltvjrq.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098000/26_dyllrc.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098010/27_gk8glh.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098021/28_jaekcn.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098037/29_b9cruj.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098051/30_aopgo4.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098065/31_winlqs.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098079/32_mybwwk.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098094/33_ej9abw.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098108/34_uxlwew.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098120/35_zcog30.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098132/36_dgkxrj.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098145/37_kvt3x5.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098157/38_wvl00y.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098170/39_bc9nra.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098182/40_dpex6w.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098197/41_let26a.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098210/42_alkba0.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098222/43_l7pjqm.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098238/44_ckw6pc.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098251/45_qtwpaf.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098273/46_rnqmek.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098288/47_vm4syd.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098302/48_s3suac.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098315/49_cllrtm.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785098329/50_hpgrs5.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132325/51_wmdk0y.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132367/52_fd7qpj.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132390/53_jd0vsr.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132414/54_gh7pkp.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132428/55_a0jnvy.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132443/56_w8ynfz.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132461/57_klkrwy.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132472/58_rkx1nr.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132489/59_u6eutx.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132500/60_tpoofi.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132519/61_lcg6ok.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132542/62_tkftsq.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132564/63_jcxecz.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785132585/64_gtklky.jpg",
+    ],
 
     statistics: [
       {
@@ -294,6 +366,116 @@ Give Earth a Smile is working toward bringing these educational voices into the 
       "Give Earth a Smile developed interactive worksheets specifically for the program.",
       "Students created their own water conservation action plans.",
       "Students were encouraged to apply environmental lessons within their homes and communities.",
+    ],
+  },
+  {
+    id: "seeds-for-change-taiwan",
+    slug: "seeds-for-change-taiwan",
+
+    title: "Seeds for Change in Taiwan",
+
+    subtitle:
+      "Empowering students through environmental restoration, sustainable agriculture, and hands-on action.",
+
+    shortDescription:
+      "A hands-on environmental restoration initiative in Gaoshu Township, Pingtung County, where students planted more than 80 banana trees while learning about sustainable agriculture and regenerative farming.",
+
+    description: `
+  As part of Give Earth a Smile's Seeds for Change initiative, students in Gaoshu Township, Pingtung County, Taiwan came together for a hands-on environmental restoration project at a rural farm. The project provided students with the opportunity to move beyond learning about environmental sustainability and actively contribute to creating a greener future.
+
+  Working alongside local students, participants planted 80+ banana trees while learning about sustainable agriculture and regenerative farming practices. Through this hands-on experience, students were able to see firsthand how responsible agricultural practices can support environmental health and contribute to the long-term sustainability of local communities.
+
+  The project aimed to connect environmental education with meaningful action. By participating directly in the planting process, students gained practical experience while developing a deeper understanding of their relationship with the environment and the role they can play in protecting it.
+
+  Seeds for Change in Taiwan reflects Give Earth a Smile's belief that young people should not only learn about environmental challenges but also be empowered to become part of the solution. By creating opportunities for students to engage directly with their communities and the natural environment, we hope to inspire a generation of environmentally conscious leaders who are ready to take action for a more sustainable future.
+    `.trim(),
+  
+    location: "Gaoshu Township, Pingtung County",
+    country: "Taiwan",
+
+    category: "Environment",
+    status: "Completed",
+
+    startDate: "Spring 2024",
+    endDate: "Spring 2024",
+
+    coverImage:
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1785095932/cover_gemlxv.jpg",
+
+    featured: false,
+
+    gallery: [
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095471/01_udum87.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095500/02_hotwkn.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095506/03_pymfbc.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095516/04_e1wzkg.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095526/05_ttt9pz.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095535/06_owncnp.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095547/07_dqx8oq.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095559/08_kxqmhf.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095572/09_xffpbf.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095583/10_rprupq.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095594/11_cfxys8.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095619/12_razipu.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095635/13_uvzbb3.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095647/14_ojm1rd.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095660/15_d3ec8t.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095678/16_hztos1.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095689/17_t8bqaq.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095706/18_hegkru.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095718/19_fknv1x.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095730/20_yu62yi.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095744/21_rrmtfv.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095759/22_hyt0pg.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095771/23_wevshn.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095785/24_jyebgp.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095798/25_myco0n.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095812/26_ypq60w.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095832/27_a3shaj.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095848/28_xcokfu.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095869/29_zmdloo.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095883/30_bjjujn.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095896/31_rw5yrn.jpg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785095916/32_xt7bps.jpg",
+    ],
+
+    statistics: [
+      {
+        value: "36,000+ NTD",
+        secondaryValue: "Approximately $1,200 USD",
+        label: "Resources invested",
+      },
+      {
+        value: "80+",
+        label: "Banana trees planted",
+      },
+      {
+        value: "Hands-On",
+        label: "Environmental restoration",
+      },
+      {
+        value: "Sustainable Agriculture",
+        label: "Education and regenerative farming awareness",
+      },
+    ],
+
+    goals: [
+      "Provide students with hands-on opportunities to learn about sustainable agriculture and regenerative farming.",
+      "Enable students to actively participate in environmental restoration.",
+      "Increase awareness of regenerative farming practices and their role in creating healthier ecosystems.",
+      "Help students understand the relationship between agriculture, environmental stewardship, and ecosystem health.",
+      "Encourage students to take ownership of environmental action within their communities.",
+      "Create opportunities for students to contribute directly to a greener and more sustainable future.",
+    ],
+
+    results: [
+      "More than 80 banana trees were planted alongside local students.",
+      "Students participated directly in hands-on environmental restoration.",
+      "Students learned about sustainable agriculture.",
+      "Students were introduced to regenerative farming practices.",
+      "The project connected environmental education with practical restoration work.",
+      "Students gained greater awareness of environmental stewardship and ecosystem health.",
+      "More than $1,200 in plants, fertilizer, and other resources supported the project.",
     ],
   },
 ];

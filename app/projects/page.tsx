@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import PublicProjectDirectory from "@/components/project/PublicProjectDirectory";
 import {
-  getProjectFilterOptions,
-  searchPublishedProjects,
-} from "@/lib/projects/publicProjectQueries";
+  getAllProjects,
+  type Project,
+  type ProjectCategory,
+} from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Projects | Give Earth a Smile",
@@ -33,19 +34,34 @@ export default async function ProjectsPage({
   const selectedCountry =
     parameters.country?.trim() || "all";
 
-  const [projects, filterOptions] =
-    await Promise.all([
-      searchPublishedProjects(
-        search,
-        selectedCategory,
-        selectedCountry,
-      ),
+  const allProjects = getAllProjects();
 
-      getProjectFilterOptions(),
-    ]);
+  const projects = filterProjects(
+    allProjects,
+    search,
+    selectedCategory,
+    selectedCountry,
+  );
+
+  const categories = Array.from(
+    new Set(
+      allProjects.map(
+        (project) => project.category,
+      ),
+    ),
+  ).sort();
+
+  const countries = Array.from(
+    new Set(
+      allProjects.map(
+        (project) => project.country,
+      ),
+    ),
+  ).sort();
 
   return (
     <main>
+      {/* Hero */}
       <section className="border-b border-[#294638] bg-[#233F31] px-6 py-20 text-white md:py-28">
         <div className="mx-auto max-w-7xl">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#F1F6C8]">
@@ -65,26 +81,67 @@ export default async function ProjectsPage({
         </div>
       </section>
 
+      {/* Project Directory */}
       <section className="bg-[#F1F6C8] px-6 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
           <PublicProjectDirectory
             projects={projects}
-            categories={
-              filterOptions.categories
-            }
-            countries={
-              filterOptions.countries
-            }
+            categories={categories}
+            countries={countries}
             search={search}
-            selectedCategory={
-              selectedCategory
-            }
-            selectedCountry={
-              selectedCountry
-            }
+            selectedCategory={selectedCategory}
+            selectedCountry={selectedCountry}
           />
         </div>
       </section>
     </main>
   );
+}
+
+function filterProjects(
+  projects: Project[],
+  search: string,
+  category: string,
+  country: string,
+): Project[] {
+  const normalizedSearch =
+    search.trim().toLowerCase();
+
+  return projects.filter((project) => {
+    const matchesCategory =
+      category === "all" ||
+      project.category ===
+        (category as ProjectCategory);
+
+    const matchesCountry =
+      country === "all" ||
+      project.country === country;
+
+    const searchableText = [
+      project.title,
+      project.subtitle,
+      project.shortDescription,
+      project.description,
+      project.location,
+      project.country,
+      project.category,
+      project.status,
+      ...project.goals,
+      ...project.results,
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    const matchesSearch =
+      normalizedSearch.length === 0 ||
+      searchableText.includes(
+        normalizedSearch,
+      );
+
+    return (
+      matchesCategory &&
+      matchesCountry &&
+      matchesSearch
+    );
+  });
 }

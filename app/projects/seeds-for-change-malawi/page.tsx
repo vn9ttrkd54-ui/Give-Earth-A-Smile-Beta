@@ -2,11 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import MalawiProjectGallery from "@/components/project/MalawiProjectGallery";
+import { getProjectBySlug } from "@/data/projects";
 
 const impactStatistics = [
   {
-    value: "831,783+ MWK",
-    secondaryValue: "Approximately $480 USD",
+    value: "919,150+ MWK",
+    secondaryValue: "Approximately $530 USD",
     label: "Raised to support the initiative",
   },
   {
@@ -47,15 +48,33 @@ const sustainableDevelopmentGoals = [
   },
 ];
 
-const projectVideos = Array.from({ length: 4 }, (_, index) => ({
-  id: index + 1,
-  src: `/videos/seeds-for-change-malawi/${String(index + 1).padStart(
-    2,
-    "0",
-  )}.mp4`,
-}));
+const projectVideos = [
+  {
+    id: 1,
+    src: "https://res.cloudinary.com/otmypjmz/video/upload/v1785097416/01_tmgnui.mp4",
+  },
+  {
+    id: 2,
+    src: "https://res.cloudinary.com/otmypjmz/video/upload/v1785097427/02_knxfa9.mp4",
+  },
+  {
+    id: 3,
+    src: "https://res.cloudinary.com/otmypjmz/video/upload/v1785097447/03_r6lbtd.mp4",
+  },
+  {
+    id: 4,
+    src: "https://res.cloudinary.com/otmypjmz/video/upload/v1785097458/04_yrf1id.mp4",
+  },
+];
 
 export default function SeedsForChangeMalawiPage() {
+  const project = getProjectBySlug(
+    "seeds-for-change-malawi"
+  );
+
+  if (!project) {
+    return null;
+  }
   return (
     <main className="bg-[#FFFAF0]">
       {/* Project heading */}
@@ -489,7 +508,7 @@ export default function SeedsForChangeMalawiPage() {
           </FadeIn>
 
           <FadeIn delay={120} className="mt-10">
-            <MalawiProjectGallery />
+            <MalawiProjectGallery images={project.gallery} />
           </FadeIn>
         </div>
       </section>

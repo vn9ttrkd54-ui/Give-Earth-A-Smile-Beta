@@ -150,7 +150,6 @@ export default function AboutPage() {
           <SectionHeader
             eyebrow="Our Progress"
             title="Our Impact in Numbers"
-            description="These current values are placeholders and will later be managed through the administrator dashboard."
           />
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

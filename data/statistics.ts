@@ -12,12 +12,12 @@ export const statistics: Statistic[] = [
   },
   {
     id: 2,
-    value: "25",
+    value: "26",
     label: "Global Ambassadors",
   },
   {
     id: 3,
-    value: "$5,000+",
+    value: "$6,200+",
     label: "Dollars Raised",
   },
   {

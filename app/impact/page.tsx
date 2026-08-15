@@ -87,12 +87,6 @@ export default function ImpactPage() {
               </article>
             </div>
           </FadeIn>
-
-          <p className="mt-5 text-center text-xs leading-6 text-[#233F31]/65">
-            Map markers currently represent approximate cities or regional
-            locations. More precise project and ambassador locations can be
-            added as the organization grows.
-          </p>
         </div>
       </section>
 

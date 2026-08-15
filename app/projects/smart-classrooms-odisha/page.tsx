@@ -2,6 +2,7 @@ import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import OdishaProjectGallery from "@/components/project/OdishaProjectGallery";
 import Link from "next/link";
+import { getProjectBySlug } from "@/data/projects";
 
 const impactStatistics = [
   {
@@ -48,6 +49,14 @@ const sustainableDevelopmentGoals = [
 ];
 
 export default function SmartClassroomsOdishaPage() {
+  const project = getProjectBySlug(
+    "smart-classrooms-odisha"
+  );
+
+  if (!project) {
+    return null;
+  }
+
   return (
     <main className="bg-[#FFFAF0]">
       {/* Project heading */}
@@ -434,7 +443,7 @@ export default function SmartClassroomsOdishaPage() {
           </FadeIn>
 
           <FadeIn delay={120} className="mt-10">
-            <OdishaProjectGallery />
+            <OdishaProjectGallery images={project.gallery} />
           </FadeIn>
         </div>
       </section>

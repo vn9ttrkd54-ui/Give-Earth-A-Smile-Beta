@@ -3,26 +3,30 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const projectImages = Array.from({ length: 64 }, (_, index) => ({
-  id: index + 1,
-  src: `/images/projects/seeds-for-change-malawi/${String(
-    index + 1,
-  ).padStart(2, "0")}.jpg`,
-  alt: `Seeds for Change in Malawi project photo ${index + 1}`,
-}));
+type MalawiProjectGalleryProps = {
+  images: string[];
+};
 
-export default function MalawiProjectGallery() {
+export default function MalawiProjectGallery({
+  images,
+}: MalawiProjectGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const selectedImage = projectImages[selectedIndex];
+  const selectedImage = images[selectedIndex];
+
+  if (!selectedImage) {
+    return null;
+  }
 
   return (
     <div>
       {/* Main Image */}
       <div className="relative aspect-[16/9] w-full overflow-hidden border border-[#294638] bg-[#E9EFD1] shadow-lg">
         <Image
-          src={selectedImage.src}
-          alt={selectedImage.alt}
+          src={selectedImage}
+          alt={`Seeds for Change in Malawi project photo ${
+            selectedIndex + 1
+          }`}
           fill
           sizes="(max-width: 1280px) 100vw, 1280px"
           className="object-cover"
@@ -43,10 +47,9 @@ export default function MalawiProjectGallery() {
 
           <p className="font-[var(--font-heading)] text-3xl">
             {String(selectedIndex + 1).padStart(2, "0")}
-
             <span className="text-lg text-white/70">
               {" "}
-              / {projectImages.length}
+              / {images.length}
             </span>
           </p>
         </div>
@@ -54,9 +57,9 @@ export default function MalawiProjectGallery() {
 
       {/* Thumbnails */}
       <div className="mt-5 grid grid-cols-3 gap-3 sm:grid-cols-5">
-        {projectImages.map((image, index) => (
+        {images.map((image, index) => (
           <button
-            key={image.id}
+            key={`${image}-${index}`}
             type="button"
             onClick={() => setSelectedIndex(index)}
             className={`relative aspect-[4/3] overflow-hidden border-2 transition duration-300 ${
@@ -67,8 +70,10 @@ export default function MalawiProjectGallery() {
             aria-label={`Show project image ${index + 1}`}
           >
             <Image
-              src={image.src}
-              alt={image.alt}
+              src={image}
+              alt={`Seeds for Change in Malawi project photo ${
+                index + 1
+              }`}
               fill
               sizes="200px"
               className="object-cover"

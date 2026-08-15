@@ -1,16 +1,18 @@
 import Link from "next/link";
 import PublicProjectCard from "@/components/project/PublicProjectCard";
-import { getFeaturedProjects } from "@/lib/projects/publicProjectQueries";
+import {
+  getAllProjects,
+  getFeaturedProjects,
+} from "@/data/projects";
 
-export default async function DatabaseFeaturedProjects() {
-  let projects = await getFeaturedProjects(3);
+export default function DatabaseFeaturedProjects() {
+  let projects = getFeaturedProjects(3);
 
+  // Fallback:
+  // If no projects are marked as featured,
+  // show the first 3 projects instead.
   if (projects.length === 0) {
-    const { getPublishedProjects } = await import(
-      "@/lib/projects/publicProjectQueries"
-    );
-
-    projects = (await getPublishedProjects()).slice(0, 3);
+    projects = getAllProjects().slice(0, 3);
   }
 
   if (projects.length === 0) {
