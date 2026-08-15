@@ -100,12 +100,13 @@ export default function PublicProjectCard({
             </div>
 
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white p-0.5 shadow-md">
-              <Image
-                src="/images/pudhiya-shakti.png"
-                alt="Pudhiya Shakti"
-                width={40}
-                height={40}
-                className="h-full w-full rounded-full object-contain"
+              <span
+                role="img"
+                aria-label="Pudhiya Shakti"
+                className="h-full w-full rounded-full bg-contain bg-center bg-no-repeat"
+                style={{
+                  backgroundImage: "url('/images/pudhiya-shakti.png')",
+                }}
               />
             </div>
           </div>
