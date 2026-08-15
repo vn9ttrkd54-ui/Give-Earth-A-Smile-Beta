@@ -89,7 +89,7 @@ export default function PublicProjectCard({
 
         {isPudhiyaShaktiProject && (
           <div className="absolute right-4 top-4 flex gap-2">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white p-1 shadow-md">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white p-1 shadow-md">
               <Image
                 src="/images/earth-icon.png"
                 alt="Give Earth a Smile"
@@ -99,13 +99,13 @@ export default function PublicProjectCard({
               />
             </div>
 
-            <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-white shadow-md">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white p-0.5 shadow-md">
               <Image
                 src="/images/pudhiya-shakti.png"
                 alt="Pudhiya Shakti"
                 width={40}
                 height={40}
-                className="h-full w-full scale-[1.45] rounded-full object-contain"
+                className="h-full w-full rounded-full object-contain"
               />
             </div>
           </div>
