@@ -44,10 +44,24 @@ export default function PublicProjectCard({
     "smart-classrooms-tamil-nadu",
   ].includes(project.slug);
 
+  const smartClassroomStudentStatistic = isPudhiyaShaktiProject
+    ? project.statistics.find((item) =>
+        item.label.toLowerCase().includes("students"),
+      ) ?? null
+    : null;
+
+  const smartClassroomFundingStatistic = isPudhiyaShaktiProject
+    ? project.statistics.find((item) =>
+        item.label.toLowerCase().includes("raised"),
+      ) ?? null
+    : null;
+
   const primaryStatistic = isMalawi
-    ? project.statistics[0] ?? null
+    ? project.statistics[1] ?? null
     : isTaiwan
       ? project.statistics[1] ?? null
+    : isPudhiyaShaktiProject
+      ? smartClassroomStudentStatistic
     : {
         value:
           getStatisticValue(project, "students impacted") ??
@@ -56,9 +70,11 @@ export default function PublicProjectCard({
       };
 
   const secondaryStatistic = isMalawi
-    ? project.statistics[1] ?? null
+    ? project.statistics[0] ?? null
     : isTaiwan
       ? project.statistics[0] ?? null
+    : isPudhiyaShaktiProject
+      ? smartClassroomFundingStatistic
     : {
         value:
           getStatisticValue(project, "classes benefiting") ??
