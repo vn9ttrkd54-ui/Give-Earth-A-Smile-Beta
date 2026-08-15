@@ -73,6 +73,15 @@ export default function JoinForm() {
           <input required name="email" type="email" className="w-full border border-[#294638] px-4 py-3" />
         </label>
         <label>
+          <span className="mb-2 block">Phone Number (Optional)</span>
+          <input
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            className="w-full border border-[#294638] px-4 py-3"
+          />
+        </label>
+        <label>
           <span className="mb-2 block">School</span>
           <input name="school" className="w-full border border-[#294638] px-4 py-3" />
         </label>

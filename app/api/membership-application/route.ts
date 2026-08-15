@@ -4,6 +4,7 @@ type MembershipApplication = {
   firstName?: string;
   lastName?: string;
   email?: string;
+  phone?: string;
   school?: string;
   city?: string;
   country?: string;
@@ -37,6 +38,7 @@ export async function POST(request: NextRequest) {
     firstName: clean(body.firstName),
     lastName: clean(body.lastName),
     email: clean(body.email),
+    phone: clean(body.phone),
     school: clean(body.school),
     city: clean(body.city),
     country: clean(body.country),
@@ -78,6 +80,7 @@ export async function POST(request: NextRequest) {
     "",
     `Name: ${application.firstName} ${application.lastName}`,
     `Email: ${application.email}`,
+    `Phone: ${application.phone || "Not provided"}`,
     `School: ${application.school || "Not provided"}`,
     `City: ${application.city}`,
     `Country: ${application.country}`,
