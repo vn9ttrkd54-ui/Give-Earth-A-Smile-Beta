@@ -74,7 +74,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-[100] border-t-2 border-[#294638] bg-[#F1F6C8]/95 shadow-sm backdrop-blur-md">
-      <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-6 px-5 py-4 lg:px-10">
+      <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-6 px-5 py-3 lg:px-10">
         <Link
           href="/"
           className="group flex min-w-0 items-center gap-3"
@@ -83,10 +83,10 @@ export default function Navbar() {
           <Image
             src="/images/logo.png"
             alt="Give Earth a Smile logo"
-            width={300}
+            width={260}
             height={50}
             priority
-            className="h-[4.5rem] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-[3.75rem] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
 
           
