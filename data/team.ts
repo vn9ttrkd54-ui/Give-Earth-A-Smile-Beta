@@ -23,10 +23,10 @@ export const executiveTeam: ExecutiveMember[] = [
   },
   {
     id: 3,
-    name: "Affan Bill",
+    name: "Affan Bilal",
     role: "Development Director and Chief Financial Officer",
     bio: "Affan oversees development, fundraising, budgeting, and the organization's financial planning.",
-    image: "/images/team/affan-bill.jpg",
+    image: "/images/team/affan-bilal.jpg",
   },
   {
     id: 4,

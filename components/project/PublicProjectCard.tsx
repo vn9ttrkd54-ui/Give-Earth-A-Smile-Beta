@@ -36,19 +36,28 @@ export default function PublicProjectCard({
   const isMalawi =
     project.slug === "seeds-for-change-malawi";
 
-  const studentsImpacted = isMalawi
-    ? project.statistics[2]?.value ?? null
-    : getStatisticValue(project, "students impacted") ??
-      getStatisticValue(project, "students");
+  const isPudhiyaShaktiProject = [
+    "smart-classrooms-odisha",
+    "smart-classrooms-tamil-nadu",
+  ].includes(project.slug);
+
+  const primaryStatistic = isMalawi
+    ? project.statistics[0] ?? null
+    : {
+        value:
+          getStatisticValue(project, "students impacted") ??
+          getStatisticValue(project, "students"),
+        label: "Students impacted",
+      };
 
   const secondaryStatistic = isMalawi
-    ? project.statistics[1]?.value ?? null
-    : getStatisticValue(project, "classes benefiting") ??
-      getStatisticValue(project, "classes");
-
-  const secondaryLabel = isMalawi
-    ? "Days of environmental education"
-    : "Classes benefiting";
+    ? project.statistics[1] ?? null
+    : {
+        value:
+          getStatisticValue(project, "classes benefiting") ??
+          getStatisticValue(project, "classes"),
+        label: "Classes benefiting",
+      };
 
   return (
     <article className="group flex h-full flex-col overflow-hidden border border-[#294638] bg-[#FFFAF0] transition duration-300 hover:-translate-y-2 hover:shadow-xl">
@@ -69,6 +78,30 @@ export default function PublicProjectCard({
           <span className="absolute left-4 top-4 bg-[#233F31] px-3 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">
             Featured
           </span>
+        )}
+
+        {isPudhiyaShaktiProject && (
+          <div className="absolute right-4 top-4 flex gap-2">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white p-1 shadow-md">
+              <Image
+                src="/images/earth-icon.png"
+                alt="Give Earth a Smile"
+                width={40}
+                height={40}
+                className="h-full w-full rounded-full object-contain"
+              />
+            </div>
+
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white p-1 shadow-md">
+              <Image
+                src="/images/pudhiya-shakti.png"
+                alt="Pudhiya Shakti"
+                width={40}
+                height={40}
+                className="h-full w-full rounded-full object-contain"
+              />
+            </div>
+          </div>
         )}
       </Link>
 
@@ -104,28 +137,28 @@ export default function PublicProjectCard({
           {project.shortDescription}
         </p>
 
-        {(studentsImpacted || secondaryStatistic) && (
+        {(primaryStatistic?.value || secondaryStatistic?.value) && (
           <div className="mt-auto grid grid-cols-2 gap-3 border-t border-[#294638]/20 pt-6">
-            {studentsImpacted && (
+            {primaryStatistic?.value && (
               <div>
                 <p className="font-[var(--font-heading)] text-2xl">
-                  {studentsImpacted}
+                  {primaryStatistic.value}
                 </p>
 
                 <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-[#233F31]/55">
-                  Students impacted
+                  {primaryStatistic.label}
                 </p>
               </div>
             )}
 
-            {secondaryStatistic && (
+            {secondaryStatistic?.value && (
               <div>
                 <p className="font-[var(--font-heading)] text-2xl">
-                  {secondaryStatistic}
+                  {secondaryStatistic.value}
                 </p>
 
                 <p className="mt-1 text-xs font-bold uppercase tracking-[0.1em] text-[#233F31]/55">
-                  {secondaryLabel}
+                  {secondaryStatistic.label}
                 </p>
               </div>
             )}

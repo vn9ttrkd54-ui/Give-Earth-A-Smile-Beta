@@ -94,7 +94,8 @@ export default function JoinForm() {
       {submitted && (
         <p className="mt-6 text-center font-semibold">
           Thank you for applying. This prototype does not save the application
-          yet.
+          yet. Please contact us by email or Instagram if you would like to
+          follow up or have any questions about your application.
         </p>
       )}
     </form>
