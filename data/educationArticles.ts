@@ -45,6 +45,99 @@ export type EducationArticle = {
 
 export const educationArticles: EducationArticle[] = [
   {
+    id: "article-renewable-energy-basics",
+    slug: "renewable-energy-basics",
+    title: "Renewable Energy: Powering a Sustainable Future",
+    subtitle:
+      "An introduction to clean energy sources, how they work, and why communities are making the transition.",
+    description:
+      "Explore solar, wind, hydropower, and other renewable energy sources—and learn how students can support a cleaner energy future.",
+    category: "Climate and Sustainability",
+    difficulty: "Beginner",
+    author: "Give Earth a Smile Education Team",
+    authorRole: "Environmental Education",
+    publishedDate: "August 1, 2026",
+    readingTime: 8,
+    coverImage: "/images/education/climate-change-basics.jpg",
+    featured: false,
+    tags: [
+      "Renewable Energy",
+      "Solar Power",
+      "Wind Power",
+      "Climate Action",
+    ],
+    sections: [
+      {
+        id: "what-is-renewable-energy",
+        title: "What Is Renewable Energy?",
+        paragraphs: [
+          "Renewable energy comes from sources that are naturally replenished, such as sunlight, wind, flowing water, and heat from within Earth. Unlike fossil fuels, these resources can be used repeatedly without being permanently depleted.",
+          "Renewable energy technologies convert these natural resources into electricity, heat, or fuel. Expanding their use can reduce greenhouse gas emissions and improve air quality while helping communities build more sustainable energy systems.",
+        ],
+        keyPoints: [
+          "Renewable resources are naturally replenished.",
+          "Clean energy can reduce dependence on fossil fuels.",
+          "Different locations are suited to different renewable resources.",
+        ],
+      },
+      {
+        id: "major-renewable-sources",
+        title: "The Major Renewable Energy Sources",
+        paragraphs: [
+          "Solar panels convert sunlight into electricity, while wind turbines use moving air to turn a generator. Hydropower uses flowing water, geothermal systems draw on heat beneath Earth’s surface, and some forms of biomass use organic material for energy.",
+          "Each source has advantages and limitations. Solar and wind power depend on weather conditions, hydropower projects can affect rivers and habitats, and biomass must be managed carefully to avoid pollution or deforestation.",
+        ],
+        keyPoints: [
+          "Solar and wind are among the fastest-growing renewable technologies.",
+          "Hydropower and geothermal energy can provide steady electricity in suitable locations.",
+          "Every energy project should consider local people and ecosystems.",
+        ],
+      },
+      {
+        id: "building-reliable-clean-energy",
+        title: "Building a Reliable Clean Energy System",
+        paragraphs: [
+          "A reliable energy system must provide power when people need it. Because sunlight and wind vary, communities may combine several energy sources with batteries, improved power grids, and energy conservation.",
+          "Energy efficiency is an important part of the transition. Buildings, appliances, transportation systems, and everyday habits that use less energy make it easier for renewable sources to meet community needs.",
+        ],
+        keyPoints: [
+          "Energy storage can save electricity for later use.",
+          "Modern grids can balance energy from several sources.",
+          "Using energy efficiently reduces both costs and environmental impact.",
+        ],
+      },
+      {
+        id: "how-students-can-help",
+        title: "How Students Can Help",
+        paragraphs: [
+          "Students can begin by learning where their school’s electricity comes from and identifying practical ways to conserve energy. An energy audit can reveal unnecessary lighting, inefficient equipment, or heating and cooling practices that waste power.",
+          "Students can also share reliable information, organize an energy-awareness campaign, or work with school leaders to explore renewable energy options. Meaningful progress often begins with a well-researched question and a realistic local goal.",
+        ],
+        keyPoints: [
+          "Investigate how energy is used in your school or community.",
+          "Connect conservation efforts to measurable results.",
+          "Support solutions that are practical, inclusive, and environmentally responsible.",
+        ],
+      },
+    ],
+    takeaways: [
+      "Renewable energy comes from sources that naturally replenish.",
+      "Solar, wind, hydropower, geothermal energy, and biomass have different benefits and limitations.",
+      "Storage, efficient grids, and energy conservation help create reliable clean energy systems.",
+      "Students can support the transition through research, conservation, and community action.",
+    ],
+    discussionQuestions: [
+      "Which renewable energy sources are best suited to your community?",
+      "How could your school reduce its energy use?",
+      "What should leaders consider before building a renewable energy project?",
+    ],
+    relatedArticleSlugs: [
+      "climate-change-basics",
+      "building-a-sustainable-school",
+    ],
+  },
+
+  {
     id: "article-climate-change-basics",
     slug: "climate-change-basics",
     title: "Climate Change: Understanding the Basics",
