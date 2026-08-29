@@ -237,7 +237,7 @@ Give Earth a Smile is working toward bringing these educational voices into the 
       "A three-day environmental education initiative at Bwiba Full Primary School in Malawi focused on water conservation, environmental responsibility, and student-led action.",
 
     description: `
-  In Spring 2026, Give Earth a Smile launched Seeds for Change, a three-day environmental education initiative at Bwiba Full Primary School in the rural Karonga District of Malawi. With approximately $266 USD (461,000 Malawian Kwacha) raised, the project brought together students and educators to explore the importance of water conservation and environmental responsibility.
+  In Spring 2026, Give Earth a Smile launched Seeds for Change, a three-day environmental education initiative at Bwiba Full Primary School in the rural Karonga District of Malawi. With approximately 461,000 Malawian Kwacha ($266 USD) raised, the project brought together students and educators to explore the importance of water conservation and environmental responsibility.
 
   Over the course of three days, 30 students participated in interactive lessons and activities designed to connect environmental concepts to their everyday lives. The program featured a storytime session centered around Why Should I Save Water? by Jen Green, helping students explore the importance of protecting and conserving one of our most essential resources.
 
@@ -331,7 +331,7 @@ Give Earth a Smile is working toward bringing these educational voices into the 
 
     statistics: [
       {
-        value: "$266 USD",
+        value: "461,000 MWK",
         label: "Raised to support the initiative",
       },
       {
@@ -359,7 +359,7 @@ Give Earth a Smile is working toward bringing these educational voices into the 
     ],
 
     results: [
-      "Approximately $266 USD (461,000 Malawian Kwacha) was raised to support the initiative.",
+      "Approximately 461,000 Malawian Kwacha ($266 USD) was raised to support the initiative.",
       "A three-day environmental education program was completed at Bwiba Full Primary School.",
       "30 students participated in interactive environmental education lessons and activities.",
       "Students explored water conservation through storytime, discussion, worksheets, and hands-on learning.",
