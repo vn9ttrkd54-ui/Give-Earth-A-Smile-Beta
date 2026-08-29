@@ -57,7 +57,7 @@ export default function PublicProjectCard({
     : null;
 
   const primaryStatistic = isMalawi
-    ? project.statistics[1] ?? null
+    ? project.statistics[2] ?? null
     : isTaiwan
       ? project.statistics[1] ?? null
     : isPudhiyaShaktiProject
