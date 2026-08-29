@@ -6,8 +6,8 @@ import { getProjectBySlug } from "@/data/projects";
 
 const impactStatistics = [
   {
-    value: "919,150+ MWK",
-    secondaryValue: "Approximately $530 USD",
+    value: "$266 USD",
+    secondaryValue: "Approximately 461,000 MWK",
     label: "Raised to support the initiative",
   },
   {
@@ -118,7 +118,7 @@ export default function SeedsForChangeMalawiPage() {
                   In Spring 2026, Give Earth a Smile launched Seeds for Change,
                   a three-day environmental education initiative at Bwiba Full
                   Primary School in the rural Karonga District of Malawi. With
-                  more than 831,783 Malawian Kwacha raised, the project brought
+                  approximately $266 USD (461,000 Malawian Kwacha) raised, the project brought
                   together students and educators to explore the importance of
                   water conservation and environmental responsibility.
                 </p>
