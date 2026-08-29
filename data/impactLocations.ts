@@ -193,6 +193,21 @@ export const impactLocations: ImpactLocation[] = [
     description:
       "..."
   }, 
+  {
+  id: "ambassador-mason-tai",
+  type: "ambassador",
+  name: "Mason Tai",
+  title: "United States Ambassador",
+  city: "San Francisco",
+  state: "California",
+  country: "United States",
+  region: "United States",
+  latitude: 37.7749,
+  longitude: -122.4194,
+  image: "/images/ambassadors/mason-tai.jpg",
+  description:
+    "Representing Give Earth a Smile through youth-led environmental outreach in the United States.",
+  },
 
   /*
    * INTERNATIONAL AMBASSADORS

@@ -56,7 +56,7 @@ export const educationArticles: EducationArticle[] = [
     difficulty: "Beginner",
     author: "Give Earth a Smile Education Team",
     authorRole: "Environmental Education",
-    publishedDate: "August 1, 2026",
+    publishedDate: "August 2026",
     readingTime: 8,
     coverImage: "/images/education/climate-change-basics.jpg",
     featured: false,
