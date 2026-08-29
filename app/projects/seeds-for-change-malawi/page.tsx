@@ -425,16 +425,6 @@ export default function SeedsForChangeMalawiPage() {
 
                   <div>
                     <dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">
-                      Partner
-                    </dt>
-
-                    <dd className="mt-1 font-semibold">
-                      Robert Mhango
-                    </dd>
-                  </div>
-
-                  <div>
-                    <dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">
                       Duration
                     </dt>
 
@@ -449,6 +439,42 @@ export default function SeedsForChangeMalawiPage() {
                     <dd className="mt-1 font-semibold">Completed</dd>
                   </div>
                 </dl>
+              </div>
+
+              {/* Project Partner */}
+              <div className="overflow-hidden border border-[#294638] bg-[#FFFAF0]">
+                <div className="relative aspect-[4/3] bg-[#DDE7BE]">
+                  <Image
+                    src="/images/ambassadors/robert-mhango.jpg"
+                    alt="Robert Lwitiko Mhango"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 32vw"
+                    className="object-cover"
+                  />
+                </div>
+
+                <div className="p-7">
+                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">
+                    Project Partner
+                  </p>
+
+                  <h2 className="mt-4 text-3xl">
+                    Robert Lwitiko Mhango
+                  </h2>
+
+                  <p className="mt-2 font-semibold text-[#6F8172]">
+                    Founder and Executive Director, Mtuli Foundation
+                  </p>
+
+                  <p className="mt-5 leading-7 text-[#233F31]/70">
+                    Robert Lwitiko Mhango is from Karonga District in northern
+                    Malawi. He has extensive experience working with American
+                    professionals and implementing U.S. government-funded
+                    projects through the U.S. Department of State. His latest
+                    initiative is a CDAF project scheduled for implementation
+                    from September through December 2026.
+                  </p>
+                </div>
               </div>
             </aside>
           </FadeIn>
