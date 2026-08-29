@@ -425,6 +425,16 @@ export default function SeedsForChangeMalawiPage() {
 
                   <div>
                     <dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">
+                      Partner
+                    </dt>
+
+                    <dd className="mt-1 font-semibold">
+                      Robert Mhango
+                    </dd>
+                  </div>
+
+                  <div>
+                    <dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">
                       Duration
                     </dt>
 
