@@ -7,11 +7,8 @@ import {
   impactCountries,
   impactLocations,
 } from "@/data/impactLocations";
-import { getProjectBySlug } from "@/data/projects";
 
 export default function ImpactPage() {
-  const reLeafProject = getProjectBySlug("the-re-leaf-project");
-
   const ambassadors = impactLocations.filter(
     (location) => location.type === "ambassador",
   );
@@ -91,78 +88,6 @@ export default function ImpactPage() {
             </div>
           </FadeIn>
 
-          {reLeafProject && (
-            <FadeIn delay={280} className="mt-12">
-              <article className="grid overflow-hidden border border-[#294638] bg-[#FFFAF0] shadow-sm lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-                <div className="relative min-h-72 bg-[#E9EFD1] lg:min-h-[420px]">
-                  <Image
-                    src={reLeafProject.coverImage}
-                    alt="The Re-Leaf Project recycling awareness campaign"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 45vw"
-                    className="object-cover"
-                  />
-                </div>
-
-                <div className="flex flex-col justify-center p-8 md:p-12">
-                  <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#6F8172]">
-                    Digital &amp; Community Impact
-                  </p>
-
-                  <div className="mt-5 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.16em]">
-                    <span className="border border-[#294638] px-3 py-2">
-                      {reLeafProject.category}
-                    </span>
-                    <span className="bg-[#F1F6C8] px-3 py-2">
-                      {reLeafProject.status}
-                    </span>
-                    <span className="border border-[#294638] px-3 py-2">
-                      {reLeafProject.location}
-                    </span>
-                  </div>
-
-                  <h2 className="mt-7 text-4xl leading-tight md:text-5xl">
-                    {reLeafProject.title}
-                  </h2>
-
-                  <p className="mt-5 text-lg font-bold leading-8 text-[#6F8172]">
-                    {reLeafProject.subtitle}
-                  </p>
-
-                  <p className="mt-5 leading-8 text-[#233F31]/80">
-                    {reLeafProject.shortDescription}
-                  </p>
-
-                  <div className="mt-8 grid grid-cols-2 gap-5 border-t border-[#294638]/20 pt-7">
-                    <div>
-                      <p className="font-[var(--font-heading)] text-3xl">
-                        100+
-                      </p>
-                      <p className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-[#6F8172]">
-                        Cards Distributed
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="font-[var(--font-heading)] text-3xl">
-                        Weekly
-                      </p>
-                      <p className="mt-1 text-xs font-bold uppercase tracking-[0.12em] text-[#6F8172]">
-                        Public Education
-                      </p>
-                    </div>
-                  </div>
-
-                  <Link
-                    href={`/projects/${reLeafProject.slug}`}
-                    className="mt-9 inline-flex w-fit items-center gap-3 bg-[#233F31] px-7 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-[#6F8172]"
-                  >
-                    Explore the Project <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
-              </article>
-            </FadeIn>
-          )}
         </div>
       </section>
 

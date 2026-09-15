@@ -149,7 +149,12 @@ export default function ImpactMapClient() {
     setMapView({
       latitude: location.latitude,
       longitude: location.longitude,
-      zoom: location.type === "project" ? 7 : 8,
+      zoom:
+        location.country === "Global"
+          ? 2
+          : location.type === "project"
+            ? 7
+            : 8,
     });
   }
 
@@ -174,7 +179,12 @@ export default function ImpactMapClient() {
       setMapView({
         latitude: firstCountryLocation.latitude,
         longitude: firstCountryLocation.longitude,
-        zoom: country === "United States" ? 4 : 5,
+        zoom:
+          country === "Global"
+            ? 2
+            : country === "United States"
+              ? 4
+              : 5,
       });
     }
   }

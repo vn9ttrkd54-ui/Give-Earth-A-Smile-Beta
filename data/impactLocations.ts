@@ -512,8 +512,29 @@ export const impactLocations: ImpactLocation[] = [
     image:
       "https://res.cloudinary.com/otmypjmz/image/upload/v1788921197/Screenshot_2026-09-08_at_10.33.11_PM_rruoh2.png",
   },
+  {
+    id: "project-the-re-leaf-project",
+    type: "project",
+    name: "The Re-Leaf Project",
+    title: "Recycling Awareness Campaign",
+    city: "Online and Community Outreach",
+    country: "Global",
+    region: "International",
+    latitude: 0,
+    longitude: 0,
+    description:
+      "An ongoing campaign created with Terracare that shares weekly recycling education and has distributed more than 100 awareness cards made from 100% recycled paper.",
+    category: "Environment",
+    projectSlug: "the-re-leaf-project",
+    image:
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1789443699/Screenshot_2026-09-14_at_11.41.32_PM_mds3zj.png",
+  },
 ];
 
 export const impactCountries = Array.from(
-  new Set(impactLocations.map((location) => location.country)),
+  new Set(
+    impactLocations
+      .map((location) => location.country)
+      .filter((country) => country !== "Global"),
+  ),
 ).sort((countryA, countryB) => countryA.localeCompare(countryB));
