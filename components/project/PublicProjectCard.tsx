@@ -108,11 +108,7 @@ export default function PublicProjectCard({
           alt={project.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className={
-            isReLeaf
-              ? "object-contain p-16 transition duration-500 group-hover:scale-105 md:p-20"
-              : "object-cover transition duration-500 group-hover:scale-105"
-          }
+          className="object-cover transition duration-500 group-hover:scale-105"
         />
 
         {project.featured && (
@@ -137,7 +133,7 @@ export default function PublicProjectCard({
               <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white p-0.5 shadow-md">
                 <Image
                   src="/images/partners/terracare.png"
-                  alt="TerraCare"
+                  alt="Terracare"
                   width={44}
                   height={44}
                   className="h-full w-full rounded-full object-cover"

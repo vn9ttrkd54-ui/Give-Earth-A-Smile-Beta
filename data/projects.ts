@@ -603,7 +603,8 @@ More than 100 cards have been created and distributed. By combining recurring on
 
     startDate: "2026",
 
-    coverImage: "/images/earth-icon.png",
+    coverImage:
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1789443699/Screenshot_2026-09-14_at_11.41.32_PM_mds3zj.png",
 
     featured: false,
 
@@ -648,7 +649,7 @@ More than 100 cards have been created and distributed. By combining recurring on
       "No new trees are harvested to produce the campaign cards.",
       "Weekly social media posts provide ongoing public recycling education.",
       "The campaign explains both what to recycle and what not to recycle.",
-      "Give Earth a Smile collaborated with TerraCare on the campaign.",
+      "Give Earth a Smile collaborated with Terracare on the campaign.",
     ],
   },
 ];
