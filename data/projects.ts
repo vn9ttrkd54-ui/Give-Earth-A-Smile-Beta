@@ -515,7 +515,7 @@ By connecting education, community service, and public outreach, the Santa Cruz 
     coverImage:
       "https://res.cloudinary.com/otmypjmz/image/upload/v1788921197/Screenshot_2026-09-08_at_10.33.11_PM_rruoh2.png",
 
-    featured: true,
+    featured: false,
 
     gallery: [
       "https://res.cloudinary.com/otmypjmz/image/upload/v1788921197/Screenshot_2026-09-08_at_10.33.11_PM_rruoh2.png",
@@ -608,8 +608,9 @@ More than 100 cards have been created and distributed. By combining recurring on
     featured: false,
 
     gallery: [
-      "https://res.cloudinary.com/otmypjmz/image/upload/v1789442144/Screenshot_2026-09-14_at_11.15.38_PM_t5akwt.png",
-      "https://res.cloudinary.com/otmypjmz/image/upload/v1789442130/Screenshot_2026-09-14_at_11.15.24_PM_aracyt.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1789443600/Screenshot_2026-09-14_at_11.39.54_PM_ptzm23.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1789443592/Screenshot_2026-09-14_at_11.39.45_PM_kquokh.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1789443699/Screenshot_2026-09-14_at_11.41.32_PM_mds3zj.png",
     ],
 
     statistics: [
@@ -623,7 +624,7 @@ More than 100 cards have been created and distributed. By combining recurring on
       },
       {
         value: "0",
-        label: "New trees harvested",
+        label: "Trees harvested for campaign cards",
       },
       {
         value: "Weekly",

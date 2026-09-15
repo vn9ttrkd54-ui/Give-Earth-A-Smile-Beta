@@ -79,32 +79,22 @@ export default function ReLeafProjectPage() {
 
   return (
     <main className="bg-[#FFFAF0] text-[#233F31]">
-      <section className="flex min-h-[560px] items-center bg-[#233F31] px-6 py-20 text-white">
-        <div className="mx-auto w-full max-w-7xl">
-          <FadeIn className="max-w-4xl">
-            <div className="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-[0.16em]">
-              <span className="border border-white/35 px-3 py-2">
-                {project.category}
-              </span>
-              <span className="bg-[#F1F6C8] px-3 py-2 text-[#233F31]">
-                {project.status}
-              </span>
-              <span className="border border-white/35 px-3 py-2">
-                Recycling Awareness
-              </span>
-            </div>
-
-            <p className="mt-7 text-sm font-bold uppercase tracking-[0.3em] text-[#B7CA7F]">
-              Education for Circular Action
-            </p>
-            <h1 className="mt-5 text-5xl text-white md:text-7xl">
-              {project.title}
-            </h1>
-            <p className="mt-7 max-w-3xl text-lg leading-8 text-white/75">
-              {project.subtitle}
-            </p>
-          </FadeIn>
-        </div>
+      <section className="bg-[#233F31] px-6 py-16 text-white md:py-20">
+        <FadeIn className="mx-auto max-w-7xl">
+          <Link href="/projects" className="mb-10 inline-flex items-center gap-3 border border-white/50 px-5 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-[#233F31]">
+            <span aria-hidden="true">←</span>
+            Back to Projects
+          </Link>
+          <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#B7CA7F]">
+            2026 · Online and Community Outreach
+          </p>
+          <h1 className="mt-5 max-w-5xl text-5xl leading-tight sm:text-6xl md:text-7xl">
+            {project.title}
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-white/80">
+            {project.subtitle}
+          </p>
+        </FadeIn>
       </section>
 
       <section className="px-6 py-16 md:py-20">
@@ -114,10 +104,7 @@ export default function ReLeafProjectPage() {
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#6F8172]">
                 Project Article
               </p>
-              <h2 className="mt-5 text-4xl md:text-5xl">
-                Rethinking Recycling, One Choice at a Time
-              </h2>
-              <div className="mt-7 space-y-5 text-lg leading-8 text-[#233F31]/75">
+              <div className="mt-8 space-y-5 text-lg leading-8 text-[#233F31]/75">
                 <p>
                   The Re-Leaf Project is an ongoing recycling awareness
                   campaign designed to make sustainable recycling practices
@@ -299,8 +286,8 @@ export default function ReLeafProjectPage() {
               </div>
 
               <div className="overflow-hidden border border-[#294638] bg-[#FFFAF0]">
-                <div className="relative aspect-square bg-[#DDE7BE]">
-                  <Image src="/images/partners/terracare.png" alt="TerraCare" fill sizes="(max-width: 1024px) 100vw, 32vw" className="object-cover" />
+                <div className="relative aspect-square bg-white p-10">
+                  <Image src="/images/partners/terracare.png" alt="TerraCare" fill sizes="(max-width: 1024px) 100vw, 32vw" className="object-contain p-10" />
                 </div>
                 <div className="p-7">
                   <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">Project Partner</p>
