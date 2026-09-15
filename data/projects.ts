@@ -624,8 +624,8 @@ More than 100 cards have been created and distributed. By combining recurring on
         label: "Recycled paper used for campaign cards",
       },
       {
-        value: "0",
-        label: "Trees harvested for campaign cards",
+        value: "No Trees",
+        label: "Harvested for campaign cards",
       },
       {
         value: "Weekly",
