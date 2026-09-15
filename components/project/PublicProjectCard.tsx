@@ -42,6 +42,9 @@ export default function PublicProjectCard({
   const isSantaCruzCleanup =
     project.slug === "santa-cruz-beach-cleanup";
 
+  const isReLeaf =
+    project.slug === "the-re-leaf-project";
+
   const isPudhiyaShaktiProject = [
     "smart-classrooms-odisha",
     "smart-classrooms-tamil-nadu",
@@ -65,6 +68,8 @@ export default function PublicProjectCard({
       ? project.statistics[1] ?? null
     : isSantaCruzCleanup
       ? project.statistics[0] ?? null
+    : isReLeaf
+      ? project.statistics[0] ?? null
     : isPudhiyaShaktiProject
       ? smartClassroomStudentStatistic
     : {
@@ -80,6 +85,8 @@ export default function PublicProjectCard({
       ? project.statistics[0] ?? null
     : isSantaCruzCleanup
       ? project.statistics[1] ?? null
+    : isReLeaf
+      ? project.statistics[1] ?? null
     : isPudhiyaShaktiProject
       ? smartClassroomFundingStatistic
     : {
@@ -91,27 +98,28 @@ export default function PublicProjectCard({
 
   return (
     <article className="group flex h-full flex-col overflow-hidden border border-[#294638] bg-[#FFFAF0] transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-      <Link
-        href={`/projects/${project.slug}`}
-        aria-label={`Read more about ${project.title}`}
-        className="relative block aspect-[4/3] overflow-hidden bg-[#DDE7BE]"
-      >
-        <Image
-          src={project.coverImage || fallbackImage}
-          alt={project.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition duration-500 group-hover:scale-105"
-        />
+      {!isReLeaf && (
+        <Link
+          href={`/projects/${project.slug}`}
+          aria-label={`Read more about ${project.title}`}
+          className="relative block aspect-[4/3] overflow-hidden bg-[#DDE7BE]"
+        >
+          <Image
+            src={project.coverImage || fallbackImage}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition duration-500 group-hover:scale-105"
+          />
 
-        {project.featured && (
-          <span className="absolute left-4 top-4 bg-[#233F31] px-3 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">
-            Featured
-          </span>
-        )}
+          {project.featured && (
+            <span className="absolute left-4 top-4 bg-[#233F31] px-3 py-2 text-xs font-bold uppercase tracking-[0.15em] text-white">
+              Featured
+            </span>
+          )}
 
-        {isPudhiyaShaktiProject && (
-          <div className="absolute right-4 top-4 flex gap-2">
+          {isPudhiyaShaktiProject && (
+            <div className="absolute right-4 top-4 flex gap-2">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white p-1 shadow-md">
               <Image
                 src="/images/earth-icon.png"
@@ -132,9 +140,10 @@ export default function PublicProjectCard({
                 }}
               />
             </div>
-          </div>
-        )}
-      </Link>
+            </div>
+          )}
+        </Link>
+      )}
 
       <div className="flex flex-1 flex-col p-7">
         <div className="flex flex-wrap gap-2">

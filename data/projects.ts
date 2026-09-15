@@ -1,6 +1,7 @@
 export type ProjectStatus =
   | "Planning"
   | "Active"
+  | "Ongoing"
   | "Completed";
 
 export type ProjectCategory =
@@ -568,6 +569,85 @@ By connecting education, community service, and public outreach, the Santa Cruz 
       "Volunteers learned about marine litter and safe cleanup practices.",
       "The project raised awareness about the effects of trash on beaches and coastal ecosystems.",
       "A heavily used public beach benefited from coordinated environmental service.",
+    ],
+  },
+  {
+    id: "project-the-re-leaf-project",
+    slug: "the-re-leaf-project",
+
+    title: "The Re-Leaf Project",
+
+    subtitle:
+      "Making sustainable recycling practices clear, practical, and visible.",
+
+    shortDescription:
+      "An ongoing recycling awareness campaign using weekly social media education and 100% recycled campaign cards to help the public understand what to recycle and what not to recycle.",
+
+    description: `
+The Re-Leaf Project is an ongoing recycling awareness campaign created to help the public make more informed and sustainable recycling decisions.
+
+Each week, the campaign publishes educational social media content about recycling practices, common sorting mistakes, and the environmental importance of responsible material use.
+
+The project also brings this information into community spaces through recycling facts campaign cards. The cards explain what should and should not be recycled in a clear, accessible format.
+
+Every card is made from 100% recycled paper derived from waste leftover sawmill wood chips. No new trees are harvested during the campaign card-making process, allowing the project materials to demonstrate the same responsible practices promoted by the campaign.
+
+More than 100 cards have been created and distributed. By combining recurring online education with tangible recycled-material resources, The Re-Leaf Project turns recycling awareness into an ongoing public learning effort.
+    `.trim(),
+
+    location: "Online and Community Outreach",
+    country: "Global",
+
+    category: "Environment",
+    status: "Ongoing",
+
+    startDate: "2026",
+
+    coverImage: "",
+
+    featured: false,
+
+    gallery: [
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1789442144/Screenshot_2026-09-14_at_11.15.38_PM_t5akwt.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1789442130/Screenshot_2026-09-14_at_11.15.24_PM_aracyt.png",
+    ],
+
+    statistics: [
+      {
+        value: "100+",
+        label: "Recycling facts cards made and distributed",
+      },
+      {
+        value: "100%",
+        label: "Recycled paper used for campaign cards",
+      },
+      {
+        value: "0",
+        label: "New trees harvested for card production",
+      },
+      {
+        value: "Weekly",
+        label: "Educational social media posts",
+      },
+    ],
+
+    goals: [
+      "Raise public awareness of sustainable recycling practices.",
+      "Explain clearly what belongs in recycling and what should be kept out.",
+      "Reduce confusion and contamination caused by incorrect recycling decisions.",
+      "Provide consistent recycling education through weekly social media content.",
+      "Model responsible material use through campaign cards made entirely from recycled paper.",
+      "Avoid harvesting new trees for the campaign card-making process.",
+    ],
+
+    results: [
+      "More than 100 recycling facts cards have been made and distributed.",
+      "All campaign cards are made from 100% recycled paper.",
+      "The recycled paper is derived from waste leftover sawmill wood chips.",
+      "No new trees are harvested to produce the campaign cards.",
+      "Weekly social media posts provide ongoing public recycling education.",
+      "The campaign explains both what to recycle and what not to recycle.",
+      "Give Earth a Smile collaborated with TerraCare on the campaign.",
     ],
   },
 ];
