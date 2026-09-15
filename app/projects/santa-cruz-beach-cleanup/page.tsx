@@ -73,8 +73,8 @@ export default function SantaCruzBeachCleanupPage() {
   return (
     <main className="bg-[#FFFAF0] text-[#233F31]">
       <section className="bg-[#233F31] px-6 py-16 text-white md:py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <FadeIn>
+        <div className="mx-auto max-w-7xl">
+          <FadeIn className="max-w-4xl">
             <div className="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-[0.16em]">
               <span className="border border-white/35 px-3 py-2">
                 {project.category}
@@ -100,18 +100,6 @@ export default function SantaCruzBeachCleanupPage() {
             </p>
           </FadeIn>
 
-          <FadeIn delay={100}>
-            <div className="relative aspect-[4/3] overflow-hidden border border-white/25 bg-[#DDE7BE]">
-              <Image
-                src={project.coverImage}
-                alt="Volunteers participating in the Santa Cruz Beach Cleanup"
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 48vw"
-                className="object-cover"
-              />
-            </div>
-          </FadeIn>
         </div>
       </section>
 
@@ -143,30 +131,6 @@ export default function SantaCruzBeachCleanupPage() {
                   of trash while helping spread awareness about beach pollution
                   and the choices that can prevent litter from reaching the
                   ocean.
-                </p>
-                <p>
-                  Main Beach is one of Santa Cruz&apos;s best-known public coastal
-                  spaces. Its popularity also means that discarded packaging,
-                  food waste, plastic fragments, and other litter can build up
-                  in areas used by visitors and wildlife. Wind, rain, and waves
-                  can move that waste toward Monterey Bay, turning a local
-                  litter problem into a broader marine issue.
-                </p>
-                <p>
-                  The educational portion of the project helped volunteers
-                  understand that a cleanup is more than simply picking up
-                  visible trash. Participants discussed where litter comes
-                  from, why some materials remain in the environment for long
-                  periods, and how debris can be swallowed by wildlife or cause
-                  entanglement. They also reviewed safe collection practices
-                  and the importance of working within an organized area.
-                </p>
-                <p>
-                  The cleanup translated that learning into measurable action.
-                  Volunteers moved through designated sections of the beach,
-                  collected visible debris, and filled four bags with waste.
-                  Working in teams allowed participants to cover the area more
-                  carefully while keeping the event coordinated and safe.
                 </p>
                 <p>
                   Awareness was an important part of the effort. The visible
