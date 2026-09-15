@@ -47,11 +47,11 @@ const sustainableDevelopmentGoals = [
       "Encouraging responsible disposal habits and greater awareness of how everyday consumption contributes to coastal waste.",
   },
   {
-    number: "13",
-    title: "Climate Action",
-    image: "/images/sdg/sdg-13.png",
+    number: "14",
+    title: "Life Below Water",
+    image: "/images/sdg/sdg-14.png",
     description:
-      "Building environmental knowledge and community participation through local, education-led action.",
+      "Reducing marine debris and protecting coastal ecosystems by removing litter before it can remain on the shoreline or enter the ocean.",
   },
   {
     number: "17",
@@ -119,7 +119,7 @@ export default function SantaCruzBeachCleanupPage() {
           <div className="space-y-14">
             <FadeIn>
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-[#6F8172]">
-                Project Overview
+                Project Article
               </p>
               <h2 className="mt-5 text-4xl md:text-5xl">
                 Learning First, Then Taking Action
@@ -143,6 +143,141 @@ export default function SantaCruzBeachCleanupPage() {
                   and the choices that can prevent litter from reaching the
                   ocean.
                 </p>
+                <p>
+                  Main Beach is one of Santa Cruz&apos;s best-known public coastal
+                  spaces. Its popularity also means that discarded packaging,
+                  food waste, plastic fragments, and other litter can build up
+                  in areas used by visitors and wildlife. Wind, rain, and waves
+                  can move that waste toward Monterey Bay, turning a local
+                  litter problem into a broader marine issue.
+                </p>
+                <p>
+                  The educational portion of the project helped volunteers
+                  understand that a cleanup is more than simply picking up
+                  visible trash. Participants discussed where litter comes
+                  from, why some materials remain in the environment for long
+                  periods, and how debris can be swallowed by wildlife or cause
+                  entanglement. They also reviewed safe collection practices
+                  and the importance of working within an organized area.
+                </p>
+                <p>
+                  The cleanup translated that learning into measurable action.
+                  Volunteers moved through designated sections of the beach,
+                  collected visible debris, and filled four bags with waste.
+                  Working in teams allowed participants to cover the area more
+                  carefully while keeping the event coordinated and safe.
+                </p>
+                <p>
+                  Awareness was an important part of the effort. The visible
+                  presence of volunteers created opportunities to encourage
+                  beach visitors to dispose of waste responsibly and recognize
+                  the connection between everyday habits and ocean health.
+                  These conversations helped extend the project&apos;s impact
+                  beyond the material collected during the event.
+                </p>
+                <p>
+                  The Santa Cruz Beach Cleanup reflects Give Earth a
+                  Smile&apos;s belief that environmental education is most
+                  effective when people can immediately apply what they learn.
+                  By combining knowledge, service, and public outreach, the
+                  project created a cleaner beach while helping volunteers and
+                  community members become more thoughtful stewards of the
+                  California coast.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn>
+              <div className="border-l-4 border-[#6F8172] bg-[#F1F6C8] p-7 md:p-9">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">
+                  Project Objective
+                </p>
+                <p className="mt-4 text-lg leading-8">
+                  Combine environmental education with direct community
+                  service by teaching volunteers about marine litter, safely
+                  removing trash from Main Beach, and raising awareness about
+                  preventing waste from reaching coastal ecosystems.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn>
+              <h3 className="text-3xl">Challenges and Opportunities</h3>
+              <ul className="mt-6 space-y-4">
+                {[
+                  "Litter can be carried from heavily used beach areas into Monterey Bay by wind, rain, and waves.",
+                  "Plastic and other persistent materials can remain in coastal environments and break into smaller fragments.",
+                  "Marine wildlife may ingest debris or become entangled in improperly discarded waste.",
+                  "Beach visitors may not recognize how individual disposal habits affect coastal and ocean health.",
+                  "A public cleanup provides an opportunity to combine visible service with environmental education.",
+                  "Volunteer activity can encourage wider community participation and responsible behavior.",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-4 border-b border-[#294638]/15 pb-4 leading-8"
+                  >
+                    <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-[#6F8172]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </FadeIn>
+
+            <FadeIn>
+              <h3 className="text-3xl">Project Solution</h3>
+              <ul className="mt-6 space-y-4">
+                {[
+                  "Begin with an educational session explaining beach pollution and its environmental effects.",
+                  "Review volunteer safety, cleanup boundaries, and responsible handling practices.",
+                  "Organize 18 volunteers into teams to clean Main Beach and nearby public areas.",
+                  "Collect and securely bag visible litter for appropriate disposal.",
+                  "Discuss the types of waste found and the ways they can affect wildlife and water quality.",
+                  "Spread awareness about preventing trash from reaching beaches and the ocean.",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-4 border-b border-[#294638]/15 pb-4 leading-8"
+                  >
+                    <span className="mt-1 font-[var(--font-heading)] text-xl text-[#6F8172]">
+                      ✓
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </FadeIn>
+
+            <FadeIn>
+              <h3 className="text-3xl">Project Benefits</h3>
+              <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                {[
+                  {
+                    title: "Cleaner Coastline",
+                    text: "Four bags of litter were removed from Main Beach before the waste could remain in the coastal environment or enter the ocean.",
+                  },
+                  {
+                    title: "Volunteer Education",
+                    text: "Eighteen volunteers strengthened their understanding of marine debris, wildlife impacts, and safe cleanup practices.",
+                  },
+                  {
+                    title: "Community Awareness",
+                    text: "The cleanup created visible opportunities to encourage responsible disposal and explain how beach litter affects ocean health.",
+                  },
+                  {
+                    title: "Youth-Led Action",
+                    text: "The project demonstrated how young people can turn environmental knowledge into organized, measurable community service.",
+                  },
+                ].map((benefit) => (
+                  <article
+                    key={benefit.title}
+                    className="border border-[#294638] bg-[#F1F6C8] p-6"
+                  >
+                    <h4 className="text-2xl">{benefit.title}</h4>
+                    <p className="mt-4 leading-7 text-[#233F31]/75">
+                      {benefit.text}
+                    </p>
+                  </article>
+                ))}
               </div>
             </FadeIn>
 
@@ -206,6 +341,25 @@ export default function SantaCruzBeachCleanupPage() {
 
           <FadeIn delay={120}>
             <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
+              <div className="border border-[#294638] bg-[#F1F6C8] p-7">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">
+                  Project File
+                </p>
+                <h2 className="mt-4 text-3xl">Full Project Profile</h2>
+                <p className="mt-4 leading-7 text-[#233F31]/70">
+                  Read the complete project overview, objectives,
+                  implementation phases, activity plan, and outcomes.
+                </p>
+                <a
+                  href="/files/santa-cruz-beach-cleanup.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-7 block bg-[#233F31] px-6 py-4 text-center font-bold text-white transition hover:bg-[#6F8172]"
+                >
+                  Open Project File
+                </a>
+              </div>
+
               <div className="border border-[#294638] bg-[#233F31] p-7 text-white">
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#B7CA7F]">
                   Project Impact
@@ -262,24 +416,6 @@ export default function SantaCruzBeachCleanupPage() {
                 </dl>
               </div>
 
-              <div className="border border-[#294638] bg-[#F1F6C8] p-7">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">
-                  Project File
-                </p>
-                <h2 className="mt-4 text-3xl">Full Project Profile</h2>
-                <p className="mt-4 leading-7 text-[#233F31]/70">
-                  Read the project overview, implementation phases, activity
-                  plan, and outcomes.
-                </p>
-                <a
-                  href="/files/santa-cruz-beach-cleanup.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-7 block bg-[#233F31] px-6 py-4 text-center font-bold text-white transition hover:bg-[#6F8172]"
-                >
-                  Open Project File
-                </a>
-              </div>
             </aside>
           </FadeIn>
         </div>
