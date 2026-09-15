@@ -494,6 +494,24 @@ export const impactLocations: ImpactLocation[] = [
   image:
     "https://res.cloudinary.com/otmypjmz/image/upload/f_auto,q_auto/v1785049566/cover_l8tbni.jpg",
   },
+  {
+    id: "project-santa-cruz-beach-cleanup",
+    type: "project",
+    name: "Santa Cruz Beach Cleanup",
+    title: "Environmental Education and Coastal Cleanup",
+    city: "Santa Cruz",
+    state: "California",
+    country: "United States",
+    region: "United States",
+    latitude: 36.964,
+    longitude: -122.0174,
+    description:
+      "An education-led cleanup where 18 volunteers removed four bags of trash from Main Beach and raised awareness about the effects of beach pollution.",
+    category: "Environment",
+    projectSlug: "santa-cruz-beach-cleanup",
+    image:
+      "/images/projects/santa-cruz-beach-cleanup/cover.svg",
+  },
 ];
 
 export const impactCountries = Array.from(

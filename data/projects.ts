@@ -478,6 +478,81 @@ Give Earth a Smile is working toward bringing these educational voices into the 
       "More than $1,200 in plants, fertilizer, and other resources supported the project.",
     ],
   },
+  {
+    id: "project-santa-cruz-beach-cleanup",
+    slug: "santa-cruz-beach-cleanup",
+
+    title: "Santa Cruz Beach Cleanup",
+
+    subtitle:
+      "Combining environmental education with hands-on action to protect California's coast.",
+
+    shortDescription:
+      "Eighteen volunteers began with an educational session before cleaning Main Beach in Santa Cruz, collecting four bags of trash and raising awareness about beach pollution.",
+
+    description: `
+Give Earth a Smile organized an education-led cleanup at Main Beach in Santa Cruz, California. The project brought volunteers together to learn about marine litter and take direct action to protect a shared coastal environment.
+
+The event began with an educational session about beach cleanups, including how trash reaches the shoreline, how litter can affect wildlife and ocean health, and how volunteers can collect debris safely and responsibly.
+
+Following the session, 18 volunteers worked together across Main Beach to remove visible litter from the shoreline and surrounding public areas. By the end of the cleanup, the group had collected four bags of trash.
+
+The project extended beyond removing waste. Volunteers also helped spread awareness about trash on beaches, its effects on coastal ecosystems, and the everyday choices that can prevent litter from reaching the ocean.
+
+By connecting education, community service, and public outreach, the Santa Cruz Beach Cleanup demonstrated how informed volunteer action can create an immediate local benefit while encouraging longer-term environmental responsibility.
+    `.trim(),
+
+    location: "Main Beach, Santa Cruz, California",
+    country: "United States",
+
+    category: "Environment",
+    status: "Completed",
+
+    startDate: "2026",
+    endDate: "2026",
+
+    coverImage:
+      "/images/projects/santa-cruz-beach-cleanup/cover.svg",
+
+    featured: true,
+
+    gallery: [],
+
+    statistics: [
+      {
+        value: "18",
+        label: "Volunteers engaged",
+      },
+      {
+        value: "4 Bags",
+        label: "Trash collected",
+      },
+      {
+        value: "1",
+        label: "Environmental education session",
+      },
+      {
+        value: "Main Beach",
+        label: "Santa Cruz coastline cleaned",
+      },
+    ],
+
+    goals: [
+      "Teach volunteers how beach litter affects wildlife, water quality, and coastal ecosystems.",
+      "Prepare volunteers to participate in a safe and organized beach cleanup.",
+      "Remove litter from Main Beach before it could remain on the shoreline or enter the ocean.",
+      "Raise public awareness about beach pollution and responsible waste disposal.",
+      "Connect environmental education with direct, community-based action.",
+    ],
+
+    results: [
+      "18 volunteers participated in the educational session and cleanup.",
+      "Four bags of trash were removed from Main Beach.",
+      "Volunteers learned about marine litter and safe cleanup practices.",
+      "The project raised awareness about the effects of trash on beaches and coastal ecosystems.",
+      "A heavily used public beach benefited from coordinated environmental service.",
+    ],
+  },
 ];
 
 export function getAllProjects(): Project[] {

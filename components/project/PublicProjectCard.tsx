@@ -39,6 +39,9 @@ export default function PublicProjectCard({
   const isTaiwan =
     project.slug === "seeds-for-change-taiwan";
 
+  const isSantaCruzCleanup =
+    project.slug === "santa-cruz-beach-cleanup";
+
   const isPudhiyaShaktiProject = [
     "smart-classrooms-odisha",
     "smart-classrooms-tamil-nadu",
@@ -60,6 +63,8 @@ export default function PublicProjectCard({
     ? project.statistics[2] ?? null
     : isTaiwan
       ? project.statistics[1] ?? null
+    : isSantaCruzCleanup
+      ? project.statistics[0] ?? null
     : isPudhiyaShaktiProject
       ? smartClassroomStudentStatistic
     : {
@@ -73,6 +78,8 @@ export default function PublicProjectCard({
     ? project.statistics[0] ?? null
     : isTaiwan
       ? project.statistics[0] ?? null
+    : isSantaCruzCleanup
+      ? project.statistics[1] ?? null
     : isPudhiyaShaktiProject
       ? smartClassroomFundingStatistic
     : {

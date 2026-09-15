@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-labelledby="title description">
+  <title id="title">Santa Cruz Beach Cleanup</title>
+  <description id="description">A branded illustration of the California coast with volunteers collecting litter.</description>
+  <rect width="1600" height="1200" fill="#dcebdc"/>
+  <rect y="610" width="1600" height="590" fill="#f4dfad"/>
+  <path d="M0 455 C260 380 445 540 700 462 C955 384 1180 510 1600 400 L1600 720 C1240 790 1010 655 735 745 C470 830 250 670 0 760Z" fill="#80bdc5"/>
+  <path d="M0 540 C250 465 455 622 710 545 C965 468 1190 590 1600 490" fill="none" stroke="#fffaf0" stroke-width="28" opacity=".9"/>
+  <circle cx="1228" cy="228" r="94" fill="#f1f6c8"/>
+  <g fill="#294638">
+    <circle cx="520" cy="670" r="38"/>
+    <path d="M482 720 Q520 690 558 720 L580 900 L460 900Z"/>
+    <path d="M488 760 L370 850" fill="none" stroke="#294638" stroke-width="34" stroke-linecap="round"/>
+    <circle cx="350" cy="873" r="20"/>
+    <circle cx="810" cy="680" r="38"/>
+    <path d="M772 730 Q810 700 848 730 L872 910 L748 910Z"/>
+    <path d="M840 770 L965 850" fill="none" stroke="#294638" stroke-width="34" stroke-linecap="round"/>
+    <rect x="945" y="835" width="90" height="120" rx="18"/>
+  </g>
+  <g transform="translate(105,110)">
+    <rect width="890" height="235" rx="8" fill="#233f31"/>
+    <text x="54" y="92" fill="#f1f6c8" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="7">COMMUNITY ACTION</text>
+    <text x="54" y="172" fill="#ffffff" font-family="Georgia, serif" font-size="52" font-weight="700">Santa Cruz Beach Cleanup</text>
+  </g>
+  <text x="108" y="1090" fill="#294638" font-family="Arial, Helvetica, sans-serif" font-size="35" font-weight="700">18 VOLUNTEERS  •  4 BAGS OF TRASH  •  MAIN BEACH</text>
+</svg>
