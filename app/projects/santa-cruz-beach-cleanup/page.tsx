@@ -79,7 +79,7 @@ export default function SantaCruzBeachCleanupPage() {
             Back to Projects
           </Link>
           <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#B7CA7F]">
-            2026 · Main Beach, Santa Cruz, California
+            Fall 2026 · Main Beach, Santa Cruz, California
           </p>
           <h1 className="mt-5 max-w-5xl text-5xl leading-tight sm:text-6xl md:text-7xl">
               {project.title}

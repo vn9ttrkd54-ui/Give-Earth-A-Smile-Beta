@@ -86,7 +86,7 @@ export default function ReLeafProjectPage() {
             Back to Projects
           </Link>
           <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#B7CA7F]">
-            2026 · Online and Community Outreach
+            Fall 2026 · Online and Community Outreach
           </p>
           <h1 className="mt-5 max-w-5xl text-5xl leading-tight sm:text-6xl md:text-7xl">
             {project.title}
@@ -106,9 +106,10 @@ export default function ReLeafProjectPage() {
               </p>
               <div className="mt-8 space-y-5 text-lg leading-8 text-[#233F31]/75">
                 <p>
-                  The Re-Leaf Project is an ongoing recycling awareness
-                  campaign designed to make sustainable recycling practices
-                  easier for the public to understand and apply.
+                  Give Earth a Smile partnered with TerraCare to create The
+                  Re-Leaf Project, an ongoing recycling awareness campaign
+                  designed to make sustainable recycling practices easier for
+                  the public to understand and apply.
                 </p>
                 <p>
                   Recycling can become confusing when rules differ between
@@ -136,11 +137,11 @@ export default function ReLeafProjectPage() {
                   demonstrate the responsible practices they promote.
                 </p>
                 <p>
-                  Through collaboration with TerraCare, The Re-Leaf Project
-                  combines ongoing education, responsible production, and
-                  community outreach. The result is a campaign that encourages
-                  better recycling decisions while showing how thoughtful
-                  material choices can reduce environmental impact.
+                  Together, Give Earth a Smile and TerraCare combine ongoing
+                  education, responsible production, and community outreach.
+                  The result is a campaign that encourages better recycling
+                  decisions while showing how thoughtful material choices can
+                  reduce environmental impact.
                 </p>
               </div>
             </FadeIn>
@@ -278,22 +279,12 @@ export default function ReLeafProjectPage() {
               <div className="border border-[#294638] bg-[#FFFAF0] p-7">
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">Project Details</p>
                 <dl className="mt-6 space-y-5">
+                  <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Partner</dt><dd className="mt-1 font-semibold">TerraCare</dd></div>
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Project Type</dt><dd className="mt-1 font-semibold">Recycling Awareness Campaign</dd></div>
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Location</dt><dd className="mt-1 font-semibold">Online and Community Outreach</dd></div>
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Focus</dt><dd className="mt-1 font-semibold">Sustainable Recycling &amp; Public Education</dd></div>
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Status</dt><dd className="mt-1 font-semibold">Ongoing</dd></div>
                 </dl>
-              </div>
-
-              <div className="overflow-hidden border border-[#294638] bg-[#FFFAF0]">
-                <div className="relative aspect-square bg-white p-10">
-                  <Image src="/images/partners/terracare.png" alt="TerraCare" fill sizes="(max-width: 1024px) 100vw, 32vw" className="object-contain p-10" />
-                </div>
-                <div className="p-7">
-                  <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">Project Partner</p>
-                  <h2 className="mt-4 text-3xl">TerraCare</h2>
-                  <p className="mt-5 leading-7 text-[#233F31]/70">TerraCare collaborated with Give Earth a Smile on The Re-Leaf Project, supporting shared outreach and the effort to make sustainable recycling education accessible through digital content and recycled-material campaign cards.</p>
-                </div>
               </div>
             </aside>
           </FadeIn>
