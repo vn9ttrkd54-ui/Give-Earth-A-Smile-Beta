@@ -259,9 +259,7 @@ export default function ReLeafProjectPage() {
             <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
               <div className="border border-[#294638] bg-[#F1F6C8] p-7">
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#6F8172]">Project File</p>
-                <h2 className="mt-4 text-3xl">Full Project Profile</h2>
-                <p className="mt-4 leading-7 text-[#233F31]/70">Read the complete campaign overview, implementation phases, audience strategy, and activity plan.</p>
-                <a href="/files/the-re-leaf-project.pdf" target="_blank" rel="noopener noreferrer" className="mt-7 block bg-[#233F31] px-6 py-4 text-center font-bold text-white transition hover:bg-[#6F8172]">Open Project File</a>
+                <h2 className="mt-4 text-3xl">Coming Soon</h2>
               </div>
 
               <div className="border border-[#294638] bg-[#233F31] p-7 text-white">
