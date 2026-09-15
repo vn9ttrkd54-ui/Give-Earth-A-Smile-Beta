@@ -45,6 +45,100 @@ export type EducationArticle = {
 
 export const educationArticles: EducationArticle[] = [
   {
+    id: "article-circular-economy",
+    slug: "circular-economy-designing-out-waste",
+    title: "The Circular Economy: Designing Out Waste",
+    subtitle:
+      "How thoughtful design, reuse, repair, and recycling can keep materials in use for longer.",
+    description:
+      "Explore how a circular economy moves beyond throwing products away by preventing waste and keeping useful materials in circulation.",
+    category: "Waste and Recycling",
+    difficulty: "Intermediate",
+    author: "Give Earth a Smile Education Team",
+    authorRole: "Sustainability Education",
+    publishedDate: "September 2026",
+    readingTime: 9,
+    coverImage: "/images/education/recycling.jpg",
+    featured: false,
+    tags: [
+      "Circular Economy",
+      "Waste Prevention",
+      "Reuse",
+      "Sustainable Design",
+    ],
+    sections: [
+      {
+        id: "linear-and-circular-systems",
+        title: "From a Linear System to a Circular One",
+        paragraphs: [
+          "Many products follow a linear path: materials are extracted, turned into products, used, and then discarded. This system can consume natural resources quickly while creating waste at every stage.",
+          "A circular economy aims to prevent waste before it is created. Products and systems are planned so that materials can remain useful through maintenance, reuse, repair, refurbishment, or responsible recycling.",
+        ],
+        keyPoints: [
+          "Linear systems often follow a take, make, and discard pattern.",
+          "Circular systems seek to keep products and materials useful for longer.",
+          "Preventing waste begins before an item reaches the recycling bin.",
+        ],
+      },
+      {
+        id: "designing-for-longer-use",
+        title: "Designing Products for Longer Use",
+        paragraphs: [
+          "The design of a product affects how long it can be used. Durable materials, replaceable parts, clear repair instructions, and packaging that uses fewer resources can all reduce unnecessary waste.",
+          "Designers must also consider what happens at the end of a product’s useful life. Products made from materials that can be safely separated are often easier to repair, recover, or recycle than products made from many permanently combined materials.",
+        ],
+        keyPoints: [
+          "Durability can reduce the need for frequent replacement.",
+          "Repairable products can remain useful instead of being discarded.",
+          "Material choices influence whether parts can be recovered later.",
+        ],
+      },
+      {
+        id: "reuse-before-recycling",
+        title: "Keeping Materials in Use",
+        paragraphs: [
+          "Recycling is an important tool, but it is not the only way to keep materials out of the trash. Sharing, repairing, donating, refilling, and repurposing can preserve more of a product’s original value and delay the need for new materials.",
+          "The best option depends on the item and the local system. An object should only be donated if it is safe and genuinely usable, while recycling instructions should always follow local guidelines.",
+        ],
+        keyPoints: [
+          "Reuse and repair can extend a product’s useful life.",
+          "Recycling rules differ between communities.",
+          "Responsible donation means passing along items that others can actually use.",
+        ],
+      },
+      {
+        id: "student-circular-action",
+        title: "Building Circular Habits at School",
+        paragraphs: [
+          "Students can begin by observing which items their school regularly purchases and discards. A simple waste audit may reveal opportunities to reduce disposable supplies, improve reuse systems, or make recycling instructions clearer.",
+          "A focused project could include a school supply exchange, a repair workshop, a reusable event plan, or an educational campaign about correct recycling. Tracking participation and materials saved helps show whether the project is making a difference.",
+        ],
+        keyPoints: [
+          "Study the waste problem before selecting a solution.",
+          "Choose one practical change that students can maintain.",
+          "Measure results and improve the project over time.",
+        ],
+      },
+    ],
+    takeaways: [
+      "A circular economy seeks to prevent waste and keep materials in use.",
+      "Product design influences durability, repairability, and recyclability.",
+      "Reuse and repair can preserve resources before recycling is needed.",
+      "Students can build circular habits through focused, measurable school projects.",
+    ],
+    discussionQuestions: [
+      "Which products at your school are replaced or discarded most often?",
+      "How could one of those products be reused, repaired, or redesigned?",
+      "What would you measure to determine whether a circular project was successful?",
+    ],
+    relatedArticleSlugs: [
+      "understanding-recycling",
+      "fast-fashion-environmental-impact",
+      "building-a-sustainable-school",
+    ],
+  },
+
+  {
     id: "article-renewable-energy-basics",
     slug: "renewable-energy-basics",
     title: "Renewable Energy: Powering a Sustainable Future",
