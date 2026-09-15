@@ -517,11 +517,12 @@ export const impactLocations: ImpactLocation[] = [
     type: "project",
     name: "The Re-Leaf Project",
     title: "Recycling Awareness Campaign",
-    city: "Online and Community Outreach",
-    country: "Global",
-    region: "International",
-    latitude: 0,
-    longitude: 0,
+    city: "Orlando",
+    state: "Florida",
+    country: "United States",
+    region: "United States",
+    latitude: 28.5383,
+    longitude: -81.3792,
     description:
       "An ongoing campaign created with Terracare that shares weekly recycling education and has distributed more than 100 awareness cards made from 100% recycled paper.",
     category: "Environment",
@@ -532,9 +533,5 @@ export const impactLocations: ImpactLocation[] = [
 ];
 
 export const impactCountries = Array.from(
-  new Set(
-    impactLocations
-      .map((location) => location.country)
-      .filter((country) => country !== "Global"),
-  ),
+  new Set(impactLocations.map((location) => location.country)),
 ).sort((countryA, countryB) => countryA.localeCompare(countryB));

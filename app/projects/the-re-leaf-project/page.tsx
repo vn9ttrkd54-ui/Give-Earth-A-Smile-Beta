@@ -86,7 +86,7 @@ export default function ReLeafProjectPage() {
             Back to Projects
           </Link>
           <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#B7CA7F]">
-            Fall 2026 · Online and Community Outreach
+            Fall 2026 · {project.location}
           </p>
           <h1 className="mt-5 max-w-5xl text-5xl leading-tight sm:text-6xl md:text-7xl">
             {project.title}
@@ -279,7 +279,7 @@ export default function ReLeafProjectPage() {
                 <dl className="mt-6 space-y-5">
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Partner</dt><dd className="mt-1 font-semibold">Terracare</dd></div>
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Project Type</dt><dd className="mt-1 font-semibold">Recycling Awareness Campaign</dd></div>
-                  <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Location</dt><dd className="mt-1 font-semibold">Online and Community Outreach</dd></div>
+                  <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Location</dt><dd className="mt-1 font-semibold">{project.location}</dd></div>
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Focus</dt><dd className="mt-1 font-semibold">Sustainable Recycling &amp; Public Education</dd></div>
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Status</dt><dd className="mt-1 font-semibold">Ongoing</dd></div>
                 </dl>

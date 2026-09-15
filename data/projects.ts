@@ -595,8 +595,8 @@ Every card is made from 100% recycled paper derived from waste leftover sawmill 
 More than 100 cards have been created and distributed. By combining recurring online education with tangible recycled-material resources, The Re-Leaf Project turns recycling awareness into an ongoing public learning effort.
     `.trim(),
 
-    location: "Online and Community Outreach",
-    country: "Global",
+    location: "Orlando, Florida",
+    country: "United States",
 
     category: "Environment",
     status: "Ongoing",
