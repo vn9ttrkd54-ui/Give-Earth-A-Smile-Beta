@@ -79,8 +79,8 @@ export default function ReLeafProjectPage() {
 
   return (
     <main className="bg-[#FFFAF0] text-[#233F31]">
-      <section className="bg-[#233F31] px-6 py-16 text-white md:py-20">
-        <div className="mx-auto max-w-7xl">
+      <section className="flex min-h-[560px] items-center bg-[#233F31] px-6 py-20 text-white">
+        <div className="mx-auto w-full max-w-7xl">
           <FadeIn className="max-w-4xl">
             <div className="flex flex-wrap gap-2 text-xs font-bold uppercase tracking-[0.16em]">
               <span className="border border-white/35 px-3 py-2">

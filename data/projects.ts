@@ -603,7 +603,7 @@ More than 100 cards have been created and distributed. By combining recurring on
 
     startDate: "2026",
 
-    coverImage: "",
+    coverImage: "/images/earth-icon.png",
 
     featured: false,
 
@@ -623,7 +623,7 @@ More than 100 cards have been created and distributed. By combining recurring on
       },
       {
         value: "0",
-        label: "New trees harvested for card production",
+        label: "New trees harvested",
       },
       {
         value: "Weekly",
