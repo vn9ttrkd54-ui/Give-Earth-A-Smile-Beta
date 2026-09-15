@@ -510,7 +510,7 @@ export const impactLocations: ImpactLocation[] = [
     category: "Environment",
     projectSlug: "santa-cruz-beach-cleanup",
     image:
-      "/images/projects/santa-cruz-beach-cleanup/cover.svg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921197/Screenshot_2026-09-08_at_10.33.11_PM_rruoh2.png",
   },
 ];
 

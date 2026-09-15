@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FadeIn from "@/components/FadeIn";
+import SantaCruzProjectGallery from "@/components/project/SantaCruzProjectGallery";
 import { getProjectBySlug } from "@/data/projects";
 
 export const metadata: Metadata = {
@@ -103,7 +104,7 @@ export default function SantaCruzBeachCleanupPage() {
             <div className="relative aspect-[4/3] overflow-hidden border border-white/25 bg-[#DDE7BE]">
               <Image
                 src={project.coverImage}
-                alt="Illustration for the Santa Cruz Beach Cleanup"
+                alt="Volunteers participating in the Santa Cruz Beach Cleanup"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 48vw"
@@ -458,6 +459,19 @@ export default function SantaCruzBeachCleanupPage() {
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-[#FFFAF0] px-6 py-16 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <FadeIn className="text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-[#6F8172]">Project Photos</p>
+            <h2 className="mt-5 text-4xl md:text-5xl">Santa Cruz Cleanup Gallery</h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#233F31]/70">Volunteers learning about beach pollution and taking action at Main Beach in Santa Cruz.</p>
+          </FadeIn>
+          <FadeIn delay={120} className="mt-10">
+            <SantaCruzProjectGallery images={project.gallery} />
+          </FadeIn>
         </div>
       </section>
 

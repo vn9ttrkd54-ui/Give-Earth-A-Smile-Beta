@@ -512,11 +512,28 @@ By connecting education, community service, and public outreach, the Santa Cruz 
     endDate: "2026",
 
     coverImage:
-      "/images/projects/santa-cruz-beach-cleanup/cover.svg",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921197/Screenshot_2026-09-08_at_10.33.11_PM_rruoh2.png",
 
     featured: true,
 
-    gallery: [],
+    gallery: [
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921197/Screenshot_2026-09-08_at_10.33.11_PM_rruoh2.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921335/Screenshot_2026-09-08_at_10.35.26_PM_c1yhsg.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921325/Screenshot_2026-09-08_at_10.35.16_PM_fqbone.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921315/Screenshot_2026-09-08_at_10.35.07_PM_mdyhrc.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921305/Screenshot_2026-09-08_at_10.34.57_PM_ale3cb.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921296/Screenshot_2026-09-08_at_10.34.48_PM_dnkpgk.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921287/Screenshot_2026-09-08_at_10.34.37_PM_qoy8zd.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921276/Screenshot_2026-09-08_at_10.34.28_PM_n2ydnv.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921265/Screenshot_2026-09-08_at_10.34.18_PM_apy82z.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921250/Screenshot_2026-09-08_at_10.34.03_PM_mxevww.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921241/Screenshot_2026-09-08_at_10.33.53_PM_a2kcte.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921226/Screenshot_2026-09-08_at_10.33.39_PM_dare6s.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921215/Screenshot_2026-09-08_at_10.33.28_PM_ctcmpb.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921205/Screenshot_2026-09-08_at_10.33.19_PM_wz91yq.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921183/Screenshot_2026-09-08_at_10.32.57_PM_iblpej.png",
+      "https://res.cloudinary.com/otmypjmz/image/upload/v1788921175/Screenshot_2026-09-08_at_10.32.50_PM_lb0kjo.png",
+    ],
 
     statistics: [
       {
