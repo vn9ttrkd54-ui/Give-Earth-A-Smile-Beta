@@ -21,7 +21,8 @@ export default function ReLeafProjectGallery({
     <div>
       <div className="relative aspect-[16/9] w-full overflow-hidden border border-[#294638] bg-[#E9EFD1] shadow-lg">
         <Image
-          src={selectedImage}
+          src={selectedImage.replace("/upload/f_auto,q_auto/", "/upload/")}
+          unoptimized
           alt={`The Re-Leaf Project campaign image ${selectedIndex + 1}`}
           fill
           sizes="(max-width: 1280px) 100vw, 1280px"

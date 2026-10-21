@@ -14,7 +14,7 @@ export default function SantaCruzProjectGallery({ images }: SantaCruzProjectGall
   return (
     <div>
       <div className="relative aspect-[16/9] w-full overflow-hidden border border-[#294638] bg-[#E9EFD1] shadow-lg">
-        <Image src={selectedImage} alt={`Santa Cruz Beach Cleanup project photo ${selectedIndex + 1}`} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-contain" />
+        <Image src={selectedImage.replace("/upload/f_auto,q_auto/", "/upload/")} unoptimized alt={`Santa Cruz Beach Cleanup project photo ${selectedIndex + 1}`} fill sizes="(max-width: 1280px) 100vw, 1280px" className="object-contain" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between gap-5 p-5 text-white md:p-8">
           <div>

@@ -23,7 +23,8 @@ export default function TaiwanProjectGallery({
       {/* Main Image */}
       <div className="relative aspect-[16/9] w-full overflow-hidden border border-[#294638] bg-[#E9EFD1] shadow-lg">
         <Image
-          src={selectedImage}
+          src={selectedImage.replace("/upload/f_auto,q_auto/", "/upload/")}
+          unoptimized
           alt={`Seeds for Change in Taiwan project photo ${
             selectedIndex + 1
           }`}
