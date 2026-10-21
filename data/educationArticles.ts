@@ -45,6 +45,99 @@ export type EducationArticle = {
 
 export const educationArticles: EducationArticle[] = [
   {
+    id: "article-stormwater-rain-gardens",
+    slug: "stormwater-rain-gardens",
+    title: "After the Rain: Protecting Water Where We Live",
+    subtitle:
+      "How everyday landscapes shape stormwater runoff—and how students can help protect local waterways.",
+    description:
+      "Follow rainwater through your community and discover how pollution prevention, rain gardens, and thoughtful school projects can protect water.",
+    category: "Community Action",
+    difficulty: "Beginner",
+    author: "Give Earth a Smile Education Team",
+    authorRole: "Environmental Education",
+    publishedDate: "October 2026",
+    readingTime: 4,
+    coverImage: "/images/education/biodiversity.jpg",
+    featured: false,
+    tags: [
+      "Stormwater",
+      "Water Quality",
+      "Rain Gardens",
+      "Community Action",
+    ],
+    sections: [
+      {
+        id: "where-rainwater-goes",
+        title: "Where Does Rainwater Go?",
+        paragraphs: [
+          "A rainy afternoon can reveal connections that are easy to miss on a dry day. Water runs from a school roof, crosses a parking lot, and disappears into a drain. That journey connects the places where we learn and live with the waterways around us.",
+          "Some rainfall soaks into the ground, while some flows over the surface as runoff. Roofs and paved areas leave fewer opportunities for water to enter the soil. Looking at these different surfaces helps us understand why the same storm can affect nearby places differently.",
+        ],
+        keyPoints: [
+          "Runoff is water that flows across the land surface.",
+          "Paved surfaces can prevent rain from soaking into the ground.",
+          "A school campus is part of a larger water system.",
+        ],
+      },
+      {
+        id: "rain-and-pollution",
+        title: "When Rain Carries More Than Water",
+        paragraphs: [
+          "As runoff moves across streets and yards, it can carry litter and other pollutants into local waters. Protecting a stream therefore begins beyond its banks: the condition of the surrounding land matters too.",
+          "Pollution prevention can start with small, consistent habits. Keep loose trash contained, dispose of pet waste properly, and follow local guidance for fertilizers and household chemicals. These actions address pollution before rainfall has a chance to carry it elsewhere.",
+        ],
+        keyPoints: [
+          "Runoff can move pollutants from land into water.",
+          "Everyday waste disposal choices affect local water quality.",
+          "Preventing pollution is part of protecting a watershed.",
+        ],
+      },
+      {
+        id: "landscapes-that-absorb-rain",
+        title: "Making Room for Rain",
+        paragraphs: [
+          "Communities can design landscapes to hold rain close to where it falls. A rain garden is a shallow planted area that temporarily collects runoff and allows it to filter through the ground. Other approaches include surfaces that let water pass through and planted channels that guide its flow.",
+          "These features need planning and maintenance. A suitable design depends on the soil, drainage, available space, and nearby buildings. Students can explore the idea with school staff and local specialists before proposing changes to a campus.",
+        ],
+        keyPoints: [
+          "Rain gardens temporarily collect and filter runoff.",
+          "Permeable surfaces provide another route for water into the ground.",
+          "Site conditions determine which approach is appropriate.",
+        ],
+      },
+      {
+        id: "student-stormwater-project",
+        title: "Turn Observation Into a School Project",
+        paragraphs: [
+          "Begin with a simple campus map. With a teacher, identify roofs, paved areas, planted spaces, and visible drains. Observe from safe locations after rainfall, noting where water collects and where litter tends to accumulate. Stay away from floodwater, roads, and drainage structures.",
+          "Use the observations to choose a practical goal, such as improving bin placement or creating a water-awareness display. Record what you change and revisit the same locations over time. Comparing observations helps students ask better questions and decide whether their project needs adjustment.",
+        ],
+        keyPoints: [
+          "Map the campus before choosing an action.",
+          "Observe safely with adult supervision.",
+          "Document changes and review the results.",
+        ],
+      },
+    ],
+    takeaways: [
+      "Rain connects everyday spaces with local waterways.",
+      "Runoff can carry pollution from the surrounding land.",
+      "Thoughtful landscapes can help manage rainfall.",
+      "Students can turn local observations into a focused school project.",
+    ],
+    discussionQuestions: [
+      "Where does rainwater appear to travel around your school?",
+      "Which everyday habits could reduce pollution along that route?",
+      "What would you record to evaluate a stormwater-awareness project?",
+    ],
+    relatedArticleSlugs: [
+      "water-conservation-every-drop-matters",
+      "native-plants-stronger-ecosystems",
+      "building-a-sustainable-school",
+    ],
+  },
+  {
     id: "article-circular-economy",
     slug: "circular-economy-designing-out-waste",
     title: "The Circular Economy: Designing Out Waste",

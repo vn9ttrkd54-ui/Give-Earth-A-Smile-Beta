@@ -524,7 +524,7 @@ export const impactLocations: ImpactLocation[] = [
     latitude: 28.5383,
     longitude: -81.3792,
     description:
-      "An ongoing campaign created with Terracare that shares weekly recycling education and has distributed more than 100 awareness cards made from 100% recycled paper.",
+      "A completed campaign created with Terracare that shared weekly recycling education and distributed more than 100 awareness cards made from 100% recycled paper.",
     category: "Environment",
     projectSlug: "the-re-leaf-project",
     image:
@@ -535,3 +535,7 @@ export const impactLocations: ImpactLocation[] = [
 export const impactCountries = Array.from(
   new Set(impactLocations.map((location) => location.country)),
 ).sort((countryA, countryB) => countryA.localeCompare(countryB));
+
+export const ambassadorCount = impactLocations.filter(
+  (location) => location.type === "ambassador",
+).length;

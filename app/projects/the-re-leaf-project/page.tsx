@@ -9,7 +9,7 @@ import { getProjectBySlug } from "@/data/projects";
 export const metadata: Metadata = {
   title: "The Re-Leaf Project | Give Earth a Smile",
   description:
-    "An ongoing recycling awareness campaign using weekly public education and campaign cards made from 100% recycled paper.",
+    "A completed recycling awareness campaign using weekly public education and campaign cards made from 100% recycled paper.",
 };
 
 const implementationPhases = [
@@ -107,7 +107,7 @@ export default function ReLeafProjectPage() {
               <div className="mt-8 space-y-5 text-lg leading-8 text-[#233F31]/75">
                 <p>
                   Give Earth a Smile partnered with Terracare to create The
-                  Re-Leaf Project, an ongoing recycling awareness campaign
+                  Re-Leaf Project, a recycling awareness campaign
                   designed to make sustainable recycling practices easier for
                   the public to understand and apply.
                 </p>
@@ -137,7 +137,7 @@ export default function ReLeafProjectPage() {
                   demonstrate the responsible practices they promote.
                 </p>
                 <p>
-                  Together, Give Earth a Smile and Terracare combine ongoing
+                  Together, Give Earth a Smile and Terracare combined
                   education, responsible production, and community outreach.
                   The result is a campaign that encourages better recycling
                   decisions while showing how thoughtful material choices can
@@ -281,7 +281,7 @@ export default function ReLeafProjectPage() {
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Project Type</dt><dd className="mt-1 font-semibold">Recycling Awareness Campaign</dd></div>
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Location</dt><dd className="mt-1 font-semibold">{project.location}</dd></div>
                   <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Focus</dt><dd className="mt-1 font-semibold">Sustainable Recycling &amp; Public Education</dd></div>
-                  <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Status</dt><dd className="mt-1 font-semibold">Ongoing</dd></div>
+                  <div><dt className="text-xs font-bold uppercase tracking-[0.15em] text-[#233F31]/55">Status</dt><dd className="mt-1 font-semibold">{project.status}</dd></div>
                 </dl>
               </div>
             </aside>

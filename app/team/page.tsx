@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { executiveTeam } from "@/data/team";
+import { ambassadorCount } from "@/data/impactLocations";
 
 export default function TeamPage() {
   return (
@@ -51,7 +52,7 @@ export default function TeamPage() {
         <h2 className="text-5xl">Our Ambassador Network</h2>
 
         <p className="mx-auto mt-6 max-w-3xl text-lg leading-8">
-          We currently have 26 ambassadors representing
+          We currently have {ambassadorCount} ambassadors representing
           locations throughout the United States and internationally.
         </p>
 

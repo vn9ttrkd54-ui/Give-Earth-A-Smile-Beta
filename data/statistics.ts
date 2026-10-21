@@ -1,3 +1,6 @@
+import { ambassadorCount } from "@/data/impactLocations";
+import { projects } from "@/data/projects";
+
 export type Statistic = {
   id: number;
   value: string;
@@ -12,7 +15,7 @@ export const statistics: Statistic[] = [
   },
   {
     id: 2,
-    value: "26",
+    value: String(ambassadorCount),
     label: "Global Ambassadors",
   },
   {
@@ -27,7 +30,7 @@ export const statistics: Statistic[] = [
   },
   {
     id: 5,
-    value: "5",
+    value: String(projects.length),
     label: "Projects and Initiatives",
   },
   {

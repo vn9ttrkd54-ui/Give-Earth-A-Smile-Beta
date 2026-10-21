@@ -581,25 +581,25 @@ By connecting education, community service, and public outreach, the Santa Cruz 
       "Making sustainable recycling practices clear, practical, and visible.",
 
     shortDescription:
-      "An ongoing recycling awareness campaign using weekly social media education and 100% recycled campaign cards to help the public understand what to recycle and what not to recycle.",
+      "A completed recycling awareness campaign that used weekly social media education and 100% recycled campaign cards to help the public understand what to recycle and what not to recycle.",
 
     description: `
-The Re-Leaf Project is an ongoing recycling awareness campaign created to help the public make more informed and sustainable recycling decisions.
+The Re-Leaf Project was a recycling awareness campaign created to help the public make more informed and sustainable recycling decisions.
 
-Each week, the campaign publishes educational social media content about recycling practices, common sorting mistakes, and the environmental importance of responsible material use.
+Each week, the campaign published educational social media content about recycling practices, common sorting mistakes, and the environmental importance of responsible material use.
 
 The project also brings this information into community spaces through recycling facts campaign cards. The cards explain what should and should not be recycled in a clear, accessible format.
 
 Every card is made from 100% recycled paper derived from waste leftover sawmill wood chips. No new trees are harvested during the campaign card-making process, allowing the project materials to demonstrate the same responsible practices promoted by the campaign.
 
-More than 100 cards have been created and distributed. By combining recurring online education with tangible recycled-material resources, The Re-Leaf Project turns recycling awareness into an ongoing public learning effort.
+More than 100 cards were created and distributed. By combining recurring online education with tangible recycled-material resources, The Re-Leaf Project helped bring practical recycling knowledge into the community.
     `.trim(),
 
     location: "Orlando, Florida",
     country: "United States",
 
     category: "Environment",
-    status: "Ongoing",
+    status: "Completed",
 
     startDate: "2026",
 
