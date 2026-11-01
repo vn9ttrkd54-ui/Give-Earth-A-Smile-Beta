@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Give Earth a Smile
 
-## Getting Started
+The organization's website brings project reports, environmental education, and
+its ambassador network together in one place. Visitors can browse projects,
+explore locations on a map, read educational articles, and apply to join.
 
-First, run the development server:
+## Local development
 
-```bash
+Install Node.js and npm, then run:
+
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. To check a change before deployment:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```sh
+npm run lint
+npx tsc --noEmit
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site uses Next.js App Router, React, TypeScript, and Tailwind CSS.
+Leaflet and OpenStreetMap provide the impact map. Cloudinary hosts project
+photos and videos; the large project galleries request original uploads to
+avoid additional image compression.
 
-## Learn More
+## Content and structure
 
-To learn more about Next.js, take a look at the following resources:
+- `app/` contains pages and the membership application endpoint.
+- `components/` contains the map, galleries, forms, navigation, and article UI.
+- `data/projects.ts` holds project summaries, gallery URLs, results, and status.
+- `data/impactLocations.ts` holds ambassadors and project map markers.
+- `data/educationArticles.ts` holds education articles and their related links.
+- `data/statistics.ts` defines impact figures. Project and ambassador counts
+  are calculated from their respective data arrays.
+- `public/` contains local images and downloadable project documents.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Content is maintained in the repository. Adding a project also requires its
+detail page and, when applicable, a corresponding map entry. Publishing updated
+data requires a new deployment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Membership applications
 
-## Deploy on Vercel
+`/api/membership-application` validates submitted fields and sends an email
+through Resend. Set `RESEND_API_KEY`, `MEMBERSHIP_FROM_EMAIL`, and
+`MEMBERSHIP_TO_EMAIL` in the deployment environment. The sender must be
+authorized by the Resend account.
+Never commit API keys or application submissions.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The endpoint checks request origin and content type, limits request and field
+sizes, and returns responses that are not cached. Its in-memory rate limiter
+applies to each server instance separately; it is not a shared, persistent
+limit across a distributed deployment. Security headers are configured in
+`next.config.ts`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+The project is intended for Vercel. With Git integration configured, pushing
+to the production branch triggers a build. Environment variables must be
+configured separately in Vercel.
+
+## Portfolio documentation
+
+For a portfolio submission, include your own account of the problem, design
+decisions, iterations, and testing. Identify your contributions and any
+collaborators, third-party assets, libraries, or AI assistance. Repository
+history and this README describe the implementation; they do not establish
+who authored each part.

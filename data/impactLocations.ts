@@ -20,13 +20,7 @@ export type ImpactLocation = {
 };
 
 export const impactLocations: ImpactLocation[] = [
-  /*
-   * UNITED STATES AMBASSADORS
-   *
-   * These currently use approximate Florida coordinates.
-   * Replace city, state, latitude, and longitude when you receive
-   * each ambassador's exact city.
-   */
+  // United States ambassadors. Map pins identify communities, not home addresses.
 
   {
     id: "ambassador-karishma-parghi",
@@ -209,12 +203,7 @@ export const impactLocations: ImpactLocation[] = [
     "Representing Give Earth a Smile through youth-led environmental outreach in the United States.",
   },
 
-  /*
-   * INTERNATIONAL AMBASSADORS
-   *
-   * Coordinates represent approximate city or country locations.
-   * Update them whenever you receive more specific information.
-   */
+  // International ambassadors. Coordinates are approximate city or country locations.
 
   {
     id: "ambassador-kejsi-papis",
@@ -418,9 +407,7 @@ export const impactLocations: ImpactLocation[] = [
 
   
 
-  /*
-   * PROJECT LOCATIONS
-   */
+  // Project locations link map markers to their project pages.
 
   {
     id: "project-seeds-for-change-taiwan",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 type AnimatedCounterProps = {
   value: string;
@@ -44,8 +45,9 @@ export default function AnimatedCounter({
   className = "",
 }: AnimatedCounterProps) {
   const containerRef = useRef<HTMLSpanElement | null>(null);
-  const hasAnimatedRef = useRef(false);
   const [displayValue, setDisplayValue] = useState("0");
+  const reducedMotion = useReducedMotion();
+  const validNumber = Number.isFinite(parseValue(value).number);
 
   useEffect(() => {
     const element = containerRef.current;
@@ -56,29 +58,16 @@ export default function AnimatedCounter({
 
     const parsed = parseValue(value);
 
-    if (!Number.isFinite(parsed.number)) {
-      setDisplayValue(value);
-      return;
-    }
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (prefersReducedMotion) {
-      setDisplayValue(value);
-      return;
-    }
+    if (!validNumber || reducedMotion) return;
 
     let animationFrameId = 0;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting || hasAnimatedRef.current) {
+        if (!entry.isIntersecting) {
           return;
         }
 
-        hasAnimatedRef.current = true;
         const startTime = performance.now();
 
         function animate(currentTime: number) {
@@ -117,11 +106,11 @@ export default function AnimatedCounter({
       observer.disconnect();
       cancelAnimationFrame(animationFrameId);
     };
-  }, [duration, value]);
+  }, [duration, value, reducedMotion, validNumber]);
 
   return (
     <span ref={containerRef} className={className}>
-      {displayValue}
+      {reducedMotion || !validNumber ? value : displayValue}
     </span>
   );
 }

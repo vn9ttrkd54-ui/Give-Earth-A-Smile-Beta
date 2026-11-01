@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import L from "leaflet";
 import {
@@ -476,9 +477,12 @@ export default function ImpactMapClient() {
                     <div className="impact-popup">
                       {location.type === "ambassador" && location.image && (
                         <div className="mb-4 overflow-hidden">
-                          <img
+                          <Image
                             src={location.image}
                             alt={location.name}
+                            width={320}
+                            height={176}
+                            sizes="320px"
                             className="h-44 w-full object-cover"
                           />
                         </div>

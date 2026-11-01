@@ -5,12 +5,10 @@ import {
   getFeaturedProjects,
 } from "@/data/projects";
 
-export default function DatabaseFeaturedProjects() {
+export default function FeaturedProjects() {
   let projects = getFeaturedProjects(3);
 
-  // Fallback:
-  // If no projects are marked as featured,
-  // show the first 3 projects instead.
+  // Keep the home page populated when no projects are marked as featured.
   if (projects.length === 0) {
     projects = getAllProjects().slice(0, 3);
   }

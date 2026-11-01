@@ -4,7 +4,7 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import FadeIn from "@/components/FadeIn";
 import SectionHeader from "@/components/SectionHeader";
 import { statistics } from "@/data/statistics";
-import DatabaseFeaturedProjects from "@/components/home/DatabaseFeaturedProjects";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
 
 const programs = [
   {
@@ -184,7 +184,7 @@ export default function AboutPage() {
           />
 
           <div className="mt-8">
-            <DatabaseFeaturedProjects />
+            <FeaturedProjects />
           </div>
         </div>
       </section>

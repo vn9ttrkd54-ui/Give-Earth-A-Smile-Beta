@@ -3,10 +3,9 @@ import Link from "next/link";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import FadeIn from "@/components/FadeIn";
 import Gallery from "@/components/Gallery";
-import ProjectCard from "@/components/ProjectCard";
 import SectionHeader from "@/components/SectionHeader";
 import { statistics } from "@/data/statistics";
-import DatabaseFeaturedProjects from "@/components/home/DatabaseFeaturedProjects";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
 
 export default function HomePage() {
   return (
@@ -146,7 +145,7 @@ export default function HomePage() {
           />
 
           <div className="mt-14">
-            <DatabaseFeaturedProjects />
+            <FeaturedProjects />
           </div>
 
           <FadeIn delay={250} className="mt-12 text-center">

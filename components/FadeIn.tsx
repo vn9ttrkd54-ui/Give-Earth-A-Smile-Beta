@@ -1,4 +1,5 @@
 "use client";
+import { useReducedMotion } from "@/lib/useReducedMotion";
 
 import {
   CSSProperties,
@@ -31,6 +32,7 @@ export default function FadeIn({
 }: FadeInProps) {
   const elementRef = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     const element = elementRef.current;
@@ -39,14 +41,7 @@ export default function FadeIn({
       return;
     }
 
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (prefersReducedMotion) {
-      setVisible(true);
-      return;
-    }
+    if (reducedMotion) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -71,7 +66,7 @@ export default function FadeIn({
     return () => {
       observer.disconnect();
     };
-  }, [once]);
+  }, [once, reducedMotion]);
 
   function getHiddenTransform() {
     switch (direction) {
@@ -89,8 +84,8 @@ export default function FadeIn({
   }
 
   const animationStyle: CSSProperties = {
-    opacity: visible ? 1 : 0,
-    transform: visible ? "translate3d(0, 0, 0)" : getHiddenTransform(),
+    opacity: visible || reducedMotion ? 1 : 0,
+    transform: visible || reducedMotion ? "translate3d(0, 0, 0)" : getHiddenTransform(),
     transitionProperty: "opacity, transform",
     transitionDuration: `${duration}ms`,
     transitionDelay: `${delay}ms`,

@@ -115,7 +115,7 @@ export default function SmartClassroomsOdishaPage() {
                   of the classroom and providing essential educational infrastructure. 
                   The completed classroom includes a 75-inch digital smart board, 
                   convertible whiteboard and smart board system with cubby storage 
-                  spaces, 26 pairs of student desks and benches, and a teacher's desk.
+                  spaces, 26 pairs of student desks and benches, and a teacher&apos;s desk.
 
                 </p>
 

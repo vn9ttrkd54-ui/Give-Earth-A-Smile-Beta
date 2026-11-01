@@ -1,7 +1,5 @@
 import {
   EducationArticle,
-  EducationCategory,
-  EducationDifficulty,
   educationArticles,
 } from "@/data/educationArticles";
 
@@ -15,25 +13,8 @@ export function getEducationArticleBySlug(
   return educationArticles.find((article) => article.slug === slug);
 }
 
-export function getFeaturedEducationArticles(): EducationArticle[] {
-  return educationArticles.filter((article) => article.featured);
-}
 
-export function getEducationArticlesByCategory(
-  category: EducationCategory,
-): EducationArticle[] {
-  return educationArticles.filter(
-    (article) => article.category === category,
-  );
-}
 
-export function getEducationArticlesByDifficulty(
-  difficulty: EducationDifficulty,
-): EducationArticle[] {
-  return educationArticles.filter(
-    (article) => article.difficulty === difficulty,
-  );
-}
 
 export function getRelatedEducationArticles(
   article: EducationArticle,

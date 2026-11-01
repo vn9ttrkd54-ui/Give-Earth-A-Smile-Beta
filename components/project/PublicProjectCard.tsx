@@ -7,7 +7,7 @@ type PublicProjectCardProps = {
 };
 
 const fallbackImage =
-  "/images/projects/project-placeholder.jpg";
+  "/images/earth-icon.png";
 
 function getStatisticValue(
   project: Project | undefined,

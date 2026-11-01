@@ -243,24 +243,3 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
-.admin-input {
-  margin-top: 0.5rem;
-  width: 100%;
-  border: 1px solid #294638;
-  background: white;
-  padding: 1rem;
-  color: #233f31;
-  outline: none;
-  transition:
-    box-shadow 150ms ease,
-    border-color 150ms ease;
-}
-
-.admin-input:focus {
-  border-color: #233f31;
-  box-shadow: 0 0 0 2px #b7ca7f;
-}
-
-.admin-input::placeholder {
-  color: rgba(35, 63, 49, 0.45);
-}

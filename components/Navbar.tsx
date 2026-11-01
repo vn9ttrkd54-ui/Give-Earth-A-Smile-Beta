@@ -43,10 +43,15 @@ const navigationLinks: NavigationLink[] = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [openMenuPath, setOpenMenuPath] = useState<string | null>(null);
+  const menuOpen = openMenuPath === pathname;
+
+  // Clear route-specific menu state when navigation changes the current page.
+  if (openMenuPath !== null && openMenuPath !== pathname) {
+    setOpenMenuPath(null);
+  }
 
   useEffect(() => {
-    setMenuOpen(false);
     document.body.style.overflow = "";
 
     window.scrollTo({
@@ -94,7 +99,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          onClick={() => setMenuOpen((current) => !current)}
+          onClick={() => setOpenMenuPath((current) => current === pathname ? null : pathname)}
           className="relative z-[60] flex h-12 w-12 flex-col items-center justify-center gap-[5px] border border-[#294638] text-[#233F31] transition-colors hover:bg-[#233F31] hover:text-white lg:hidden"
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}

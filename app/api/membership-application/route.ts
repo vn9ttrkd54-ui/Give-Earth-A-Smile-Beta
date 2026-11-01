@@ -31,6 +31,7 @@ type RateLimitEntry = {
   resetAt: number;
 };
 
+// Limits apply per server instance and reset when that instance restarts.
 const rateLimitStore = new Map<string, RateLimitEntry>();
 
 function json(data: object, status = 200, extraHeaders?: HeadersInit) {
