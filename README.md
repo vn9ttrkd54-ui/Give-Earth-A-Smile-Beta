@@ -1,5 +1,7 @@
 # Give Earth a Smile
 
+[Live website](https://give-earth-a-smile-beta.vercel.app/)
+
 A website for a youth-led environmental organization, connecting its community
 projects, educational resources, and ambassador network.
 
