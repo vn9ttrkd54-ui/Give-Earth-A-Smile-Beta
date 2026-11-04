@@ -91,6 +91,7 @@ export default function ReLeafProjectPage() {
           <h1 className="mt-5 max-w-5xl text-5xl leading-tight sm:text-6xl md:text-7xl">
             {project.title}
           </h1>
+          <ProjectHighlights photos={project.featuredPhotos ?? []} />
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/80">
             {project.subtitle}
           </p>
@@ -328,3 +329,4 @@ export default function ReLeafProjectPage() {
     </main>
   );
 }
+import ProjectHighlights from "@/components/project/ProjectHighlights";

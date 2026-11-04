@@ -84,6 +84,7 @@ export default function SeedsForChangeTaiwanPage() {
           <h1 className="mt-5 max-w-5xl text-5xl leading-tight sm:text-6xl md:text-7xl">
             Seeds for Change in Taiwan
           </h1>
+          <ProjectHighlights photos={project.featuredPhotos ?? []} />
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/80">
             Connecting environmental education with hands-on restoration,
@@ -525,3 +526,4 @@ export default function SeedsForChangeTaiwanPage() {
     </main>
   );
 }
+import ProjectHighlights from "@/components/project/ProjectHighlights";

@@ -134,6 +134,7 @@ export default function SmartClassroomsTamilNaduPage() {
             <h1 className="mt-8 max-w-5xl text-5xl leading-[1.05] md:text-7xl">
               Smart Classrooms in Tamil Nadu
             </h1>
+            <ProjectHighlights photos={project.featuredPhotos ?? []} />
 
             <p className="mt-8 max-w-4xl text-lg leading-8 text-white/75 md:text-xl">
               Expanding access to technology-enabled education, classroom
@@ -547,3 +548,4 @@ export default function SmartClassroomsTamilNaduPage() {
     </main>
   );
 }
+import ProjectHighlights from "@/components/project/ProjectHighlights";

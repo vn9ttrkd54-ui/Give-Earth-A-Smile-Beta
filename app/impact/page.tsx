@@ -91,6 +91,31 @@ export default function ImpactPage() {
         </div>
       </section>
 
+      <section id="partners" className="border-y border-[#294638]/20 bg-[#FFFAF0] px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeader
+            eyebrow="Working Together"
+            title="Our Partners"
+            description="Connecting with organizations that share our commitment to environmental action."
+          />
+          <FadeIn className="mx-auto mt-12 max-w-3xl">
+            <article className="border border-[#294638] bg-white p-6 sm:p-10">
+              <Image
+                src="/images/partners/world-youth-parliament-for-water.png"
+                alt="World Youth Parliament for Water"
+                width={1002}
+                height={466}
+                sizes="(max-width: 768px) 100vw, 688px"
+                className="mx-auto h-auto w-full object-contain"
+              />
+              <h3 className="mt-6 text-center text-2xl sm:text-3xl">
+                World Youth Parliament for Water
+              </h3>
+            </article>
+          </FadeIn>
+        </div>
+      </section>
+
       <section className="bg-[#F1F6C8] px-6 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
           <SectionHeader

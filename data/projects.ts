@@ -40,6 +40,7 @@ export type Project = {
   featured: boolean;
 
   gallery: string[];
+  featuredPhotos?: { src: string; alt: string }[];
 
   statistics: ProjectStatistic[];
 
@@ -51,6 +52,20 @@ export const projects: Project[] = [
   {
     id: "project-smart-classrooms-odisha",
     slug: "smart-classrooms-odisha",
+    featuredPhotos: [
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785048915/07_n9ffk9.jpg",
+        "alt": "A teacher leading a lesson with the classroom smart board"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785049549/14_mvanzw.jpg",
+        "alt": "Students seated at desks in the completed smart classroom"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785048875/03_dvnmzp.jpg",
+        "alt": "Digital learning content displayed on the classroom smart board"
+      }
+    ],
 
     title: "Smart Classrooms in Odisha",
 
@@ -151,6 +166,20 @@ Give Earth a Smile is working toward bringing these educational voices into the 
   {
     id: "smart-classrooms-tamil-nadu",
     slug: "smart-classrooms-tamil-nadu",
+    featuredPhotos: [
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785090841/13_dggmvg.png",
+        "alt": "Students gathered at the school in Nagapattinam"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785090808/11_kbigxo.png",
+        "alt": "The smart board and classroom learning resources"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785090768/08_ndysdc.png",
+        "alt": "A project participant with students at the school"
+      }
+    ],
 
     title: "Smart Classrooms in Tamil Nadu",
 
@@ -228,6 +257,20 @@ Give Earth a Smile is working toward bringing these educational voices into the 
   {
     id: "seeds-for-change-malawi",
     slug: "seeds-for-change-malawi",
+    featuredPhotos: [
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785098079/32_mybwwk.jpg",
+        "alt": "Students attending an environmental education session in Malawi"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785098120/35_zcog30.jpg",
+        "alt": "Project materials being shared at the school"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785132414/54_gh7pkp.jpg",
+        "alt": "Students and educators gathered outside the school"
+      }
+    ],
 
     title: "Seeds for Change in Malawi",
 
@@ -372,6 +415,20 @@ Give Earth a Smile is working toward bringing these educational voices into the 
   {
     id: "seeds-for-change-taiwan",
     slug: "seeds-for-change-taiwan",
+    featuredPhotos: [
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785095471/01_udum87.jpg",
+        "alt": "Children taking part in a hands-on planting activity"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785095771/23_wevshn.jpg",
+        "alt": "An educator guiding children during planting"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1785095848/28_xcokfu.jpg",
+        "alt": "Banana plants growing at the project site in Taiwan"
+      }
+    ],
 
     title: "Seeds for Change in Taiwan",
 
@@ -482,6 +539,20 @@ Give Earth a Smile is working toward bringing these educational voices into the 
   {
     id: "project-santa-cruz-beach-cleanup",
     slug: "santa-cruz-beach-cleanup",
+    featuredPhotos: [
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1788921197/Screenshot_2026-09-08_at_10.33.11_PM_rruoh2.png",
+        "alt": "Volunteers collecting litter together at Main Beach"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1788921296/Screenshot_2026-09-08_at_10.34.48_PM_dnkpgk.png",
+        "alt": "A volunteer picking up litter from the beach"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1788921205/Screenshot_2026-09-08_at_10.33.19_PM_wz91yq.png",
+        "alt": "Volunteers holding collected trash after the cleanup"
+      }
+    ],
 
     title: "Santa Cruz Beach Cleanup",
 
@@ -574,6 +645,20 @@ By connecting education, community service, and public outreach, the Santa Cruz 
   {
     id: "project-the-re-leaf-project",
     slug: "the-re-leaf-project",
+    featuredPhotos: [
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1789443592/Screenshot_2026-09-14_at_11.39.45_PM_kquokh.png",
+        "alt": "Volunteers making recycled-paper awareness cards"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1792552654/Screenshot_2026-10-20_at_11.14.19_PM_ewusqi.png",
+        "alt": "Recycling guidance and campaign cards displayed outdoors"
+      },
+      {
+        "src": "https://res.cloudinary.com/otmypjmz/image/upload/v1792552656/Screenshot_2026-10-20_at_11.14.15_PM_lcjrwm.png",
+        "alt": "Project volunteers sharing recycling awareness cards"
+      }
+    ],
 
     title: "The Re-Leaf Project",
 

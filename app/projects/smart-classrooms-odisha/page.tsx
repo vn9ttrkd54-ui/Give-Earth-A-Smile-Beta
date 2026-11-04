@@ -77,6 +77,7 @@ export default function SmartClassroomsOdishaPage() {
           <h1 className="mt-5 max-w-5xl text-5xl leading-tight sm:text-6xl md:text-7xl">
             Smart Classrooms in Odisha
           </h1>
+          <ProjectHighlights photos={project.featuredPhotos ?? []} />
 
           <p className="mt-6 max-w-3xl text-lg leading-8 text-white/80">
             Expanding access to technology-enabled education for students in a
@@ -450,3 +451,4 @@ export default function SmartClassroomsOdishaPage() {
     </main>
   );
 }
+import ProjectHighlights from "@/components/project/ProjectHighlights";
