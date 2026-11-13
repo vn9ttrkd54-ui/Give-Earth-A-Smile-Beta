@@ -45,6 +45,99 @@ export type EducationArticle = {
 
 export const educationArticles: EducationArticle[] = [
   {
+    id: "article-light-pollution-wildlife",
+    slug: "light-pollution-protecting-night",
+    title: "Protecting the Night: Light Pollution and Wildlife",
+    subtitle:
+      "Why natural darkness matters—and how thoughtful lighting can support wildlife and communities.",
+    description:
+      "Explore how artificial light changes nighttime habitats, why migrating birds can be affected, and how students can help their schools use outdoor lighting responsibly.",
+    category: "Biodiversity",
+    difficulty: "Beginner",
+    author: "Give Earth a Smile Education Team",
+    authorRole: "Conservation Education",
+    publishedDate: "November 2026",
+    readingTime: 4,
+    coverImage: "/images/education/biodiversity.jpg",
+    featured: false,
+    tags: [
+      "Light Pollution",
+      "Wildlife",
+      "Night Skies",
+      "Community Action",
+    ],
+    sections: [
+      {
+        id: "understanding-light-pollution",
+        title: "When Light Goes Beyond Where It Is Needed",
+        paragraphs: [
+          "A light above a doorway can help someone find their way home. The same fixture can also send light into a neighbor’s window, across nearby habitat, or upward into the sky. Light pollution occurs when artificial lighting reaches places or times where it is unnecessary or disruptive.",
+          "One visible effect is skyglow: the brightening of the night sky as artificial light scatters in the atmosphere. Another is light trespass, when lighting spills beyond the area it is meant to serve. Recognizing these effects helps us ask a more useful question than whether a place is simply bright or dark: where is the light going?",
+        ],
+        keyPoints: [
+          "Light pollution involves the placement, direction, and timing of artificial light.",
+          "Skyglow makes the night sky brighter and stars harder to see.",
+          "Light trespass extends illumination beyond its intended area.",
+        ],
+      },
+      {
+        id: "wildlife-after-dark",
+        title: "Wildlife Needs the Night, Too",
+        paragraphs: [
+          "Habitat does not stop being important when the sun sets. Many birds migrate at night, and artificial lights can attract and disorient them. Birds drawn toward illuminated buildings may circle, use energy, or encounter glass and other structures. Lighting is one part of the larger problem of bird collisions.",
+          "Changes to nighttime conditions can also affect how animals move, find food, and interact. The response depends on the species and its surroundings, so one lighting solution will not suit every habitat. A local conservation group can help students understand which animals use their area and when those animals may be especially vulnerable.",
+        ],
+        keyPoints: [
+          "Many migrating birds travel at night.",
+          "Artificial light can attract or disorient birds near buildings.",
+          "Protecting habitat includes considering nighttime conditions.",
+        ],
+      },
+      {
+        id: "thoughtful-outdoor-lighting",
+        title: "Better Lighting Begins With a Purpose",
+        paragraphs: [
+          "Responsible outdoor lighting begins by identifying the task: lighting a doorway, path, or activity area. Shielded fixtures direct light toward that area rather than into the sky. Timers and motion sensors can reduce the hours that lights remain on, while warm-colored lighting and appropriate brightness can reduce unnecessary disturbance.",
+          "An efficient bulb alone does not solve the problem if it illuminates the wrong place or stays on when it is not needed. The goal is to meet real visibility and access needs while reducing wasted light. Property managers should make changes with the people who use the space, including those arriving or leaving after dark.",
+        ],
+        keyPoints: [
+          "Direct and shield lights toward the area that needs illumination.",
+          "Use timers or sensors where they suit the space and its users.",
+          "Consider brightness, color, operating hours, and energy use together.",
+        ],
+      },
+      {
+        id: "school-lighting-observation",
+        title: "Plan a School Lighting Observation",
+        paragraphs: [
+          "With a teacher and facilities staff, make a daytime map of outdoor fixtures and the areas they serve. Ask when each light operates and why it is needed. If an evening observation is approved and supervised, record whether light spills toward trees, neighboring properties, or the sky. Students should not adjust fixtures or enter restricted areas.",
+          "Choose one question to investigate, such as whether lights near an unused entrance remain on after activities finish. Discuss a possible change with staff, then compare observations under similar conditions. Record the time, weather, and activities taking place. A short report should explain both the environmental goal and how the proposal preserves needed lighting for people using the site.",
+        ],
+        keyPoints: [
+          "Begin with permission, a map, and input from facilities staff.",
+          "Document a specific problem before proposing a change.",
+          "Compare observations and include the needs of people using the space.",
+        ],
+      },
+    ],
+    takeaways: [
+      "Artificial light can affect places beyond the area it is intended to illuminate.",
+      "Natural darkness is an important part of wildlife habitat.",
+      "Direction, timing, brightness, and color all influence outdoor lighting.",
+      "Students can use observation and collaboration to propose practical improvements.",
+    ],
+    discussionQuestions: [
+      "Where have you noticed outdoor lighting reaching beyond the space it is meant to illuminate?",
+      "Which local animals might be affected by artificial light at night?",
+      "How could your school reduce unnecessary lighting while meeting the needs of people using its grounds?",
+    ],
+    relatedArticleSlugs: [
+      "protecting-local-biodiversity",
+      "native-plants-stronger-ecosystems",
+      "building-a-sustainable-school",
+    ],
+  },
+  {
     id: "article-stormwater-rain-gardens",
     slug: "stormwater-rain-gardens",
     title: "After the Rain: Protecting Water Where We Live",
